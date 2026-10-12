@@ -1,0 +1,34 @@
+{
+  "returncode": 0,
+  "stdout": "{\"split\": 0, \"error_pct\": 2.369999885559082, \"full_warm_ms\": 40.0441960000002, \"predictions_exact\": true, \"reset_exact\": true, \"input_immutable\": true, \"source_sha256\": \"43c487a621cd5e563f5636181db4af74816daecfa37c90bf3f850cf699c1df51\"}\n{\"split\": 1, \"error_pct\": 2.8499999046325684, \"full_warm_ms\": 39.916648000000166, \"predictions_exact\": true, \"reset_exact\": true, \"input_immutable\": true, \"source_sha256\": \"43c487a621cd5e563f5636181db4af74816daecfa37c90bf3f850cf699c1df51\"}\n{\"split\": 2, \"error_pct\": 2.919999837875366, \"full_warm_ms\": 39.88323399999949, \"predictions_exact\": true, \"reset_exact\": true, \"input_immutable\": true, \"source_sha256\": \"43c487a621cd5e563f5636181db4af74816daecfa37c90bf3f850cf699c1df51\"}\n",
+  "stderr": "",
+  "rows": [
+    {
+      "split": 0,
+      "error_pct": 2.369999885559082,
+      "full_warm_ms": 40.0441960000002,
+      "predictions_exact": true,
+      "reset_exact": true,
+      "input_immutable": true,
+      "source_sha256": "43c487a621cd5e563f5636181db4af74816daecfa37c90bf3f850cf699c1df51"
+    },
+    {
+      "split": 1,
+      "error_pct": 2.8499999046325684,
+      "full_warm_ms": 39.916648000000166,
+      "predictions_exact": true,
+      "reset_exact": true,
+      "input_immutable": true,
+      "source_sha256": "43c487a621cd5e563f5636181db4af74816daecfa37c90bf3f850cf699c1df51"
+    },
+    {
+      "split": 2,
+      "error_pct": 2.919999837875366,
+      "full_warm_ms": 39.88323399999949,
+      "predictions_exact": true,
+      "reset_exact": true,
+      "input_immutable": true,
+      "source_sha256": "43c487a621cd5e563f5636181db4af74816daecfa37c90bf3f850cf699c1df51"
+    }
+  ]
+}
