@@ -1,0 +1,12 @@
+{
+  "source_sha256": "43c487a621cd5e563f5636181db4af74816daecfa37c90bf3f850cf699c1df51",
+  "source_bytes": 16104,
+  "difficulty": 3,
+  "runs": 3,
+  "energy_enabled": true,
+  "raw_record_sha256": {
+    "run-1.json": "ba133a6ec8a98fb5dc59e29107e9e4094f58ebf2b5b5d2a8b0994f5dd1340c7f",
+    "run-2.json": "705d5961ffb29a51d311fdd21d39d615f39ee5c0bbc39ef2639f7c2b1416f80b",
+    "run-3.json": "b3dcccb1f5b141eeb70dbdab282506295a1344013c18cf29c750c4aca9fb5654"
+  }
+}

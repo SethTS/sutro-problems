@@ -1,0 +1,35 @@
+{
+  "pull_request": 117,
+  "reviewed_head": "49a4cf4fd8eabb53066dd15fb0aa8a877f8689ec",
+  "source_sha256": "43c487a621cd5e563f5636181db4af74816daecfa37c90bf3f850cf699c1df51",
+  "source_bytes": 16104,
+  "recommendation": "merge",
+  "blockers": [],
+  "qualification": {
+    "passed_runs": 3,
+    "required_runs": 3,
+    "median_ranked_ms": 51.77218410217276,
+    "median_energy_mj": 8839.065985200987,
+    "aggregate_mnist_error_pct": 2.613939393939394,
+    "calls_per_run": 15,
+    "mnist_calls_per_run": 11,
+    "holdout_calls_per_run": 4,
+    "distinct_gpu_uuids": 3,
+    "source_identity_and_saved_judge_and_energy_reconstruction": "exact",
+    "no_retries_or_replacement_runs": true
+  },
+  "nonblocking_documentation_issue": "New D3 README row is separated from existing Markdown table by a blank line. Root notified; source/qualification are unaffected.",
+  "author_official_audit": "All3pass and allrawhashes exact; median51.627899090136964ms8706.872617695493mJ; source originally namedkernel_d3_polar_two_updates.py but exacthashmatchespackagedsubmission.py.",
+  "separate_failed_candidate": "NS5 one-update sourcecc3f2af9\u2026preserved;1/3pass, failures22and28labels short. Never pooledinto finalsource.",
+  "limitations": "No same-draw fresh reviewer pairing with PR116 was performed; separate source/draw records cannot establish speed or accuracy superiority. Authored development/reset/input-integrity evidence is consistent but was not independently rerun. Static source examination and fresh hidden-draw sandbox qualification independently found no leakage or persistence.",
+  "evidence_directory": "/Users/yaroslavvb/git/sutro-problems/output/pr-review-20261012/pr117",
+  "modal_app": {
+    "app_id": "ap-s9zinXY9XSx0UpTK6zdaFD",
+    "state": "stopped",
+    "tasks": 0,
+    "created_at": "2026-10-12T07:30:42-07:00",
+    "stopped_at": "2026-10-12T07:34:41-07:00",
+    "verification_scope": "modal app list --json observed app stopped with zero tasks; no explicit stop necessary."
+  },
+  "completed_at": "2026-10-12T14:36:41.130515+00:00"
+}
