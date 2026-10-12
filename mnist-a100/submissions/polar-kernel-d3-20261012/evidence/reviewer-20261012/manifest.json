@@ -1,0 +1,21 @@
+{
+  "pull_request": 117,
+  "reviewed_head": "49a4cf4fd8eabb53066dd15fb0aa8a877f8689ec",
+  "source_filename": "submission.py",
+  "source_path": "author/submission.py",
+  "source_sha256": "43c487a621cd5e563f5636181db4af74816daecfa37c90bf3f850cf699c1df51",
+  "source_bytes": 16104,
+  "difficulty": 3,
+  "runs": 3,
+  "energy_enabled": true,
+  "local_scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+  "local_runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+  "modal_app_id": "ap-s9zinXY9XSx0UpTK6zdaFD",
+  "command": "/tmp/sutro-pr-review-20261008-controller/bin/python canonical/run_modal.py author/submission.py:classify --difficulty 3 --runs 3 --json reviewer-modal",
+  "initial_reviewer_set": true,
+  "failed_runs_replaced": false,
+  "source_modified": false,
+  "launch_setup_note": "First shell redirection failed before Python ran because reviewer-modal did not exist; directory created before initial batch.",
+  "manifest_written_at": "2026-10-12T14:32:13.843668+00:00",
+  "modal_app_created_at": "2026-10-12T07:30:42-07:00"
+}

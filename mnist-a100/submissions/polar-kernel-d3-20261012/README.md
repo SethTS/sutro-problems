@@ -1,6 +1,6 @@
 # Spherical direction/radius kernel — D3
 
-Three original independent energy-enabled canonical sandbox evaluations passed. Median ranked time **51.627899 ms**, median above-idle GPU energy **8,706.872618 mJ**, pooled MNIST error **2.493333%** over 330,000 predictions. Human review remains pending.
+Three original independent energy-enabled canonical sandbox evaluations passed. Median ranked time **51.627899 ms**, median above-idle GPU energy **8,706.872618 mJ**, pooled MNIST error **2.493333%** over 330,000 predictions. Independent maintainer verification is recorded below.
 
 | Run | MNIST error | Ranked ms | Above-idle mJ |
 |---:|---:|---:|---:|
@@ -43,3 +43,28 @@ python submissions/polar-kernel-d3-20261012/verify_records.py submissions/polar-
 ```
 
 The audit reconstructs accuracy/timing and energy verdicts and checks source SHA and sandbox status. It is a saved-record check, not an independent GPU reproduction.
+
+## Independent maintainer verification — 2026-10-12
+
+All three initial fresh energy-enabled canonical Modal A100-80GB runs passed. The unchanged source was checked for fresh per-call fitting, input integrity, query-truth isolation and source compliance. Every saved accuracy/timing verdict and complete energy window was reconstructed with the unchanged canonical scorer. All 45 timed calls completed; three distinct GPU UUIDs were recorded. No failed outcome was replaced and no learner retry or repair was made.
+
+The reviewer set has median ranked time **51.772184 ms**, median above-idle board energy **8839.065985 mJ**, and descriptive pooled MNIST error **2.613939%**. Each run qualifies individually; pooling is not used to override a failure. The top-level leaderboard uses this independent reviewer set, while the original author set above is retained separately.
+
+| Reviewer run | Correct | MNIST error | Ranked ms | Above-idle mJ |
+|---:|---:|---:|---:|---:|
+| 1 | 107,092/110,000 | 2.643636% | 51.772184 | 8839.065985 |
+| 2 | 107,070/110,000 | 2.663636% | 53.377750 | 8121.589288 |
+| 3 | 107,212/110,000 | 2.534545% | 51.235180 | 9042.249257 |
+
+[Raw records and manifest](evidence/reviewer-20261012/), [canonical reconstruction](evidence/reviewer-20261012/verification.json), and [source review](evidence/reviewer-20261012/source-review.json) are retained. The source SHA remains `43c487a621cd5e563f5636181db4af74816daecfa37c90bf3f850cf699c1df51`.
+
+Verify the reviewer records locally from `mnist-a100/`:
+
+```sh
+python submissions/polar-kernel-d3-20261012/evidence/reviewer-20261012/verify_records.py \
+  submissions/polar-kernel-d3-20261012/evidence/reviewer-20261012 \
+  submissions/polar-kernel-d3-20261012/submission.py \
+  --output /tmp/polar-d3-reviewer-verification.json
+```
+
+These separate hidden draws do not establish an accuracy or speed advantage over PR #116. The established D3 record is relative to previously accepted entries.
