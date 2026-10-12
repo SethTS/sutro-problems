@@ -68,6 +68,8 @@ provisional. ★ identifies an established record.
 | 2026-10-05 | 151,404 | 1,157.1 | [py](submissions/ladder-kernel-tuned-20261003/ladder_d3.py), [report](submissions/ladder-kernel-tuned-20261003/README.md) | [@islamborghini](https://github.com/islamborghini) | Sampled Ladder, batch 1,000, 800 steps, TF32; tuned forward and backward Triton kernels; median of three sandboxed runs |
 | 2026-10-08 | 98,226 | 416.1 | [py](submissions/native-mlp-d3-20261007/graph1250-repair/submission.py), [report](submissions/native-mlp-d3-20261007/graph1250-repair/README.md) | [@sjbaebae](https://github.com/sjbaebae) | Eight 60-256-256-256-10 RMSNorm/ReLU MLPs, 1,250 updates, five-neighbor voting and three-step query graph propagation; median of three sandboxed Modal runs ★ best |
 
+| 2026-10-12 | 8,707 | 51.6 | [py](submissions/polar-kernel-d3-20261012/submission.py), [report](submissions/polar-kernel-d3-20261012/README.md) | [@sjbaebae](https://github.com/sjbaebae) | Spherical direction/radius RBF, two tangent-gradient metric updates; derived from PR #116; median of three sandboxed energy-enabled runs; submitted for review |
+
 ## Difficulty = 4 (error ≤ 2.30%)
 
 | Date | mJ | ms | Submission | Entrant | Description |
