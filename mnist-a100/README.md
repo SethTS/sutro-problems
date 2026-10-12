@@ -67,6 +67,7 @@ provisional. ★ identifies an established record.
 | 2026-09-30 | 253,761 | 1,732.2 | [py](submissions/improved-20260930/ladder_d3.py), [report](submissions/improved-20260930/README.md) | [@yaroslavvb](https://github.com/yaroslavvb) | Ladder, 1,100 steps; 8.3% fewer updates; one sandboxed run |
 | 2026-10-05 | 151,404 | 1,157.1 | [py](submissions/ladder-kernel-tuned-20261003/ladder_d3.py), [report](submissions/ladder-kernel-tuned-20261003/README.md) | [@islamborghini](https://github.com/islamborghini) | Sampled Ladder, batch 1,000, 800 steps, TF32; tuned forward and backward Triton kernels; median of three sandboxed runs |
 | 2026-10-08 | 98,226 | 416.1 | [py](submissions/native-mlp-d3-20261007/graph1250-repair/submission.py), [report](submissions/native-mlp-d3-20261007/graph1250-repair/README.md) | [@sjbaebae](https://github.com/sjbaebae) | Eight 60-256-256-256-10 RMSNorm/ReLU MLPs, 1,250 updates, five-neighbor voting and three-step query graph propagation; median of three sandboxed Modal runs ★ best |
+| 2026-10-12 | 8,499 | 51.6 | [py](submissions/kernel-rbf-d3-20261009/kernel_d3_two_metric_low_ridge.py), [report](submissions/kernel-rbf-d3-20261009/README.md) | [@islamborghini](https://github.com/islamborghini) | Non-neural RBF kernel ridge, two analytic metric updates, 16-step Nyström-preconditioned CG and local class geometry; median of three sandboxed Modal runs |
 
 ## Difficulty = 4 (error ≤ 2.30%)
 

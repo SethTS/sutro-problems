@@ -1,0 +1,141 @@
+{
+ "returncode": 0,
+ "stdout": "kernel_d3_two_metric_low_ridge.py:classify at 2.70% error: 15 timed calls, each in a fresh process\n  review flag: 20,388 bytes, close to the 20,480-byte limit\n  NVIDIA A100-SXM4-80GB, torch 2.12.0+cu130, sandbox on\n  call  1/15: 54.664 ms, scorer's clock 57.458 ms\n  call  2/15: 54.771 ms, scorer's clock 58.250 ms\n  call  3/15: 53.536 ms, scorer's clock 59.147 ms\n  call  4/15: 52.289 ms, scorer's clock 55.388 ms\n  call  5/15: 53.418 ms, scorer's clock 56.835 ms\n  call  6/15: 54.552 ms, scorer's clock 56.405 ms\n  call  7/15: 52.941 ms, scorer's clock 59.233 ms\n  call  8/15: 55.224 ms, scorer's clock 58.264 ms\n  call  9/15: 52.022 ms, scorer's clock 57.473 ms\n  call 10/15: 53.932 ms, scorer's clock 57.462 ms\n  call 11/15: 54.334 ms, scorer's clock 57.207 ms\n  call 12/15: 53.631 ms, scorer's clock 56.739 ms\n  call 13/15: 53.881 ms, scorer's clock 58.452 ms\n  call 14/15: 52.311 ms, scorer's clock 55.273 ms\n  call 15/15: 52.642 ms, scorer's clock 55.397 ms\nMNIST 97.33% (107,067/110,000), 56.851 ms/call; hold-out (kmnist) 96.84%, 57.024 ms/call (floored by the scorer's clock); score 57.024 ms\n",
+ "stderr": "",
+ "record": {
+  "version": "mnist-a100/1.2.0 (protections of sutro-mnist-medium/3.0.0, tightened; energy column)",
+  "file": "kernel_d3_two_metric_low_ridge.py",
+  "function": "classify",
+  "source_sha256": "13dfbe8b83a2cd92c422e576ff4b0b8b756c440f8132b61beb4ffa821b144dc4",
+  "band_bp": 270,
+  "sandboxed": true,
+  "holdout": "kmnist",
+  "device": "NVIDIA A100-SXM4-80GB",
+  "torch": "2.12.0+cu130",
+  "calls": [
+   {
+    "dataset": "mnist",
+    "ms": 54.66419219970703,
+    "parent_ms": 62.211589000000345,
+    "correct": 9765,
+    "total": 10000,
+    "overhead_ms": 4.753598997909528
+   },
+   {
+    "dataset": "mnist",
+    "ms": 54.770687103271484,
+    "parent_ms": 62.594119999999975,
+    "correct": 9739,
+    "total": 10000,
+    "overhead_ms": 4.344462499208788
+   },
+   {
+    "dataset": "mnist",
+    "ms": 53.535743713378906,
+    "parent_ms": 63.35239599999909,
+    "correct": 9735,
+    "total": 10000,
+    "overhead_ms": 4.205766999814159
+   },
+   {
+    "dataset": "mnist",
+    "ms": 52.28851318359375,
+    "parent_ms": 60.47596499999486,
+    "correct": 9728,
+    "total": 10000,
+    "overhead_ms": 5.087676498257423
+   },
+   {
+    "dataset": "mnist",
+    "ms": 53.41798400878906,
+    "parent_ms": 60.78335600000173,
+    "correct": 9709,
+    "total": 10000,
+    "overhead_ms": 3.94850599894815
+   },
+   {
+    "dataset": "mnist",
+    "ms": 54.551551818847656,
+    "parent_ms": 60.9066949999999,
+    "correct": 9716,
+    "total": 10000,
+    "overhead_ms": 4.502190497387346
+   },
+   {
+    "dataset": "mnist",
+    "ms": 52.940799713134766,
+    "parent_ms": 63.52014700000552,
+    "correct": 9740,
+    "total": 10000,
+    "overhead_ms": 4.287024497730727
+   },
+   {
+    "dataset": "kmnist",
+    "ms": 55.22431945800781,
+    "parent_ms": 62.584004000001414,
+    "correct": 9692,
+    "total": 10000,
+    "overhead_ms": 4.320045996524584
+   },
+   {
+    "dataset": "mnist",
+    "ms": 52.02227020263672,
+    "parent_ms": 62.43502300000614,
+    "correct": 9732,
+    "total": 10000,
+    "overhead_ms": 4.9624664987673555
+   },
+   {
+    "dataset": "kmnist",
+    "ms": 53.93203353881836,
+    "parent_ms": 61.67196100000183,
+    "correct": 9681,
+    "total": 10000,
+    "overhead_ms": 4.20972350206614
+   },
+   {
+    "dataset": "mnist",
+    "ms": 54.33446502685547,
+    "parent_ms": 62.01169100000925,
+    "correct": 9750,
+    "total": 10000,
+    "overhead_ms": 4.804433999899402
+   },
+   {
+    "dataset": "mnist",
+    "ms": 53.630977630615234,
+    "parent_ms": 61.93885400000454,
+    "correct": 9718,
+    "total": 10000,
+    "overhead_ms": 5.200181999634424
+   },
+   {
+    "dataset": "kmnist",
+    "ms": 53.88083267211914,
+    "parent_ms": 63.09720399997332,
+    "correct": 9663,
+    "total": 10000,
+    "overhead_ms": 4.645531502086328
+   },
+   {
+    "dataset": "mnist",
+    "ms": 52.311038970947266,
+    "parent_ms": 59.58982500001753,
+    "correct": 9735,
+    "total": 10000,
+    "overhead_ms": 4.316657500946349
+   },
+   {
+    "dataset": "kmnist",
+    "ms": 52.64179229736328,
+    "parent_ms": 59.779104000000416,
+    "correct": 9700,
+    "total": 10000,
+    "overhead_ms": 4.3817750020820085
+   }
+  ],
+  "problems": [],
+  "summary": "MNIST 97.33% (107,067/110,000), 56.851 ms/call; hold-out (kmnist) 96.84%, 57.024 ms/call (floored by the scorer's clock)",
+  "ranked_ms": 57.02420052684659
+ }
+}

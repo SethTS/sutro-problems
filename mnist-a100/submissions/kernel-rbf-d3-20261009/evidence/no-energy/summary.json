@@ -1,0 +1,50 @@
+{
+  "qualified_runs": 3,
+  "runs_total": 3,
+  "median_ranked_ms": 52.80944175800046,
+  "pooled_mnist_error_pct": 2.62,
+  "pooled_mnist_correct": 321354,
+  "pooled_mnist_total": 330000,
+  "energy_mj": null,
+  "runs": [
+    {
+      "run": 1,
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "ranked_ms": 57.02420052684659,
+      "mnist_correct": 107067,
+      "mnist_total": 110000,
+      "mean_error_pct": 2.6663636363636365,
+      "worst_draw_error_pct": 2.91,
+      "holdout": "kmnist",
+      "holdout_accuracy_pct": 96.84,
+      "accuracy_margin_correct": 37,
+      "qualified": true
+    },
+    {
+      "run": 2,
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "ranked_ms": 52.80944175800046,
+      "mnist_correct": 107128,
+      "mnist_total": 110000,
+      "mean_error_pct": 2.610909090909091,
+      "worst_draw_error_pct": 2.82,
+      "holdout": "fashion",
+      "holdout_accuracy_pct": 87.095,
+      "accuracy_margin_correct": 98,
+      "qualified": true
+    },
+    {
+      "run": 3,
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "ranked_ms": 49.038230475472005,
+      "mnist_correct": 107159,
+      "mnist_total": 110000,
+      "mean_error_pct": 2.5827272727272725,
+      "worst_draw_error_pct": 2.8,
+      "holdout": "kmnist",
+      "holdout_accuracy_pct": 96.795,
+      "accuracy_margin_correct": 129,
+      "qualified": true
+    }
+  ]
+}
