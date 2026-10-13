@@ -1,0 +1,154 @@
+{
+ "submission": "mnist-a100/submissions/tangent-crossteach-d5-20261012",
+ "difficulty": 5,
+ "band_error_pct": 1.9,
+ "source_bytes": 12135,
+ "source_sha256": "a3b18bac64dddc3f7aa8c614e2279932aa74040720cb861e8dfa40eaa67923c3",
+ "review_flags": [],
+ "distinct_gpus": true,
+ "passed_runs": 3,
+ "runs": 3,
+ "median_ranked_ms": 3359.445467862216,
+ "median_energy_mj_per_call": 677766.4830980663,
+ "aggregate_mnist_error_pct": 1.7624242424242431,
+ "per_run": [
+  {
+   "file": "run-1.json",
+   "device": "NVIDIA A100 80GB PCIe",
+   "gpu_uuid": "GPU-fb11e358-3517-85e7-b6f2-d9fbdfab04c0",
+   "holdout": "kmnist",
+   "ranked_ms": 3369.8360484730115,
+   "recomputed_ranked_ms": 3369.8360484730115,
+   "energy_mj_per_call": 633927.0934671118,
+   "datasets": {
+    "mnist": {
+     "calls": 11,
+     "correct": 108031,
+     "total": 110000,
+     "error_pct": 1.7900000000000027,
+     "worst_call_error_pct": 1.959999999999995,
+     "mean_ms": 3369.8360484730115,
+     "parent_floor_ms": 3355.4576217165395,
+     "slowest_over_median": 1.006501870430353,
+     "fastest_over_median": 0.9959545655674078
+    },
+    "kmnist": {
+     "calls": 4,
+     "correct": 39051,
+     "total": 40000,
+     "error_pct": 2.3724999999999996,
+     "worst_call_error_pct": 2.5900000000000034,
+     "mean_ms": 3364.08447265625,
+     "parent_floor_ms": 3349.56273643811,
+     "slowest_over_median": 1.0006929386967462,
+     "fastest_over_median": 0.9983451241019069
+    }
+   },
+   "checks": {
+    "source_sha256_matches": true,
+    "sandboxed": true,
+    "no_scorer_problems": true,
+    "mnist_calls_11_holdout_calls_4": true,
+    "mnist_mean_error_within_band": true,
+    "every_mnist_call_within_band_plus_1_5": true,
+    "holdout_accuracy_at_least_15pct": true,
+    "same_work_timing": true,
+    "ranked_ms_reproduced": true,
+    "no_energy_problems": true
+   },
+   "passed": true
+  },
+  {
+   "file": "run-2.json",
+   "device": "NVIDIA A100-SXM4-80GB",
+   "gpu_uuid": "GPU-2837b825-2492-c9fb-6176-a2b345a71a48",
+   "holdout": "fashion",
+   "ranked_ms": 3359.445467862216,
+   "recomputed_ranked_ms": 3359.445467862216,
+   "energy_mj_per_call": 677766.4830980663,
+   "datasets": {
+    "fashion": {
+     "calls": 4,
+     "correct": 35572,
+     "total": 40000,
+     "error_pct": 11.070000000000002,
+     "worst_call_error_pct": 11.299999999999999,
+     "mean_ms": 3346.0003662109375,
+     "parent_floor_ms": 3333.715316713108,
+     "slowest_over_median": 1.0049703773659246,
+     "fastest_over_median": 0.9986502053429667
+    },
+    "mnist": {
+     "calls": 11,
+     "correct": 108077,
+     "total": 110000,
+     "error_pct": 1.7481818181818154,
+     "worst_call_error_pct": 2.059999999999995,
+     "mean_ms": 3359.445467862216,
+     "parent_floor_ms": 3346.466104538139,
+     "slowest_over_median": 1.003415494875231,
+     "fastest_over_median": 0.9966815672117145
+    }
+   },
+   "checks": {
+    "source_sha256_matches": true,
+    "sandboxed": true,
+    "no_scorer_problems": true,
+    "mnist_calls_11_holdout_calls_4": true,
+    "mnist_mean_error_within_band": true,
+    "every_mnist_call_within_band_plus_1_5": true,
+    "holdout_accuracy_at_least_15pct": true,
+    "same_work_timing": true,
+    "ranked_ms_reproduced": true,
+    "no_energy_problems": true
+   },
+   "passed": true
+  },
+  {
+   "file": "run-3.json",
+   "device": "NVIDIA A100-SXM4-80GB",
+   "gpu_uuid": "GPU-416828e0-0a6b-3a3b-ba29-a5a5e72e8c7c",
+   "holdout": "kmnist",
+   "ranked_ms": 3352.0782359730115,
+   "recomputed_ranked_ms": 3352.0782359730115,
+   "energy_mj_per_call": 699197.4324144544,
+   "datasets": {
+    "mnist": {
+     "calls": 11,
+     "correct": 108076,
+     "total": 110000,
+     "error_pct": 1.7490909090909112,
+     "worst_call_error_pct": 1.849999999999996,
+     "mean_ms": 3352.0782359730115,
+     "parent_floor_ms": 3339.255154378144,
+     "slowest_over_median": 1.0069567732526217,
+     "fastest_over_median": 0.9938923792260647
+    },
+    "kmnist": {
+     "calls": 4,
+     "correct": 39009,
+     "total": 40000,
+     "error_pct": 2.477499999999999,
+     "worst_call_error_pct": 2.5900000000000034,
+     "mean_ms": 3347.7593383789062,
+     "parent_floor_ms": 3334.862644495689,
+     "slowest_over_median": 1.0035842735725498,
+     "fastest_over_median": 0.9971135366912568
+    }
+   },
+   "checks": {
+    "source_sha256_matches": true,
+    "sandboxed": true,
+    "no_scorer_problems": true,
+    "mnist_calls_11_holdout_calls_4": true,
+    "mnist_mean_error_within_band": true,
+    "every_mnist_call_within_band_plus_1_5": true,
+    "holdout_accuracy_at_least_15pct": true,
+    "same_work_timing": true,
+    "ranked_ms_reproduced": true,
+    "no_energy_problems": true
+   },
+   "passed": true
+  }
+ ]
+}
