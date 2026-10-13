@@ -33,3 +33,23 @@ Builds on @islamborghini's [kernel-pcg entry](../kernel-pcg-20260929/README.md) 
 - Transductive: test rows are used without labels, as HKNN vertices carrying model-predicted labels.
 - Our earlier, slower version of this pipeline (with a pseudo-label refit, 52.1 ms on Modal on 2026-10-05) showed that the refit added little once HKNN is present. This version drops it.
 - Co-developed with Claude.
+
+## Independent maintainer verification — 2026-10-12
+
+All three initial fresh energy-enabled sandboxed Modal A100-80GB runs passed individually. Source review found no qualification blocker. All 45 timed calls and complete energy windows were reconstructed with the unchanged canonical scorer; three distinct GPU UUIDs were recorded. No failed run was replaced or learner repair made.
+
+The reviewer medians are **18.143665 ms** and **2361.815112 mJ above idle per call**. The leaderboard uses this independent set; the author source and original evidence above are retained.
+
+| Reviewer run | Correct | MNIST error | Ranked ms | Above-idle mJ |
+|---:|---:|---:|---:|---:|
+| 1 | 107,400/110,000 | 2.363636% | 18.411804 | 2100.016333 |
+| 2 | 107,256/110,000 | 2.494545% | 18.112284 | 2361.815112 |
+| 3 | 107,212/110,000 | 2.534545% | 18.143665 | 2370.329065 |
+
+[Raw records and manifest](evidence/reviewer-20261012/) and [canonical reconstruction](evidence/reviewer-20261012/verification.json) are retained. Learner SHA-256: `da456d0ed99d8fb59b26e76b1658d6cd8d69b31710122936f2ca5f81f0ced966`. Energy excludes host energy and first-call compilation.
+
+Reproduce from `mnist-a100/`:
+
+```sh
+python run_modal.py submissions/rfm-hknn-d3-20261012/submission.py:rfm_d3 --difficulty 3 --runs 3 --json /tmp/pr121-d3-verification
+```

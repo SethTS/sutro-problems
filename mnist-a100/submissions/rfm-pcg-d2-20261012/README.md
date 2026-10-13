@@ -33,3 +33,23 @@ Builds directly on @islamborghini's [kernel-pcg entry](../kernel-pcg-20260929/RE
 - Inductive: test rows are only scored.
 - Plain PyTorch with no `torch.compile`, so the warm-up is short and the scorer's post-warm-up staging cost stays small.
 - Co-developed with Claude.
+
+## Independent maintainer verification — 2026-10-12
+
+All three initial fresh energy-enabled sandboxed Modal A100-80GB runs passed individually. Source review found no qualification blocker. All 45 timed calls and complete energy windows were reconstructed with the unchanged canonical scorer; three distinct GPU UUIDs were recorded. No failed run was replaced or learner repair made.
+
+The reviewer medians are **4.578529 ms** and **602.662112 mJ above idle per call**. The leaderboard uses this independent set; the author source and original evidence above are retained.
+
+| Reviewer run | Correct | MNIST error | Ranked ms | Above-idle mJ |
+|---:|---:|---:|---:|---:|
+| 1 | 106,444/110,000 | 3.232727% | 4.382246 | 602.662112 |
+| 2 | 106,529/110,000 | 3.155455% | 4.578529 | 628.332434 |
+| 3 | 106,558/110,000 | 3.129091% | 5.892114 | 425.005391 |
+
+[Raw records and manifest](evidence/reviewer-20261012/) and [canonical reconstruction](evidence/reviewer-20261012/verification.json) are retained. Learner SHA-256: `d2e38e1072b2f7ca6e0e3ade3746d2bddb32604aca8d1ddcc6127233135f2776`. Energy excludes host energy and first-call compilation.
+
+Reproduce from `mnist-a100/`:
+
+```sh
+python run_modal.py submissions/rfm-pcg-d2-20261012/submission.py:classify --difficulty 2 --runs 3 --json /tmp/pr121-d2-verification
+```

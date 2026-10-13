@@ -32,3 +32,23 @@ Ladder network of Rasmus et al. 2015, following @SethTS's [Ladder entries](../la
 - Transductive: test rows are used without labels, in the unlabelled pool and as distillation targets.
 - Training is nondeterministic on the GPU, so reruns on the same draw flip a few dozen labels at about the same error.
 - Co-developed with Claude.
+
+## Independent maintainer verification — 2026-10-12
+
+All three initial fresh energy-enabled sandboxed Modal A100-80GB runs passed individually. Source review found no qualification blocker. All 45 timed calls and complete energy windows were reconstructed with the unchanged canonical scorer; three distinct GPU UUIDs were recorded. No failed run was replaced or learner repair made.
+
+The reviewer medians are **580.093770 ms** and **63113.166019 mJ above idle per call**. The leaderboard uses this independent set; the author source and original evidence above are retained.
+
+| Reviewer run | Correct | MNIST error | Ranked ms | Above-idle mJ |
+|---:|---:|---:|---:|---:|
+| 1 | 107,643/110,000 | 2.142727% | 580.093770 | 62922.126045 |
+| 2 | 107,580/110,000 | 2.200000% | 578.657028 | 70019.835702 |
+| 3 | 107,738/110,000 | 2.056364% | 580.305271 | 63113.166019 |
+
+[Raw records and manifest](evidence/reviewer-20261012/) and [canonical reconstruction](evidence/reviewer-20261012/verification.json) are retained. Learner SHA-256: `f4c69bf486197cd00721320a90dbd644ad734b3371e65ea2fff498d9304ebbdc`. Energy excludes host energy and first-call compilation.
+
+Reproduce from `mnist-a100/`:
+
+```sh
+python run_modal.py submissions/ladder-kernel-d4-20261012/submission.py:ladder_kernel --difficulty 4 --runs 3 --json /tmp/pr121-d4-verification
+```

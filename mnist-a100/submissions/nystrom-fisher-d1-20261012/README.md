@@ -34,3 +34,23 @@ Nyström kernel approximation; Fisher/LDA metric; class-wise k-means (competitiv
 - Inductive: test rows are only featurised and scored.
 - An earlier attempt at this run set failed while Modal built the scorer image (a dataset download was reset), before the method ran. The three runs here are the first complete set for this source.
 - Co-developed with Claude.
+
+## Independent maintainer verification — 2026-10-12
+
+All three initial fresh energy-enabled sandboxed Modal A100-80GB runs passed individually. Source review found no qualification blocker. All 45 timed calls and complete energy windows were reconstructed with the unchanged canonical scorer; three distinct GPU UUIDs were recorded. No failed run was replaced or learner repair made.
+
+The reviewer medians are **1.627842 ms** and **60.207195 mJ above idle per call**. The leaderboard uses this independent set; the author source and original evidence above are retained.
+
+| Reviewer run | Correct | MNIST error | Ranked ms | Above-idle mJ |
+|---:|---:|---:|---:|---:|
+| 1 | 104,573/110,000 | 4.933636% | 2.149163 | 60.207195 |
+| 2 | 104,600/110,000 | 4.909091% | 1.627842 | 60.501830 |
+| 3 | 104,474/110,000 | 5.023636% | 1.497903 | 58.883797 |
+
+[Raw records and manifest](evidence/reviewer-20261012/) and [canonical reconstruction](evidence/reviewer-20261012/verification.json) are retained. Learner SHA-256: `34ac5441dec258a0f9fc49f42c58d865e96020146df0a42b062305f8bf25346b`. Energy excludes host energy and first-call compilation.
+
+Reproduce from `mnist-a100/`:
+
+```sh
+python run_modal.py submissions/nystrom-fisher-d1-20261012/submission.py:nys_d1 --difficulty 1 --runs 3 --json /tmp/pr121-d1-verification
+```
