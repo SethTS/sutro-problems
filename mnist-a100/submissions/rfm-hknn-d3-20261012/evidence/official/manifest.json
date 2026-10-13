@@ -1,0 +1,40 @@
+{
+ "source": {
+  "file": "submission.py",
+  "sha256": "da456d0ed99d8fb59b26e76b1658d6cd8d69b31710122936f2ca5f81f0ced966",
+  "bytes": 14707,
+  "function": "rfm_d3"
+ },
+ "difficulty": 3,
+ "median_ranked_ms": 18.39081033265573,
+ "median_mj_per_call": 2218.4540066131453,
+ "runs": [
+  {
+   "file": "evidence/official/run-1.json",
+   "sha256": "f864f9203ad9c9fac57fa9eb939a49a7e6cdfabf6c76330a36839c92dfe30848",
+   "source_sha256": "da456d0ed99d8fb59b26e76b1658d6cd8d69b31710122936f2ca5f81f0ced966",
+   "device": "NVIDIA A100-SXM4-80GB",
+   "ranked_ms": 18.1928912795,
+   "mj_per_call": 2300.983105426542,
+   "scorer": "mnist-a100/1.2.0 (protections of sutro-mnist-medium/3.0.0, tightened; energy column)"
+  },
+  {
+   "file": "evidence/official/run-2.json",
+   "sha256": "dc8b451d2c55bf71304efb7185ca8cccaccb7976d0779e8eecaa36abb620841f",
+   "source_sha256": "da456d0ed99d8fb59b26e76b1658d6cd8d69b31710122936f2ca5f81f0ced966",
+   "device": "NVIDIA A100-SXM4-80GB",
+   "ranked_ms": 19.22797702812555,
+   "mj_per_call": 2218.4540066131453,
+   "scorer": "mnist-a100/1.2.0 (protections of sutro-mnist-medium/3.0.0, tightened; energy column)"
+  },
+  {
+   "file": "evidence/official/run-3.json",
+   "sha256": "96c096cffd9845cd79879a922b910afb72f8e29d94234096ec51513e152afa33",
+   "source_sha256": "da456d0ed99d8fb59b26e76b1658d6cd8d69b31710122936f2ca5f81f0ced966",
+   "device": "NVIDIA A100-SXM4-80GB",
+   "ranked_ms": 18.39081033265573,
+   "mj_per_call": 2181.410690169189,
+   "scorer": "mnist-a100/1.2.0 (protections of sutro-mnist-medium/3.0.0, tightened; energy column)"
+  }
+ ]
+}
