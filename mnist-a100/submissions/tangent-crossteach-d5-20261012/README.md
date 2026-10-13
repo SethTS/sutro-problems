@@ -100,3 +100,28 @@ From `mnist-a100`:
 ```bash
 python run_modal.py submissions/tangent-crossteach-d5-20261012/submission.py:classify --difficulty 5 --runs 3 --json out/d5-tangent
 ```
+
+## Independent maintainer verification — 2026-10-12
+
+All three initial fresh energy-enabled canonical Modal A100-80GB runs passed. Source review found no compliance blocker: caller inputs are copied into owned buffers, tangents are fitted anew, and weights, EMA, optimizer state, pseudo-labels and query pools are reset on every call. All 45 timed calls completed and three distinct GPU UUIDs were recorded. No failed outcome was replaced, and no learner retry or repair was made.
+
+The reviewer set has median ranked time **3335.394886 ms**, median above-idle GPU board energy **638234.154568 mJ**, and descriptive pooled MNIST error **1.824848%**. Each run passes the 1.90% gate individually. The top-level leaderboard uses this reviewer set; author and research records remain separate.
+
+| Reviewer run | Correct | MNIST error | Ranked ms | Above-idle mJ |
+|---:|---:|---:|---:|---:|
+| 1 | 107,940/110,000 | 1.872727% | 3335.394886 | 662154.992877 |
+| 2 | 108,063/110,000 | 1.760909% | 3358.272278 | 629924.834404 |
+| 3 | 107,975/110,000 | 1.840909% | 3322.150457 | 638234.154568 |
+
+[Raw records and frozen manifest](evidence/reviewer-20261012/), [canonical reconstruction](evidence/reviewer-20261012/verification.json), and [source review](evidence/reviewer-20261012/source-review.json) are retained. The learner SHA remains `a3b18bac64dddc3f7aa8c614e2279932aa74040720cb861e8dfa40eaa67923c3`.
+
+Verify the reviewer records locally from `mnist-a100/`:
+
+```sh
+python submissions/tangent-crossteach-d5-20261012/evidence/reviewer-20261012/verify_records.py \
+  submissions/tangent-crossteach-d5-20261012/evidence/reviewer-20261012 \
+  submissions/tangent-crossteach-d5-20261012/submission.py \
+  --output /tmp/d5-reviewer-verification.json
+```
+
+Energy is above-idle GPU board energy under the canonical repeated-call protocol, excluding host/system energy and first-call compilation. Comparisons with other submissions use separate draws and devices, not a paired accuracy experiment.

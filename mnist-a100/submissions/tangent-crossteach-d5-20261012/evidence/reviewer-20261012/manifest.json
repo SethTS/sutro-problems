@@ -1,0 +1,25 @@
+{
+  "pull_request": 118,
+  "reviewed_head": "436b80bb40e4c346792ddad71670c7a5dbc8c5e9",
+  "source_filename": "submission.py",
+  "source_relative_path": "source/mnist-a100/submissions/tangent-crossteach-d5-20261012/submission.py",
+  "source_bytes": 12135,
+  "source_sha256": "a3b18bac64dddc3f7aa8c614e2279932aa74040720cb861e8dfa40eaa67923c3",
+  "local_scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+  "local_runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+  "difficulty": 5,
+  "runs": 3,
+  "energy_enabled": true,
+  "initial_reviewer_set": true,
+  "failed_outcomes_replaced": false,
+  "created_at": "2026-10-12T23:51:21.754355+00:00",
+  "command": "/tmp/sutro-pr-review-20261008-controller/bin/python canonical/run_modal.py source/mnist-a100/submissions/tangent-crossteach-d5-20261012/submission.py:classify --difficulty 5 --runs 3 --json modal",
+  "modal_app_id": "ap-Va3dkcWXzyCrrnxJ8j5hKk",
+  "completed_at": "2026-10-13T00:02:46.009555+00:00",
+  "controller_exit_code": 0,
+  "raw_record_sha256": {
+    "run-1.json": "e6abe418e240fae7230e42e7335cccecfb033d149a33d1a662650aae3926aca7",
+    "run-2.json": "fff3175f303f47c35206896835629cfdca95077f0fdb70f451e26005c8dbb476",
+    "run-3.json": "3bb64c016595a99ec851b825efe303e0e18f8d44a3fa5b6384aca7ea10e92a5a"
+  }
+}
