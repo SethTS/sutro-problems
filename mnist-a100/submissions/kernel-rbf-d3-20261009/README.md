@@ -1,97 +1,52 @@
-# Non-backprop RBF kernel classifier — difficulty 3, 2026-10-12
+# Non-backprop RBF kernel classifier — difficulty 3
 
-RBF kernel ridge classification with two analytic feature-metric updates and a local class-geometry correction. **All three fixed energy-enabled sandboxed Modal A100-80GB runs of unchanged scorer 1.2.0 passed, including every energy check; time and energy are their respective medians.**
+RBF kernel ridge with two analytic metric updates, 16-step Nyström-preconditioned CG and local class geometry. CG executes as a CUDA graph with current inputs on every fit. **All six fixed stock runs passed every timing gate.** The predeclared first three runs also passed accuracy and energy; their medians are **49.990213 ms** and **8,417.715 mJ (8.417715 J)**. The complete six-run batch is 5/6 overall: run 6 fails mean accuracy, and remains included below.
 
-**Submission for maintainer review.**
+Entrant: [@islamborghini](https://github.com/islamborghini). Implementation authored with DeepSeek V4.1 Flash through OpenCode. Entry point: [kernel_d3_cg_graph.py](kernel_d3_cg_graph.py):classify.
 
-| Difficulty | Band | Metric updates | CG steps per solve | ms/call | mJ/call above idle | MNIST error, 33 calls | File |
-| ---: | ---: | ---: | ---: | ---: | --- | ---: | --- |
-| 3 | 2.70% | 2 | 16 | **51.593931** | **8,499.142** | **2.592121%** | [kernel_d3_two_metric_low_ridge.py](kernel_d3_two_metric_low_ridge.py) |
+## Method
 
-The 33 MNIST calls predicted **321,446 / 330,000** labels correctly. Energy is GPU board energy per call above idle, less the calibrated empty-call cost. The median is **8.499142 J per call**. It excludes host/system energy and first-call compilation.
+Normalize feature vectors and retain a training-standardized log-radius feature (weight 0.5). Learn two feature metrics from analytic input derivatives on 512 training rows. Fit ten-output RBF kernel ridge on all 10,000 training rows, with gamma 0.02, ridge 0.05, 256 Nyström landmarks and 16 CG steps per solve. Correct the 2,048 lowest-margin queries using 64 neighbors per class, combining labelled training rows and 7,952 disjoint confident queries with predicted labels; add standardized local scores at strength 0.55.
 
-## Method and attribution
+Every call refits its coefficients and metric from the supplied inputs. Query labels are unavailable. The fit uses torch.no_grad and explicit analytic derivatives, with no backward/autograd/optimizer calls or pretrained model. Training Gram storage is FP16; solver/local work is FP32; Triton products use tf32x3.
 
-Entrant: [@islamborghini](https://github.com/islamborghini). Implementation authored with **DeepSeek V4.1 Flash through OpenCode**. The entry point is `classify(train_x, train_y, test_x)`.
+## Runtime change
 
-1. Normalize each supplied feature vector to a common radius, retaining a training-standardized log-radius feature with weight 0.5.
-2. Fit an RBF kernel predictor and evaluate its input derivatives analytically on 512 training rows. Form their average gradient outer-product metric, normalize its trace, regularize it toward identity and take its matrix square root. Perform two such metric updates.
-3. Fit the final ten-output kernel ridge system. RBF gamma is 0.02 and ridge is 0.05. Each of the two metric fits and the final fit uses 16 conjugate-gradient steps with a 256-landmark Nyström preconditioner. The model uses the full training Gram; the landmarks accelerate the solve.
-4. Rank query confidence by the margin between the top two class scores. Correct the 2,048 least-confident queries using 64 nearest supports per class. Each class support combines labelled training rows with model-generated pseudo-labels from the 7,952 more-confident queries. The two query sets are disjoint. A regularized local covariance score is standardized across classes and added to the kernel score with strength 0.55.
+The CG operation sequence is captured during the permitted foreign warm-up. Every solve recomputes its Nyström factor, copies the current Gram/targets/factor into static buffers, replays initialization and all 16 iterations, and returns a clone. The graph cache strongly owns its scratch tensors; later replay cannot overwrite weights returned to an earlier caller. Buffers retain their last values between calls but are overwritten before use; no fitted result is reused. Cholesky and eigensolvers remain eager. The successful first fit collects and freezes the warm heap; new-object garbage collection remains enabled.
 
-The local correction uses supplied query features transductively. Query labels are unavailable to the learner; pseudo-labels come only from its current kernel predictions. Every call constructs all fitted coefficients, metrics, supports and workspace anew, including after the permitted foreign warm-up. There are no pretrained coefficients, external examples or retained fitted state.
+CUDA graphs reduce timed Python/driver launches. Six passing timing evaluations support this runtime change, but do not establish the cause of an earlier stall or guarantee future cloud timing. No timing padding, omitted computation, altered scorer or modified gate is used.
 
-The complete fit runs under `torch.no_grad()`. Kernel input derivatives are explicit formulas and matrix operations; there are no backward/autograd/optimizer calls. The method is backprop-free, rather than derivative-free.
+## Fixed evaluations
 
-## GPU implementation
+Stock scorer 1.2.0, unchanged run_modal.py, CUDA 13.3 / Python 3.13 / Torch 2.12, Modal A100-80GB, sandbox required. Every run has 11 MNIST + 4 foreign calls in fresh workers after foreign warm-up. All 90 timed calls remain in the raw records. The slowest event time is 50.839554 ms. Ranked scores include the scorer's calibrated parent-clock floor.
 
-Triton kernels implement RBF construction, split-K ten-output matrix products, conjugate-gradient reductions/vector updates, and fused local-neighbourhood moments. Local covariance solves use batched Cholesky operations. Training Gram storage is FP16; solver state and local covariance work use FP32. Triton dot products explicitly use `tf32x3`. These fixed precision choices apply to every fit; the PyTorch matmul TF32 flag is False.
+| Run | Timing | MNIST maximum ms | MNIST ceiling ms | Mean error | Overall | Energy mJ/call |
+|---:|---|---:|---:|---:|---|---:|
+| 1 | PASS | 49.234943 | 98.096252 | 2.628182% | PASS | 8417.715 |
+| 2 | PASS | 49.370113 | 98.643074 | 2.541818% | PASS | 7841.957 |
+| 3 | PASS | 50.839554 | 98.303101 | 2.630909% | PASS | 8445.230 |
+| 4 | PASS | 47.883263 | 96.709763 | 2.607273% | PASS | 8549.236 |
+| 5 | PASS | 41.922562 | 84.219009 | 2.534545% | PASS | 7844.611 |
+| 6 | PASS | 49.201153 | 98.528381 | 2.710909% | FAIL (accuracy) | unmeasured |
 
-## Runs
+Runs 1–3 were designated as the qualification group before launch; runs 4–6 were additional checks. Runs 1–3 have pooled MNIST error 2.600303%. Run 6 scored 107,018/110,000 against 107,030 required (12 short); its energy was not attempted after disqualification. The failed run is not replaced or included in a passing-subset qualification claim. All five measured energy results pass the canonical reference/idle/control/accuracy/timing gates. Energy is GPU-board consumption above idle and empty control, excluding setup and host/system energy.
 
-Difficulty 3 requires mean MNIST error at most **2.70% across the 11 MNIST calls within each run**. No individual MNIST draw may exceed **4.20%**, the band plus 1.50 percentage points. Every recorded run satisfies both limits.
+A separate [initial no-energy smoke](evidence/smoke/) also passed (49.526 ms); it is not pooled into the reported medians.
 
-| Run | GPU / power limit | Ranked ms/call | Above-idle mJ/call | MNIST correct | Mean error | Worst error | Holdout accuracy | Raw evidence |
-| ---: | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
-| 1 | A100-SXM4-80GB, 400 W | 50.127887 | 8,947.584 | 107,140/110,000 | 2.600000% | 3.03% | kmnist: 97.0525% | [JSON](evidence/official/run-1.json) |
-| 2 | A100-SXM4-80GB, 400 W | 51.593931 | 8,499.142 | 107,044/110,000 | 2.687273% | 2.96% | kmnist: 96.7625% | [JSON](evidence/official/run-2.json) |
-| 3 | A100-SXM4-80GB, 400 W | 53.217094 | 7,971.171 | 107,262/110,000 | 2.489091% | 2.64% | kmnist: 96.9525% | [JSON](evidence/official/run-3.json) |
-
-Each run contains 11 MNIST and four foreign calls, each in a fresh sandboxed worker after foreign warm-up. The unchanged stock Modal runner used three single-use containers. Energy records contain three distinct GPU UUIDs. All three fixed energy-enabled outcomes are included; no failed outcome was replaced or rerun. Ranked time includes the scorer's parent-clock floor and the slower dataset mean.
-
-Run 2 has the narrowest accuracy margin: 14 correct labels above the required aggregate. These observed passes do not establish future qualification probability. Original raw prediction arrays and remote execution-time scorer hashes are not retained by the stock runner.
-
-## Energy measurement
-
-The canonical protocol reads NVML board-energy counters around a 20-second method window, subtracts adjacent frozen-worker idle power, and subtracts the empty round-trip energy per call. A separate FP32 matrix-multiplication reference checks telemetry before importing the learner. Every reference, idle, context, energy-window accuracy and timing-consistency check passed.
-
-| Run | Reference J/TFLOP | Reference TFLOP/s | Mean idle W | Mean method-window W | Method-window calls | Method-window seconds |
-| ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1 | 8.3941 | 18.0900 | 87.785 | 285.341 | 442 | 20.047865 |
-| 2 | 8.2281 | 18.1854 | 70.058 | 228.156 | 372 | 20.020592 |
-| 3 | 7.9960 | 18.0758 | 63.756 | 228.426 | 413 | 20.030671 |
-
-[Energy reconstruction](evidence/official/energy-audit.json) recalculates the results directly from the raw windows, then compares them with unchanged `energy_summary`; all three values match. The fixed [measurement plan](evidence/official/measurement-plan.json) was recorded before the energy batch. This is a board-energy measurement under the canonical repeated-call protocol, not whole-system energy or per-kernel energy.
-
-Each energy window starts with 32 prebuilt image draws and then reuses them under fresh rotations and label permutations. The 1,227 energy-window calls are repeated measurements, not 1,227 independent image draws or additional qualification runs.
-
-## Settings and validation
-
-The configuration was fixed before the three stock runs. An additional development-only pooled error target of 2.60% was missed at 2.637222%; that target remains unmet. Before observing official outcomes, advancement to the fixed three-run stock check used the published 2.70% gate. This submission claims the published requirements, not the additional development buffer.
-
-- Exact learner bytes pass the stock source/import checker at 20,388 bytes, 92 bytes below the limit. All records identify the packaged source hash and `classify` entry point.
-- All mean/worst MNIST accuracy, foreign accuracy, output, sandbox, timing-dispersion and independent parent-clock gates pass. Saved canonical `judge` reconstructions reproduce every verdict and ranked time.
-- Separate source/evidence reviews read the complete learner, traced query-truth isolation and per-call state, and independently reconstructed all 45 numerical call records. No concrete source/protocol violation was found. These are saved-record reviews, not new GPU reproductions or maintainer acceptance.
-- The evaluation scorer and runner remain unchanged. All three canonical energy/reference/control/idle checks pass, and numerical reconstructions match the raw records.
+[Complete six-run evidence](evidence/all-six/), [independent arithmetic](evidence/all-six/audit.json), [fixed plan](evidence/official/measurement-plan.json), and [GPU solver comparisons](evidence/numerics.json) bind this exact source. GPU comparisons show zero difference from eager CG in six cases covering changed inputs, zero-target recovery, identical replay, prior-output isolation, odd steps and rank zero; they are developer checks, not qualification runs. All outcomes from the original submitted source remain in [historical evidence](evidence/historical/), with its original source hash and source file.
 
 ## Reproduce
 
-From `mnist-a100/`, with Modal configured; this launches paid A100 work:
+From mnist-a100 (launches paid GPU work):
 
 ```sh
-python run_modal.py submissions/kernel-rbf-d3-20261009/kernel_d3_two_metric_low_ridge.py:classify \
-  --difficulty 3 --runs 3 --json /tmp/kernel-rbf-d3-energy
+python run_modal.py submissions/kernel-rbf-d3-20261009/kernel_d3_cg_graph.py:classify --difficulty 3 --runs 6 --json /tmp/kernel-d3-runtime
 ```
 
-Verify the packaged saved records locally, without GPU work:
+Verify the predeclared saved three-run group locally:
 
 ```sh
-python submissions/kernel-rbf-d3-20261009/verify_records.py \
-  submissions/kernel-rbf-d3-20261009/evidence/official \
-  --source submissions/kernel-rbf-d3-20261009/kernel_d3_two_metric_low_ridge.py
+python submissions/kernel-rbf-d3-20261009/verify_records.py submissions/kernel-rbf-d3-20261009/evidence/official
 ```
 
-[Verification output](evidence/official/verification.log) reports every saved-run check and the three-run median. [Summary](evidence/official/summary.json) contains reconstructed aggregates. [Manifest](evidence/official/manifest.json) binds the exact source and unfiltered records.
-
-## Initial no-energy verification
-
-The first fixed three-run stock verification remains preserved separately in [raw no-energy evidence](evidence/no-energy/), with its [manifest](evidence/no-energy/manifest.json), [summary](evidence/no-energy/summary.json) and [verification output](evidence/no-energy/verification.log). All three passed: ranked times 57.024201, 52.809442 and 49.038230 ms; mean errors 2.666364%, 2.610909% and 2.582727%. That set's median was 52.809442 ms and pooled error 2.6200%. It contains no energy measurements. It is not pooled into the energy-enabled time or energy medians above. The new batch was requested to measure the missing energy column, with unchanged learner bytes.
-
-## SHA-256 and provenance
-
-- `kernel_d3_two_metric_low_ridge.py`: `13dfbe8b83a2cd92c422e576ff4b0b8b756c440f8132b61beb4ffa821b144dc4`.
-- Scorer 1.2.0: `1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064`.
-- Stock Modal runner: `1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab`.
-- All three raw-record hashes are preserved in the manifest. These local scorer/runner identities matched current upstream during review; the original stock record format does not attest their hashes inside the remote execution.
-
-No scorer, runner, dataset release or evaluation gate is changed by this submission. Human source review and acceptance remain pending.
+Source SHA-256: 296b69006ad178cf85562387e40d29d8149381a41e1b3c7d7f8bcb1683c565b8; 19,730 bytes (750 below the cap). Scorer SHA-256: 1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064. Runner SHA-256: 1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab. Human acceptance remains pending.

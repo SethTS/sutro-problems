@@ -1,15 +1,14 @@
 {
-  "created_utc": "2026-10-12T07:18:28.947295+00:00",
-  "runs": 3,
-  "difficulty": 3,
+  "created_utc": "2026-10-13T05:46:56.947119+00:00",
+  "source_sha256": "296b69006ad178cf85562387e40d29d8149381a41e1b3c7d7f8bcb1683c565b8",
+  "source_bytes": 19730,
+  "runs": 6,
   "energy": true,
-  "source_sha256": "13dfbe8b83a2cd92c422e576ff4b0b8b756c440f8132b61beb4ffa821b144dc4",
-  "source_bytes": 20388,
+  "difficulty": 3,
+  "fixed_before_launch": true,
+  "grouping": "Runs1-3 form the preregistered 3-run energy set; runs4-6 additional reliability checks with energy. Every result remains visible; do not replace any failure or claim reliability if any of six fails. Separate smoke also retained.",
+  "output": "/Users/islam/Documents/pretext/official-d3-cg-graph-energy-01",
+  "profile": "islam-asanov-1234",
   "scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
-  "runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
-  "retain_all_outcomes": true,
-  "replace_failed_runs": false,
-  "retune_source": false,
-  "original_no_energy_records_unchanged": true,
-  "purpose": "Measure the missing energy column in a fixed three-run canonical batch; retain all outcomes and keep the initial no-energy evidence separate."
+  "runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab"
 }

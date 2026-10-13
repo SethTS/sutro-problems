@@ -67,7 +67,7 @@ def check_run(result, source_sha, source_name, band):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("directory", type=Path)
-    parser.add_argument("--source", type=Path, default=HERE / "kernel_d3_two_metric_low_ridge.py", help="exact candidate the records must match")
+    parser.add_argument("--source", type=Path, default=HERE / "kernel_d3_cg_graph.py", help="exact candidate the records must match")
     args = parser.parse_args()
 
     manifest_path = args.directory / "manifest.json"

@@ -1,0 +1,9 @@
+{
+  "scope": "Separate initial stock no-energy smoke; not pooled into qualification or six-run batch medians",
+  "source_sha256": "296b69006ad178cf85562387e40d29d8149381a41e1b3c7d7f8bcb1683c565b8",
+  "runs": 1,
+  "energy_enabled": false,
+  "raw_record_sha256": {
+    "run-1.json": "ad828a1ee2d60c6210aea93ab7423506368058b39f18af1189c82593795bce40"
+  }
+}

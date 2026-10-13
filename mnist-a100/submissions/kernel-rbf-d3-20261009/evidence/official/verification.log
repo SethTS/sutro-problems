@@ -1,8 +1,8 @@
-submissions/kernel-rbf-d3-20261009/evidence/official: 3 runs, difficulty 3, source kernel_d3_two_metric_low_ridge.py sha 13dfbe8b
+mnist-d3-submission-draft/mnist-a100/submissions/kernel-rbf-d3-20261009/evidence/official: 3 runs, difficulty 3, source kernel_d3_cg_graph.py sha 296b6900
 run  device                  gpu             ranked ms    energy mJ MNIST err holdout err  status
-  1  NVIDIA A100-SXM4-80GB   4df93921        50.127887    8,947.584     2.60% 2.95% kmnist  PASS
-  2  NVIDIA A100-SXM4-80GB   de521a18        51.593931    8,499.142     2.69% 3.24% kmnist  PASS
-  3  NVIDIA A100-SXM4-80GB   5aee18a4        53.217094    7,971.171     2.49% 3.05% kmnist  PASS
+  1  NVIDIA A100-SXM4-80GB   53b37762        49.820535    8,417.715     2.63% 12.77% fashion  PASS
+  2  NVIDIA A100-SXM4-80GB   c5c617ff        51.312406    7,841.957     2.54% 12.51% fashion  PASS
+  3  NVIDIA A100-SXM4-80GB   47ee823b        49.990213    8,445.230     2.63% 12.66% fashion  PASS
   run returned 0: OK (3/3)
   no problems: OK (3/3)
   empty stderr: OK (3/3)
@@ -20,6 +20,6 @@ run  device                  gpu             ranked ms    energy mJ MNIST err ho
   energy rebuild: OK (3/3)
   energy measurement present: OK (3/3)
   distinct GPU UUIDs: OK (3 of 3)
-  ranked medians: median 51.593931 ms
-  energy medians: median 8,499.141927 mJ over 3 runs
+  ranked medians: median 49.990213 ms
+  energy medians: median 8,417.715451 mJ over 3 runs
 Verified 3/3 saved records: no disqualification problems; local reconstruction only, not an independent GPU reproduction.

@@ -1,0 +1,58 @@
+{
+  "developer_only": true,
+  "passed": true,
+  "tests": [
+    {
+      "n": 512,
+      "salt": 0,
+      "steps": 16,
+      "rank": 256,
+      "max_abs": 0.0,
+      "pass": true
+    },
+    {
+      "n": 512,
+      "salt": 1,
+      "steps": 16,
+      "rank": 256,
+      "max_abs": 0.0,
+      "pass": true
+    },
+    {
+      "n": 10000,
+      "salt": 0,
+      "steps": 16,
+      "rank": 256,
+      "max_abs": 0.0,
+      "pass": true
+    },
+    {
+      "n": 10000,
+      "salt": 1,
+      "steps": 16,
+      "rank": 256,
+      "max_abs": 0.0,
+      "pass": true
+    },
+    {
+      "n": 512,
+      "salt": 2,
+      "steps": 5,
+      "rank": 256,
+      "max_abs": 0.0,
+      "pass": true
+    },
+    {
+      "n": 512,
+      "salt": 3,
+      "steps": 5,
+      "rank": 0,
+      "max_abs": 0.0,
+      "pass": true
+    }
+  ],
+  "candidate_sha256": "296b69006ad178cf85562387e40d29d8149381a41e1b3c7d7f8bcb1683c565b8",
+  "base_sha256": "0d05e0ff0412b905210088c0cba503ef569d5921d68c402ad46fe0a37255b7f3",
+  "torch": "2.12.0+cu130",
+  "device": "NVIDIA A100 80GB PCIe"
+}
