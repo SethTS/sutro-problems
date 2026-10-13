@@ -1,0 +1,40 @@
+{
+  "pull_request": 121,
+  "review_date": "2026-10-12",
+  "reviewed_head": "afa877280f75ad3d337c0a781b15306362c40d48",
+  "merged_main_head": "01feb59036f0c14ed72ae48b2c37014af2a1ddb6",
+  "source_file": "../../submission.py",
+  "source_sha256": "34ac5441dec258a0f9fc49f42c58d865e96020146df0a42b062305f8bf25346b",
+  "source_bytes": 18323,
+  "function": "nys_d1",
+  "difficulty": 1,
+  "runs": [
+    {
+      "file": "run-1.json",
+      "sha256": "4956138c682856c63f5fd3e61ace842b147b105c0d4e9816b039150bdceb25de",
+      "gpu_uuid": "GPU-fd895c52-d95d-6eab-524f-5f3c9c22aac6",
+      "device": "NVIDIA A100-SXM4-80GB"
+    },
+    {
+      "file": "run-2.json",
+      "sha256": "c33a2ba89032c8c738d8c141ad41a3274bb5e96fb8aa49a113620f08f86963d8",
+      "gpu_uuid": "GPU-6ff30e52-32c9-782d-e2cb-4ecd9f6e9199",
+      "device": "NVIDIA A100-SXM4-80GB"
+    },
+    {
+      "file": "run-3.json",
+      "sha256": "db11a3bb3b4206bd8a7c7abe7e91c2e68285881390a1b7948f8550f5ceb92c67",
+      "gpu_uuid": "GPU-84be5636-9bf9-f915-cf6d-413492a31bcd",
+      "device": "NVIDIA A100-SXM4-80GB"
+    }
+  ],
+  "energy_enabled": true,
+  "scorer": "mnist-a100/1.2.0 (protections of sutro-mnist-medium/3.0.0, tightened; energy column)",
+  "scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+  "runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+  "verification_sha256": "97eeb08a4d77c147d73cf013a9b14305ce636f5d515bd304eb058a0de85a3511",
+  "promotion_script_sha256": "d8eb8331e6a138ba0da78b6615039b258fc68b87b9224bed8197f546cac8aa33",
+  "modal_app_url": "https://modal.com/apps/yaroslavvb/main/ap-F99g0NAaDeaOhywKCLSYlk",
+  "started_unix": 1791860505.5171359,
+  "finished_unix": 1791860841.2666812
+}

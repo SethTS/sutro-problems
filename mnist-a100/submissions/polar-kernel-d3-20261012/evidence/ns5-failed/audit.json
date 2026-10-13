@@ -1,0 +1,63 @@
+{
+  "source_sha256": "cc3f2af9ccb8b03f280cce2bbf8c6ea8cb316936d9a0f91b7baec5607d5206f8",
+  "runs": [
+    {
+      "file": "run-1.json",
+      "passed": false,
+      "checks": {
+        "returncode": false,
+        "source_sha": true,
+        "sandbox": true,
+        "calls": true,
+        "judge": false,
+        "energy": false
+      },
+      "error_pct": 2.72,
+      "ranked_ms": null,
+      "mj_per_call": null,
+      "problems": [
+        "MNIST accuracy 97.280% (107,008/110,000); the band needs 107,030 correct"
+      ],
+      "uuid": null
+    },
+    {
+      "file": "run-2.json",
+      "passed": true,
+      "checks": {
+        "returncode": true,
+        "source_sha": true,
+        "sandbox": true,
+        "calls": true,
+        "judge": true,
+        "energy": true
+      },
+      "error_pct": 2.624545454545457,
+      "ranked_ms": 38.313469211862035,
+      "mj_per_call": 6075.927260343573,
+      "problems": [],
+      "uuid": "GPU-4592e414-9ae1-73c8-ab0b-ff962c73104f"
+    },
+    {
+      "file": "run-3.json",
+      "passed": false,
+      "checks": {
+        "returncode": false,
+        "source_sha": true,
+        "sandbox": true,
+        "calls": true,
+        "judge": false,
+        "energy": false
+      },
+      "error_pct": 2.725454545454542,
+      "ranked_ms": null,
+      "mj_per_call": null,
+      "problems": [
+        "MNIST accuracy 97.275% (107,002/110,000); the band needs 107,030 correct"
+      ],
+      "uuid": null
+    }
+  ],
+  "qualified": false,
+  "median_ms": null,
+  "median_mj": null
+}

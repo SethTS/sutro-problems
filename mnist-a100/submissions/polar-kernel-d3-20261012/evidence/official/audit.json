@@ -1,0 +1,59 @@
+{
+  "source_sha256": "43c487a621cd5e563f5636181db4af74816daecfa37c90bf3f850cf699c1df51",
+  "runs": [
+    {
+      "file": "run-1.json",
+      "passed": true,
+      "checks": {
+        "returncode": true,
+        "source_sha": true,
+        "sandbox": true,
+        "calls": true,
+        "judge": true,
+        "energy": true
+      },
+      "error_pct": 2.4399999999999977,
+      "ranked_ms": 43.0386871519228,
+      "mj_per_call": 8085.754809609031,
+      "problems": [],
+      "uuid": "GPU-3a861025-3bcd-175b-3a3c-ed6be053b9fa"
+    },
+    {
+      "file": "run-2.json",
+      "passed": true,
+      "checks": {
+        "returncode": true,
+        "source_sha": true,
+        "sandbox": true,
+        "calls": true,
+        "judge": true,
+        "energy": true
+      },
+      "error_pct": 2.471818181818186,
+      "ranked_ms": 52.997398479839944,
+      "mj_per_call": 8706.872617695493,
+      "problems": [],
+      "uuid": "GPU-425e7cda-c308-68ab-7a05-d66cb8150e79"
+    },
+    {
+      "file": "run-3.json",
+      "passed": true,
+      "checks": {
+        "returncode": true,
+        "source_sha": true,
+        "sandbox": true,
+        "calls": true,
+        "judge": true,
+        "energy": true
+      },
+      "error_pct": 2.568181818181814,
+      "ranked_ms": 51.627899090136964,
+      "mj_per_call": 8966.888948391515,
+      "problems": [],
+      "uuid": "GPU-a198bca2-a6a7-2929-9ca6-0e21d6ec02cb"
+    }
+  ],
+  "qualified": true,
+  "median_ms": 51.627899090136964,
+  "median_mj": 8706.872617695493
+}

@@ -1,0 +1,303 @@
+{
+ "returncode": 0,
+ "stdout": "mnist_d4_ladder_kernel.py:ladder_kernel at 2.30% error: 15 timed calls, each in a fresh process\n  review flag: 20,451 bytes, close to the 20,480-byte limit\n  NVIDIA A100-SXM4-80GB, torch 2.12.0+cu130, sandbox on\n  call  1/15: 578.595 ms, scorer's clock 581.593 ms\n  call  2/15: 579.999 ms, scorer's clock 584.300 ms\n  call  3/15: 578.966 ms, scorer's clock 582.206 ms\n  call  4/15: 580.453 ms, scorer's clock 583.389 ms\n  call  5/15: 577.732 ms, scorer's clock 580.569 ms\n  call  6/15: 584.538 ms, scorer's clock 587.628 ms\n  call  7/15: 578.833 ms, scorer's clock 581.594 ms\n  call  8/15: 577.461 ms, scorer's clock 580.211 ms\n  call  9/15: 576.825 ms, scorer's clock 580.308 ms\n  call 10/15: 580.151 ms, scorer's clock 583.004 ms\n  call 11/15: 579.048 ms, scorer's clock 581.476 ms\n  call 12/15: 578.847 ms, scorer's clock 581.655 ms\n  call 13/15: 578.995 ms, scorer's clock 581.740 ms\n  call 14/15: 577.946 ms, scorer's clock 580.898 ms\n  call 15/15: 578.132 ms, scorer's clock 580.629 ms\nMNIST 97.92% (107,710/110,000), 579.286 ms/call; hold-out (kmnist) 96.98%, 578.673 ms/call (floored by the scorer's clock); score 579.286 ms\nenergy: one more fresh process runs the method back to back on fresh MNIST draws for 20 s, between idle windows in which it is frozen\n  NVIDIA A100-SXM4-80GB: idle 72.6 W with the method frozen; telemetry reference 18.4 TFLOP/s at 8.59 J/TFLOP above idle (a healthy NVIDIA A100-SXM4-80GB reads 6-11)\n  the round trip alone: 14.4 mJ per call over 3,160 empty calls, subtracted\n  the method: 35 calls in 20.3 s, MNIST 97.93%, 577.446 ms per call, 188.5 W on average\nenergy 67355.634 mJ per call above idle\n",
+ "stderr": "/usr/local/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:320: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:320: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:320: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:320: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:320: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:320: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:320: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:320: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:320: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:320: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:320: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:320: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:320: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:320: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:320: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:320: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.\n  warnings.warn(\n",
+ "record": {
+  "version": "mnist-a100/1.2.0 (protections of sutro-mnist-medium/3.0.0, tightened; energy column)",
+  "file": "mnist_d4_ladder_kernel.py",
+  "function": "ladder_kernel",
+  "source_sha256": "f4c69bf486197cd00721320a90dbd644ad734b3371e65ea2fff498d9304ebbdc",
+  "band_bp": 230,
+  "sandboxed": true,
+  "holdout": "kmnist",
+  "device": "NVIDIA A100-SXM4-80GB",
+  "torch": "2.12.0+cu130",
+  "calls": [
+   {
+    "dataset": "mnist",
+    "ms": 578.5947875976562,
+    "parent_ms": 583.6415150000037,
+    "correct": 9792,
+    "total": 10000,
+    "overhead_ms": 2.0481249986049406
+   },
+   {
+    "dataset": "mnist",
+    "ms": 579.9987182617188,
+    "parent_ms": 586.4330960000075,
+    "correct": 9796,
+    "total": 10000,
+    "overhead_ms": 2.1330909986051267
+   },
+   {
+    "dataset": "mnist",
+    "ms": 578.9655151367188,
+    "parent_ms": 584.5667000000105,
+    "correct": 9794,
+    "total": 10000,
+    "overhead_ms": 2.3610785008156085
+   },
+   {
+    "dataset": "kmnist",
+    "ms": 580.453369140625,
+    "parent_ms": 585.623787000003,
+    "correct": 9699,
+    "total": 10000,
+    "overhead_ms": 2.2344089997286574
+   },
+   {
+    "dataset": "mnist",
+    "ms": 577.7315673828125,
+    "parent_ms": 582.8358939999987,
+    "correct": 9796,
+    "total": 10000,
+    "overhead_ms": 2.2669714992977106
+   },
+   {
+    "dataset": "mnist",
+    "ms": 584.5380859375,
+    "parent_ms": 589.7879609999848,
+    "correct": 9774,
+    "total": 10000,
+    "overhead_ms": 2.160283500383798
+   },
+   {
+    "dataset": "kmnist",
+    "ms": 578.8334350585938,
+    "parent_ms": 583.5697589999995,
+    "correct": 9703,
+    "total": 10000,
+    "overhead_ms": 1.975873499480258
+   },
+   {
+    "dataset": "kmnist",
+    "ms": 577.4612426757812,
+    "parent_ms": 582.350555000005,
+    "correct": 9684,
+    "total": 10000,
+    "overhead_ms": 2.1393540009225944
+   },
+   {
+    "dataset": "mnist",
+    "ms": 576.8253173828125,
+    "parent_ms": 582.3556919999646,
+    "correct": 9796,
+    "total": 10000,
+    "overhead_ms": 2.0474240009589266
+   },
+   {
+    "dataset": "mnist",
+    "ms": 580.1513061523438,
+    "parent_ms": 585.0255090000474,
+    "correct": 9804,
+    "total": 10000,
+    "overhead_ms": 2.0219329991593895
+   },
+   {
+    "dataset": "mnist",
+    "ms": 579.0484619140625,
+    "parent_ms": 583.8602320000064,
+    "correct": 9780,
+    "total": 10000,
+    "overhead_ms": 2.3845669988061218
+   },
+   {
+    "dataset": "mnist",
+    "ms": 578.8467407226562,
+    "parent_ms": 583.8675690000059,
+    "correct": 9784,
+    "total": 10000,
+    "overhead_ms": 2.2123585008284863
+   },
+   {
+    "dataset": "mnist",
+    "ms": 578.9951782226562,
+    "parent_ms": 583.9913719999572,
+    "correct": 9815,
+    "total": 10000,
+    "overhead_ms": 2.250962999459489
+   },
+   {
+    "dataset": "kmnist",
+    "ms": 577.9456176757812,
+    "parent_ms": 583.2180659999722,
+    "correct": 9706,
+    "total": 10000,
+    "overhead_ms": 2.3199624993017096
+   },
+   {
+    "dataset": "mnist",
+    "ms": 578.1319580078125,
+    "parent_ms": 583.2021799999438,
+    "correct": 9779,
+    "total": 10000,
+    "overhead_ms": 2.573268000000553
+   }
+  ],
+  "problems": [],
+  "summary": "MNIST 97.92% (107,710/110,000), 579.286 ms/call; hold-out (kmnist) 96.98%, 578.673 ms/call (floored by the scorer's clock)",
+  "ranked_ms": 579.2862289835832,
+  "energy": {
+   "mj_per_call": 67355.63437540272,
+   "problems": [],
+   "net_mj_before_control": 67370.05555283038,
+   "control_mj_per_call": 14.421177427668685,
+   "control_calls": 3160,
+   "gross_mj_per_call": 109539.17142857143,
+   "idle_w": 72.57365134768753,
+   "active_w": 188.51848019761252,
+   "calls": 35,
+   "seconds": 20.336844409000037,
+   "ms_median": 577.4458618164062,
+   "timed_mnist_ms_median": 578.9655151367188,
+   "correct": 342771,
+   "total": 350000,
+   "reference": {
+    "tflops_per_s": 18.37603097683433,
+    "j_per_tflop": 8.591371439947189,
+    "exact": true,
+    "band": [
+     [
+      6.0,
+      11.0
+     ],
+     [
+      15.0,
+      23.0
+     ]
+    ]
+   },
+   "device": {
+    "name": "NVIDIA A100-SXM4-80GB",
+    "uuid": "GPU-d1063a41-ded0-389e-92c2-851f1beec625",
+    "vbios": "92.00.9E.00.03",
+    "driver": "580.95.05",
+    "power_limit_w": 400.0
+   },
+   "windows": [
+    {
+     "name": "idle 1",
+     "seconds": 5.004410579000023,
+     "joules": 353.42,
+     "utilization_max": 0,
+     "contexts": 1
+    },
+    {
+     "name": "reference",
+     "seconds": 5.205558901000018,
+     "joules": 1194.346,
+     "matmuls": 696,
+     "dim": 4096,
+     "exact": true
+    },
+    {
+     "name": "idle 2",
+     "seconds": 5.004125269999918,
+     "joules": 362.804,
+     "utilization_max": 0,
+     "contexts": 1
+    },
+    {
+     "name": "control",
+     "seconds": 5.0023959760000025,
+     "joules": 407.055,
+     "calls": 3160
+    },
+    {
+     "name": "idle 3",
+     "seconds": 5.003110547000006,
+     "joules": 360.341,
+     "utilization_max": 0,
+     "contexts": 1
+    },
+    {
+     "name": "method",
+     "seconds": 20.336844409000037,
+     "joules": 3833.871,
+     "calls": 35,
+     "ms": [
+      606.5049438476562,
+      577.5748901367188,
+      577.4458618164062,
+      577.4837646484375,
+      577.6240844726562,
+      577.597412109375,
+      577.5523681640625,
+      577.5155029296875,
+      577.4684448242188,
+      577.5042724609375,
+      577.575927734375,
+      577.3834228515625,
+      577.44384765625,
+      577.3455200195312,
+      577.4397583007812,
+      577.3742065429688,
+      577.375244140625,
+      577.448974609375,
+      577.4694213867188,
+      577.3629150390625,
+      577.40185546875,
+      577.4049072265625,
+      577.4254150390625,
+      577.5134887695312,
+      577.4929809570312,
+      577.3465576171875,
+      577.5298461914062,
+      577.343505859375,
+      577.4141235351562,
+      577.3885498046875,
+      577.4397583007812,
+      577.3568115234375,
+      577.46533203125,
+      577.49609375,
+      577.4458618164062
+     ],
+     "correct": [
+      9785,
+      9785,
+      9821,
+      9799,
+      9807,
+      9777,
+      9789,
+      9786,
+      9770,
+      9814,
+      9779,
+      9820,
+      9815,
+      9799,
+      9779,
+      9800,
+      9804,
+      9780,
+      9785,
+      9793,
+      9794,
+      9753,
+      9788,
+      9803,
+      9795,
+      9803,
+      9804,
+      9793,
+      9793,
+      9808,
+      9800,
+      9770,
+      9790,
+      9781,
+      9809
+     ]
+    },
+    {
+     "name": "idle 4",
+     "seconds": 5.003616523999995,
+     "joules": 365.884,
+     "utilization_max": 0,
+     "contexts": 1
+    }
+   ]
+  }
+ }
+}

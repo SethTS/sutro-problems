@@ -1,0 +1,60 @@
+{
+  "pull_request": 118,
+  "reviewed_head": "436b80bb40e4c346792ddad71670c7a5dbc8c5e9",
+  "checked_at": "2026-10-12T23:53:07.461721+00:00",
+  "source_sha256": "a3b18bac64dddc3f7aa8c614e2279932aa74040720cb861e8dfa40eaa67923c3",
+  "source_bytes": 12135,
+  "source_gate_passed": true,
+  "source_limit_bytes": 20480,
+  "review_flags": [],
+  "canonical_scorer_unchanged": true,
+  "canonical_runner_unchanged": true,
+  "imports": [
+    {
+      "line": 21,
+      "module": "os"
+    },
+    {
+      "line": 23,
+      "module": "torch"
+    },
+    {
+      "line": 24,
+      "module": "torch.nn.functional"
+    },
+    {
+      "line": 257,
+      "module": "mnist"
+    }
+  ],
+  "entry_point": "classify",
+  "function_lines": {
+    "_orth": 37,
+    "_forward": 47,
+    "_loss": 58,
+    "_update": 75,
+    "_step": 89,
+    "_readout": 114,
+    "_cross_teach": 143,
+    "_tangents": 156,
+    "_reset": 166,
+    "_build": 194,
+    "_capture": 214,
+    "_load": 228,
+    "classify": 235
+  },
+  "changed_scope": "New source, README and three raw author runs plus author verification.json; scorer, runner, data and published gates unchanged. No leaderboard row is added by the PR.",
+  "persistent_state": "Empty module _S becomes a graph/workspace/compiler cache during warmup; it holds tensors and optimizer but classify always overwrites all supplied inputs and recomputes tangents, then resets all fitted state before training. No cached fitted outputs are consulted.",
+  "per_call_fresh_state": "_load copies train_x/train_y/test_x into owned buffers and refits tangents. _reset reinitializes every parameter from currenttrainrows/randomfixedseed, EMA copies parameters, Muon momentumbufferszero, everyAdamWstatevaluezero, timestepzero, pseudolabel/confidencezero, disjointquerypoolpermutationfresh. The captured first step overwritesAdamLR from currenttimestep schedule before usingit. CUDAgraphcaptured backward is created after p.grad=None and writes currentcallgradients; optimizer/EMA usecurrentparamvalues.",
+  "query_truth": "No querytruth argument or imports. Query supervision derives from currentEMA logits/embeddings and suppliedtrainlabels throughK5prior/threegraphsteps. Trainlabel nodes clamped. Runtime environment access limitedcachepaths, not parent or datasets.",
+  "cross_teacher_isolation": "Querypermutation split into two disjoint halves; members0..3 train onlypool0 and members4..7 onlypool1. Half0 currentreadout assignslabels/confidences tootherhalf4..7 (pool1), half1 assigns tootherhalf0..3 (pool0); teachers never train supervised on targetpool. Bothreadouts happen before furthertraining and readout uses EMA/model/currentfeatures only, not uy. Transductive unlabeledquerygraph allowed.",
+  "input_integrity": "Learner immediately copies inputs to ownedtx/ty/qx buffers. Tangents,sim/distances,maskeddiagonals, modelbuffers/optimizers/pseudos mutate owned allocations only; suppliedinputstorages neverwritten.",
+  "compiler_graph_review": "torch.compile called inside_build onallowedPyTorchloss/update funcs, fullgraph=True,dynamic=False. Capture onforeignwarmup compiles twofixedshapetrainingstepgraphs (labeled andpseudo), synchronizes sidestream withmainstream. Everytimedcall replays fixed2500steps, updatescrosslabels atfixedintervals, includesfresh tangentsetup andfinalreadout. No timer/CUDAevent patching or skippingwork bydataset.",
+  "prior_review": "Only scalaralgorithmhyperparameters anddocstrings; no fitted tensorliteral/encodedmodel/externaldata/decoder/network/processintrospection/calleraccess. Initialweights derive fromcurrenttrainingfeatures, labelclasses symmetric. Warmuprandomstreampositionmaypersist, but no learnedparametersstatepersists.",
+  "os_review": "os imported onlygetuid plus environ.setdefault for Triton/Inductor/tmp compiler caches; runtimecall only. Main guard imports scorer and prints score only when launched directly; worker imports module so neverexecutes guard.",
+  "blockers": [],
+  "documentation_notes": [
+    "Integration table row is absent in this PR; accepted record could be added by maintainer. Author-supplied officialrecords have no source/scorer/runner provenance manifest; source is bound by recordhash and currentfrozen files verify numerical gates, and fresh independent batch supplies separate reproduction."
+  ],
+  "scope": "Manual fullsource review and unchangedcanonical import/source gate; author rawrecord reconstruction and fresh reviewer Modal are separately recorded."
+}

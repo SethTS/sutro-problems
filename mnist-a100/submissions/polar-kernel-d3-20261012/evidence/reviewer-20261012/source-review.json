@@ -1,0 +1,86 @@
+{
+  "pull_request": 117,
+  "reviewed_head": "49a4cf4fd8eabb53066dd15fb0aa8a877f8689ec",
+  "source_sha256": "43c487a621cd5e563f5636181db4af74816daecfa37c90bf3f850cf699c1df51",
+  "source_bytes": 16104,
+  "source_gate_passed": true,
+  "imports": [
+    "torch",
+    "triton",
+    "triton.language"
+  ],
+  "static_blockers": [],
+  "fresh_per_call_fitting": "classify directly calls fit_scores; every call initializes targets, workspace and identity direction metric, fits two metric updates and final kernel weights from supplied train_x/train_y.",
+  "query_truth": "Only test_x is accepted, with no truth argument or scorer-memory/IO access. Confident query pseudo-labels are generated from current kernel predictions; support and uncertain query sets are disjoint.",
+  "input_integrity": "train_x/test_x are read through normalization/norm operations yielding new tensors; train_y is only one-hot encoded or compared. In-place writes and Triton output pointers apply to newly created kernel, solver and score tensors, never inputs.",
+  "import_gate": "Only torch/triton/triton.language; module body contains scalar configuration, imports, allowed backend toggle and function decorators. No blobs, filesystem, network, dynamic imports or learned module tensors.",
+  "allowed_learning": "RBF kernel linear algebra, Nystr\u00f6m-preconditioned CG, analytic metric gradients, eigendecomposition, Cholesky and local geometry all act on current supplied inputs/labels. No reconstruction, neural network training or pretrained state.",
+  "source_delta": {
+    "reviewed_head": "49a4cf4fd8eabb53066dd15fb0aa8a877f8689ec",
+    "source_sha256": "43c487a621cd5e563f5636181db4af74816daecfa37c90bf3f850cf699c1df51",
+    "upstream116_head": "43ca1a493e073c09eea6b346b9509609a0cb21e4",
+    "upstream116_sha256": "13dfbe8b83a2cd92c422e576ff4b0b8b756c440f8132b61beb4ffa821b144dc4",
+    "ast_unchanged_functions": [
+      "_axpy_update",
+      "_base_solve",
+      "_dir_update",
+      "_dot",
+      "_dot_sum",
+      "_dot_tile",
+      "_fused_kernel",
+      "_fused_moments",
+      "_fused_solve_triton",
+      "_local_moments",
+      "_local_val",
+      "_nystrom_precond",
+      "_powered",
+      "_product10",
+      "_product10_reduce",
+      "_rbf_kernel",
+      "_solve_local",
+      "classify",
+      "kernel",
+      "local_scores",
+      "make_workspace",
+      "product",
+      "pseudo_split",
+      "solve"
+    ],
+    "ast_changed_functions": [
+      "fit_scores"
+    ],
+    "removed_functions": [
+      "gradient_metric",
+      "prepare",
+      "self_check"
+    ],
+    "added_functions": []
+  },
+  "attribution": "First source comments and README explicitly credit PR116 @islamborghini and its DeepSeek V4.1 Flash/OpenCode origin. Existing solver and local correction preserved. Delta only fit_scores, removal of prepare/gradient_metric/self_check, formatting.",
+  "author_manifest_checks": {
+    "source_sha256": true,
+    "source_bytes": true,
+    "difficulty": true,
+    "runs": true,
+    "energy_enabled": true,
+    "raw_hashes_exact": true
+  },
+  "author_filename_provenance": "Official source executed as kernel_d3_polar_two_updates.py, packaged as submission.py; raw-record SHA256 exactly equals packaged source, confirmed independently. Separate NS5 source likewise renamed but exact hash preserved.",
+  "author_packaging_gate_scope": "Author reports three draws with exact packaged/research predictions, reset exactness and immutable inputs. Independently checked consistent SHA and field assertions; fresh reviewer canonical run separately tests new hidden draws but does not recreate authored development gate.",
+  "author_development_recalculation": {
+    "draws": 11,
+    "original_mean_error_pct": 2.7018180760470303,
+    "polar2_mean_error_pct": 2.6754544865001333,
+    "paired_delta_pp": -0.026363589546897194,
+    "paired_se_pp": 0.029519565625253763,
+    "qualification": false,
+    "scope": "Descriptive paired development arrays, not canonical qualification or evidence of a significant gain."
+  },
+  "documentation_issue": "Top-level README added row is preceded by blank line, breaking continuity with D3 Markdown table. Cosmetic repair recommended if merging; no performance record claim over PR116.",
+  "failed_candidate_retention": "Separate NS5 one-update source cc3f2af9ccb8b03f280cce2bbf8c6ea8cb316936d9a0f91b7baec5607d5206f8 and all three raw runs preserved. Independent canonical audit finds1/3passes, two failures by22 and28labels. Never pooled into final spherical source.",
+  "canonical_identities": {
+    "mnist.py": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+    "run_modal.py": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab"
+  },
+  "qualification_scope": "Source compliance and author saved-record consistency are established; merge eligibility also requires exact initial fresh reviewer set to pass3/3."
+}
