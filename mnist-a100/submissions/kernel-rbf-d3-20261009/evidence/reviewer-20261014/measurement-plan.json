@@ -1,0 +1,15 @@
+{
+  "created_utc": "2026-10-14T14:24:25.108628+00:00",
+  "reviewed_head": "98d0c08310f7d800437842b5d2ad9a2da8e65e37",
+  "source_sha256": "296b69006ad178cf85562387e40d29d8149381a41e1b3c7d7f8bcb1683c565b8",
+  "source_bytes": 19730,
+  "source_file": "kernel_d3_cg_graph.py",
+  "entry_point": "classify",
+  "runs": 3,
+  "difficulty": 3,
+  "energy_enabled": true,
+  "fixed_before_launch": true,
+  "scope": "Fresh maintainer independent reproduction group; all three outcomes retained; no failed run replaced. Published qualification reviewed separately.",
+  "local_scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+  "local_runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab"
+}

@@ -1,0 +1,28 @@
+{
+  "created_utc": "2026-10-14T14:24:25.108628+00:00",
+  "reviewed_head": "98d0c08310f7d800437842b5d2ad9a2da8e65e37",
+  "source_sha256": "296b69006ad178cf85562387e40d29d8149381a41e1b3c7d7f8bcb1683c565b8",
+  "source_bytes": 19730,
+  "source_file": "kernel_d3_cg_graph.py",
+  "entry_point": "classify",
+  "runs": 3,
+  "difficulty": 3,
+  "energy_enabled": true,
+  "fixed_before_launch": true,
+  "scope": "Fresh maintainer independent reproduction group; all three outcomes retained; no failed run replaced. Published qualification reviewed separately.",
+  "local_scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+  "local_runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+  "completed_utc": "2026-10-14T14:29:18.975579+00:00",
+  "app_id": "ap-gX9iatwZjCiAnP73h61jH9",
+  "app_url": "https://modal.com/apps/yaroslavvb/main/ap-gX9iatwZjCiAnP73h61jH9",
+  "raw_record_sha256": {
+    "run-1.json": "3fba3fb4d7eb96f7d3312deaa7fe99ffd93725674a7ab47d8acfc90d156eeb14",
+    "run-2.json": "26e8d6df61b4f848e285a52248d12e5f035abf3e5142cb142f0cec726f384a28",
+    "run-3.json": "2899370672c23155031c6b0c2d2f2db2c4a1e24f726673df48e51deee74fd127"
+  },
+  "reruns": 0,
+  "learner_repairs": 0,
+  "failed_outcomes_retained": true,
+  "runner_unmodified": true,
+  "scorer_unmodified": true
+}

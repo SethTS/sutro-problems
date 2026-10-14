@@ -1,5 +1,28 @@
 # Non-backprop RBF kernel classifier — difficulty 3
 
+## Independent reviewer reproduction — October 14, 2026
+
+The first frozen reviewer group passed **3/3 fresh canonical sandboxed Modal A100-80GB runs**, with valid above-idle energy measurements on three distinct GPUs. Median ranked time is **43.995720 ms/call** and median energy is **7,899.394708 mJ/call**; pooled MNIST error is **2.540909%** (321,615/330,000 correct).
+
+| Reviewer run | MNIST error | Margin, labels | Ranked ms | Above-idle mJ |
+| - | -: | -: | -: | -: |
+| 1 | 2.542727% | +173 | 43.995720 | 7,899.394708 |
+| 2 | 2.544545% | +171 | 43.991775 | 7,619.733229 |
+| 3 | 2.535455% | +181 | 52.048573 | 8,400.286392 |
+
+Source is unchanged at SHA-256 `296b69006ad178cf85562387e40d29d8149381a41e1b3c7d7f8bcb1683c565b8`. The scorer and runner are unchanged. [Verification](evidence/reviewer-20261014/verification.json) reconstructs every complete canonical score and energy result from the [raw records](evidence/reviewer-20261014/); [source review](evidence/reviewer-20261014/source-review.json) covers per-call fitting, label isolation and cached-state reset. No reviewer outcome was replaced or retried.
+
+The author's fixed first-three group remains separate from the six-run batch, which passed 5/6 overall; its sixth run missed the accuracy gate by 12 labels. All six and the previous source's evidence are retained. The new reviewer group is independent of those outcomes.
+
+The leaderboard uses the independent reviewer medians above. Author results below are retained separately. The published instructions specify three official Modal runs and their median; this independent reproduction is review evidence, not a newly imposed second-batch submission rule.
+
+Using Python 3.13 as in the canonical runner, recheck saved records from this submission directory with `python evidence/reviewer-20261014/verify_records.py evidence/reviewer-20261014 kernel_d3_cg_graph.py --output /tmp/pr116-verification.json`. This reconstructs recorded verdicts without executing the learner.
+
+## Original author report (as submitted)
+
+Present-tense record and pending-review claims below describe the submission date; the dated reviewer section above gives the accepted review status.
+
+
 RBF kernel ridge with two analytic metric updates, 16-step Nyström-preconditioned CG and local class geometry. CG executes as a CUDA graph with current inputs on every fit. **All six fixed stock runs passed every timing gate.** The predeclared first three runs also passed accuracy and energy; their medians are **49.990213 ms** and **8,417.715 mJ (8.417715 J)**. The complete six-run batch is 5/6 overall: run 6 fails mean accuracy, and remains included below.
 
 Entrant: [@islamborghini](https://github.com/islamborghini). Implementation authored with DeepSeek V4.1 Flash through OpenCode. Entry point: [kernel_d3_cg_graph.py](kernel_d3_cg_graph.py):classify.

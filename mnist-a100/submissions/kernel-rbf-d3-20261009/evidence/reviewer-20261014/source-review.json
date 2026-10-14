@@ -1,0 +1,96 @@
+{
+  "pull_request": 116,
+  "reviewed_head": "98d0c08310f7d800437842b5d2ad9a2da8e65e37",
+  "source_sha256": "296b69006ad178cf85562387e40d29d8149381a41e1b3c7d7f8bcb1683c565b8",
+  "source_bytes": 19730,
+  "source_gate_passed": true,
+  "source_limit_bytes": 20480,
+  "source_byte_margin": 750,
+  "canonical_scorer_unchanged": true,
+  "canonical_runner_unchanged": true,
+  "scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+  "runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+  "imports": [
+    {
+      "line": 10,
+      "module": "gc"
+    },
+    {
+      "line": 11,
+      "module": "torch"
+    },
+    {
+      "line": 12,
+      "module": "triton"
+    },
+    {
+      "line": 13,
+      "module": "triton.language"
+    }
+  ],
+  "entry_point": "classify",
+  "prior_reviewed_head": "43ca1a493e073c09eea6b346b9509609a0cb21e4",
+  "prior_source_sha256": "13dfbe8b83a2cd92c422e576ff4b0b8b756c440f8132b61beb4ffa821b144dc4",
+  "ast_identical_functions_to_previous_review": [
+    "_axpy_update",
+    "_base_solve",
+    "_dir_update",
+    "_dot",
+    "_dot_sum",
+    "_dot_tile",
+    "_fused_kernel",
+    "_fused_moments",
+    "_fused_solve_triton",
+    "_local_moments",
+    "_local_val",
+    "_powered",
+    "_product10",
+    "_product10_reduce",
+    "_rbf_kernel",
+    "_solve_local",
+    "fit_scores",
+    "gradient_metric",
+    "kernel",
+    "local_scores",
+    "make_workspace",
+    "prepare",
+    "product",
+    "pseudo_split"
+  ],
+  "changed_functions": [
+    "_nystrom_precond",
+    "classify",
+    "solve"
+  ],
+  "added_functions": [
+    "_graph_solve",
+    "_nystrom_factor",
+    "_precond"
+  ],
+  "removed_functions": [
+    "self_check"
+  ],
+  "changed_scope": "One leaderboard row plus new source, README, record verifier and retained new/historical evidence; no scorer, runner, dataset or gate edits.",
+  "source_review": "Full current source, changed solver/cache implementation, original reviewed source, unchanged canonical scorer and supplied saved records reviewed. No prior trained data, query-label access, decoding or filesystem/network/process introspection.",
+  "per_call_fresh_state": "classify -> fit_scores freshly normalizes supplied tensors, makes targets, metric, all Gram matrices, Nystr\u00f6m factors, weights and local query correction. Query pseudo-support labels come from current scores. All fitting remains under no_grad; explicit analytic metric derivatives, no backward/optimizer.",
+  "input_integrity": "prepare divides into fresh tensors; train_y only read in scatter and class filters; diagonal/scores/Triton writes target owned new tensors. No caller input mutation.",
+  "graph_cache": "Cache key binds shape, dtype, device, ridge, steps and rank. Entry strongly owns static Gram/targets/factor, graph output and scratch. Every solve recomputes v then copies current k/targets/v into buffers; graph contains zeros_like weights, residual/initial direction setup, initial norm and all fixed CG updates. All scratch entries are overwritten before relevant reads. output.clone separates each solve result from later replay. No fitted output or previous labels reused.",
+  "warmup_and_gc": "Foreign warm-up is explicitly allowed to compile/capture. classify computes labels before first gc.collect/gc.freeze, then sets one boolean. Freeze changes Python collection scheduling; it does not bypass timed fitting or read frozen tensors. New objects still GC enabled. Frozen foreign-warm heap is not used as fit data.",
+  "kernels": "Masked tensor reads/writes on owned storage; product/CG reduction/update and local covariance launch sequences maintain stream ordering. TF32x3 used uniformly; training Gram FP16 and state/covariance FP32.",
+  "no_dataset_timing_branch": "Algorithm/hyperparameters are fixed; conditionals depend on tensor shape and static options. No prediction truth, dataset-name access, clock/event tampering, sleeps or omitted timed math.",
+  "previous_review_status": "GitHub API currently returns no issue comments, inline review comments, or reviews. Prior local maintainer review at output/pr-review-20261012/pr116 found no static blocker; old source fresh run2 failed timing with 258.320373535ms event (264.21215ms parent minus 4.4833815ms overhead). Retained old outcomes cannot be used as current-source qualifications.",
+  "published_rule_distinction": "The README describes records as median of three Modal A100 runs. Fresh maintainer three-run reproduction is additional evidence; a failed set is not a permanent ban on a source or a new published source-eligibility rule.",
+  "author_claims": "Independent saved-record replay matches fixed first-three reported medians. All six outcomes are retained, with sixth mean-accuracy failure openly reported. Prelaunch grouping is asserted by archived plan metadata; no external notarization of that timestamp claimed.",
+  "developer_numerics": "Six claimed eager-vs-graph comparisons are supplied developer evidence only; not independently rerun here. Fresh canonical reviewer GPU group tests complete current source on independent hidden draws.",
+  "blockers": [],
+  "documentation_notes": [],
+  "fresh_reviewer_scope": "Three fresh canonical energy-enabled runs were preregistered and launched once; every outcome retained; no failed outcome replaced.",
+  "fresh_reviewer_result": {
+    "passed_runs": 3,
+    "required_passed_runs": 3,
+    "energy_valid_runs": 3,
+    "median_ranked_ms": 43.99572018063779,
+    "median_energy_mj": 7899.394708314494,
+    "app_id": "ap-gX9iatwZjCiAnP73h61jH9"
+  }
+}

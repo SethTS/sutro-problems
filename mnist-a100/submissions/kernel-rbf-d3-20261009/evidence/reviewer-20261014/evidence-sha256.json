@@ -1,0 +1,13 @@
+{
+  "author-evidence-audit.json": "faa60b5141fec63dc3ca69ce50a16b9d9125171ae977dfcd612ae00202a5bc01",
+  "manifest.json": "2b5b383563d850bb72376e3fbf3b2421f324d7fa830727f72de42781d7d3bbe7",
+  "measurement-plan.json": "1174392473e74e99a1c5a0d081c9f42d78bd2ddceded85c606150bcce3889faa",
+  "review-decision.json": "2c9803527646a41d698acf40d21b5646a60f690b5bc83d1671d4908b16020525",
+  "run-1.json": "3fba3fb4d7eb96f7d3312deaa7fe99ffd93725674a7ab47d8acfc90d156eeb14",
+  "run-2.json": "26e8d6df61b4f848e285a52248d12e5f035abf3e5142cb142f0cec726f384a28",
+  "run-3.json": "2899370672c23155031c6b0c2d2f2db2c4a1e24f726673df48e51deee74fd127",
+  "source-review.json": "9dad8ab71a334e6d56675ad4fbde1fcdbd175fcff02eed96e13b4a501961e605",
+  "specialist-verification.json": "d684b7ef8e2840573fc14b415ea38c5c6f614cdaf35730243f9f49dc65fa15f5",
+  "verification.json": "f6466eb7459e917d0e18659fd7de83c525dd2d6529facfd27b44d412de572955",
+  "verify_records.py": "0773cf432d0e2de6e3b08fccca24c917a0bd638dc2e8857c8592a0adc92a4915"
+}
