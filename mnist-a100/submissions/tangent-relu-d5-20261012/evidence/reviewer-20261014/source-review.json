@@ -1,0 +1,73 @@
+{
+  "pr": 120,
+  "head": "c686ccb78b1cc7e1a6ae63e0f25ffda4c3095659",
+  "folder": "tangent-relu-d5-20261012",
+  "source_path": "/Users/yaroslavvb/git/sutro-problems/output/pr-review-20261014/pr120/source/mnist-a100/submissions/tangent-relu-d5-20261012/submission.py",
+  "function": "classify",
+  "main_head": "f8717d8fc56ec117a1750375c23fd0eb0f73b624",
+  "source_sha256": "9adc570a02279b34d0766344ec72f5589ff10fae06e1b6b341b58dc351a6445a",
+  "scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+  "runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+  "checked_at_utc": "2026-10-14T14:27:19.289819+00:00",
+  "source_bytes": 13363,
+  "source_gate_passed": true,
+  "review_flags": [],
+  "source_limit_bytes": 20480,
+  "function_lines": {
+    "_orth": 38,
+    "_keep": 48,
+    "_forward": 59,
+    "_loss": 70,
+    "_update": 87,
+    "_step": 101,
+    "_readout": 126,
+    "_cross_teach": 158,
+    "_tangents": 171,
+    "_reset": 181,
+    "_build": 209,
+    "_capture": 229,
+    "_load": 243,
+    "classify": 250
+  },
+  "imports": [
+    {
+      "line": 22,
+      "module": "os"
+    },
+    {
+      "line": 24,
+      "module": "torch"
+    },
+    {
+      "line": 25,
+      "module": "torch.nn.functional"
+    },
+    {
+      "line": 272,
+      "module": "mnist"
+    }
+  ],
+  "static_blockers": [],
+  "changed_scope": "PR adds one learner, README and raw author evidence; no scorer, runner, dataset or leaderboard changes.",
+  "method": "Eight RMSNorm/ReLU MLPs trained with Muon, tangent jitter, mixup and disjoint-pool pseudo-label cross-teaching; signed-power current-draw embeddings and clamped train/query graph propagation.",
+  "state_reset": "classify copies all supplied data through _load, recomputes same-class tangents, then _reset overwrites all model parameters, copies fresh weights into EMA, clears Muon and Adam state, timestep and pseudo-label/confidence arrays and reconstructs disjoint query pools before 2200 updates. Module _S caches compiler/CUDA graph/workspace only; no learned warmup state is retained for fitting.",
+  "inputs_and_truth": "Supplied tensors are copied into owned buffers and never mutated. Query supervision derives from current model probabilities, provided train labels and the current unlabeled query graph; no test truth, scorer, caller state or hidden dataset access.",
+  "cross_teaching": "Half 0 trains pseudo-labels on pool 0 and half 1 on disjoint pool 1. Each half labels the other half, using embeddings/logits rather than the pseudo-label arrays. Transductive query features are allowed by existing accepted D3/D5 sources.",
+  "prior_or_harness_shortcut": "Only scalar algorithm hyperparameters and docstrings. No fitted literals, encoded weights, decoder, external data, network calls, timer/event patching, parent introspection, or data-specific work shortcut. os usage is getuid plus runtime setdefault cache paths under /tmp.",
+  "work_and_compilation": "Warmup builds torch.compile loss/update functions, captures labelled and pseudo steps after three setup executions each and synchronizes streams. Every timed call includes tangent fitting, reset, fixed 2200 graph replays, scheduled cross-teaching and final readout.",
+  "source_specific": "Width 256; hidden bias/gain placeholders remain at reset 0/1 and are unused. AdamW updates head parameters; all optimizer tensors are cleared.",
+  "qualification_scope": "Manual full-source audit, unchanged canonical check_source/review_flags, independent raw-record arithmetic and one frozen fresh energy-enabled three-run Modal qualification. Author verification code is not executed.",
+  "policy_assessment": {
+    "canonical_rules": "mnist.py docstring defines each run (11 MNIST + 4 holdout), D5 accuracy<=1.90%, worst draw<=3.40%, foreign accuracy>=15%, clock and dispersion gates. run_modal.py --runs 3 reports a complete pass only if all three runs pass; established rows use median of three.",
+    "rerun_rule_search": "Current canonical README, scorer docstring, runner and root CLAUDE.md contain no rule permanently barring a source after a failed earlier complete author set, and no pooled-across-all-sets eligibility rule for this separate mnist-a100 runner. Historical maintainer reviews avoided replacing failed reviewer runs; this review will retain its initial reviewer set without replacements.",
+    "earlier_author_failure": "None disclosed for this exact source.",
+    "no_replacement_runs": true,
+    "independent_initial_set_required_for_this_review": true,
+    "no_permanent_source_exclusion_invented": true
+  },
+  "source_identity_unchanged": true,
+  "randomness_note": "The dedicated initialization generator is reseeded. Global/graph RNG stream positions used for minibatches and jitter can continue from warmup, but no fitted data, weights or optimizer state persists; canonical rules require fresh fitting, not identical random stream positions.",
+  "adam_learning_rate_note": "The scalar AdamW LR tensor is not explicitly zeroed by _reset, but the captured _step overwrites it from the reset timestep schedule before every AdamW update.",
+  "prior_independent_reviewer_set_found": false,
+  "author_evidence_scope": "Author raw JSON is supplied evidence reconstructed numerically; it is not attested independent execution. The separately launched reviewer set is independent GPU reproduction."
+}

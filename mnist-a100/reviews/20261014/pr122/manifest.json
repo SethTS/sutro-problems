@@ -1,0 +1,29 @@
+{
+  "pr": 122,
+  "head": "f63a5521d0bd24fea490b91d1056ea5d6491bd8d",
+  "folder": "tangent-relu-w128-bias-d5-20261013",
+  "source_path": "/Users/yaroslavvb/git/sutro-problems/output/pr-review-20261014/pr122/source/mnist-a100/submissions/tangent-relu-w128-bias-d5-20261013/submission.py",
+  "function": "classify",
+  "main_head": "f8717d8fc56ec117a1750375c23fd0eb0f73b624",
+  "source_sha256": "d3bc8a2bf543c8db7f90e57d9b974532eb4e15d3f5415c1f79015ac34a2075a9",
+  "scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+  "runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+  "runs": 3,
+  "difficulty": 5,
+  "independent": true,
+  "set_number": 1,
+  "source_frozen_before_launch": true,
+  "replacement_runs": 0,
+  "energy_enabled": true,
+  "app_id": "ap-1ui7Xvt97HAkrHaSU80ECG",
+  "app_url": "https://modal.com/apps/yaroslavvb/main/ap-1ui7Xvt97HAkrHaSU80ECG",
+  "started_unix": 1791987901.473048,
+  "local_scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+  "local_runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+  "raw_record_sha256": {
+    "run-1.json": "aaa16417095586b69e757b229220d99cd046e3ddfa5afeae5f508ac0508c47d0",
+    "run-2.json": "76d8a88f0d6d05d80605135de07ad21f0fcbf8d75d16ba5cd6b2751ffa6f0d3f",
+    "run-3.json": "366f31ef1dedf934af79c177651d350bbea8bef266a272e4a2f7322bb8f24cb9"
+  },
+  "finished_unix": 1791988893.437288
+}

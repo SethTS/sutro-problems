@@ -1,5 +1,26 @@
 # D5: cross-taught Muon ReLU-MLP ensemble with local tangent jitter (fast)
 
+## Independent reviewer reproduction — October 14, 2026
+
+The first frozen reviewer group passed **3/3 fresh canonical sandboxed Modal A100-80GB runs**, with valid above-idle energy measurements on three distinct GPUs. Median ranked time is **1,915.402496 ms/call** and median energy is **343,151.622557 mJ/call**; pooled MNIST error is **1.789091%** (324,096/330,000 correct).
+
+| Reviewer run | MNIST error | Margin, labels | Ranked ms | Above-idle mJ |
+| - | -: | -: | -: | -: |
+| 1 | 1.810000% | +99 | 1,922.228505 | 331,163.170874 |
+| 2 | 1.812727% | +96 | 1,913.758972 | 343,151.622557 |
+| 3 | 1.744545% | +171 | 1,915.402496 | 346,421.252166 |
+
+Source is unchanged at SHA-256 `9adc570a02279b34d0766344ec72f5589ff10fae06e1b6b341b58dc351a6445a`. The scorer and runner are unchanged. [Verification](evidence/reviewer-20261014/verification.json) reconstructs every complete canonical score and energy result from the [raw records](evidence/reviewer-20261014/); [source review](evidence/reviewer-20261014/source-review.json) covers per-call fitting, label isolation and cached-state reset. No reviewer outcome was replaced or retried.
+
+The leaderboard uses the independent reviewer medians above. Author results below are retained separately. The published instructions specify three official Modal runs and their median; this independent reproduction is review evidence, not a newly imposed second-batch submission rule.
+
+Using Python 3.13 as in the canonical runner, recheck saved records from this submission directory with `python evidence/reviewer-20261014/verify_records.py evidence/reviewer-20261014 submission.py --output /tmp/pr120-verification.json`. This reconstructs recorded verdicts without executing the learner.
+
+## Original author report (as submitted)
+
+Present-tense record and pending-review claims below describe the submission date; the dated reviewer section above gives the accepted review status.
+
+
 Entrant: [@likelytobelaura](https://github.com/likelytobelaura). The joint train+query graph-propagation readout is
 [@sjbaebae](https://github.com/sjbaebae)'s, from the D3 record (see [Credits](#credits)).
 

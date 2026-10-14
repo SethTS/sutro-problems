@@ -1,0 +1,79 @@
+{
+  "review_date": "2026-10-14",
+  "repository": "cybertronai/sutro-problems",
+  "fresh_canonical_modal_runs": 9,
+  "fresh_score_passes": 7,
+  "fresh_accuracy_failures": 2,
+  "fresh_timed_calls": 135,
+  "new_reviewer_groups_fixed_once": true,
+  "failed_outcomes_replaced": false,
+  "scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+  "runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+  "merged": [
+    {
+      "pull_request": 116,
+      "difficulty": 3,
+      "source_sha256": "296b69006ad178cf85562387e40d29d8149381a41e1b3c7d7f8bcb1683c565b8",
+      "median_ranked_ms": 43.99572018063779,
+      "median_energy_mj": 7899.394708314494,
+      "aggregate_mnist_error_pct": 2.540909090909091,
+      "best_record": false,
+      "evidence": "mnist-a100/submissions/kernel-rbf-d3-20261009/evidence/reviewer-20261014",
+      "url": "https://github.com/cybertronai/sutro-problems/pull/116",
+      "reviewer_passed_runs": 3,
+      "current_record": false
+    },
+    {
+      "pull_request": 120,
+      "difficulty": 5,
+      "source_sha256": "9adc570a02279b34d0766344ec72f5589ff10fae06e1b6b341b58dc351a6445a",
+      "median_ranked_ms": 1915.4024963378906,
+      "median_energy_mj": 343151.62255701073,
+      "aggregate_mnist_error_pct": 1.789090909090909,
+      "best_record": false,
+      "evidence": "mnist-a100/submissions/tangent-relu-d5-20261012/evidence/reviewer-20261014",
+      "url": "https://github.com/cybertronai/sutro-problems/pull/120",
+      "reviewer_passed_runs": 3,
+      "current_record": false
+    }
+  ],
+  "left_open": [
+    {
+      "pull_request": 110,
+      "url": "https://github.com/cybertronai/sutro-problems/pull/110",
+      "reviewed_head": "95368c5469238ff5d6c3c0633bf8831947454c84",
+      "source_sha256": "c9ce69223b6d1625858d298cf462207435edac7026fbcf3bcce8040d48537ea6",
+      "reason": "Requested A100 diagnostic was already completed October 8; explicitly non-record, and current mnist README requires a separate branch.",
+      "new_gpu_runs": 0
+    },
+    {
+      "pull_request": 114,
+      "url": "https://github.com/cybertronai/sutro-problems/pull/114",
+      "reviewed_head": "74dc7ad1eb3f0d5d4fd4c75ec1394b6fb8e1e9c1",
+      "source_sha256": "c5ed1d8ffb115cc58a6a6b4ac468b07c780d773b3f8d7387ec3f295b6f1b3eb1",
+      "reason": "Unchanged source: prior independent review passed 1/3, with accuracy misses of 64 and 4 labels. Author three-pass set retained separately.",
+      "new_gpu_runs": 0
+    },
+    {
+      "pull_request": 119,
+      "url": "https://github.com/cybertronai/sutro-problems/pull/119",
+      "reviewed_head": "4f2ea071a78da77a84e1de0f5551ec5f71f6ceec",
+      "source_sha256": "6f0e1a109ece2679f8ee1e0527cd98abc6a58e664d11fc6033740765ba4a990f",
+      "reason": "Unchanged source: prior independent review passed 1/3, with two later 90-second warm-up timeouts. Published prose says 180 seconds, implementation allows only 90 for later workers; underlying phase remains undiagnosed. Author three-pass set retained separately.",
+      "new_gpu_runs": 0
+    },
+    {
+      "pull_request": 122,
+      "url": "https://github.com/cybertronai/sutro-problems/pull/122",
+      "reviewed_head": "f63a5521d0bd24fea490b91d1056ea5d6491bd8d",
+      "source_sha256": "d3bc8a2bf543c8db7f90e57d9b974532eb4e15d3f5415c1f79015ac34a2075a9",
+      "reason": "First independent reviewer group passed 1/3; two complete runs missed D5 accuracy by 28 and 74 labels. All original author groups and reviewer outcomes retained.",
+      "new_gpu_runs": 3,
+      "reviewer_evidence": "pr122",
+      "aggregate_mnist_error_pct": 1.9012121212121211,
+      "qualified_median_ranked_ms": null,
+      "qualified_median_energy_mj": null
+    }
+  ],
+  "policy_note": "Published instructions specify three official Modal A100 runs and a median; they do not explicitly require a second three-of-three maintainer batch or impose permanent source exclusion. Holds reflect observed contrary reproduction evidence or the separate non-record-branch policy, not a new submission rule. Author sets remain separate from reviewer sets. Energy telemetry validity is separate from score qualification."
+}
