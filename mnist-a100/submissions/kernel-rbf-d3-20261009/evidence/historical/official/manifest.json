@@ -1,0 +1,25 @@
+{
+  "difficulty": 3,
+  "runs": 3,
+  "source_file": "kernel_d3_two_metric_low_ridge.py",
+  "function": "classify",
+  "source_sha256": "13dfbe8b83a2cd92c422e576ff4b0b8b756c440f8132b61beb4ffa821b144dc4",
+  "source_bytes": 20388,
+  "entrant": "islamborghini",
+  "implementation_authoring": "DeepSeek V4.1 Flash via OpenCode",
+  "energy": "enabled; stock above-idle board-energy protocol",
+  "local_scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+  "local_runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+  "reviewed_upstream_commit": "7c7d477978613fa354126fbb912e9d9a92c73c98",
+  "scorer_version": "mnist-a100/1.2.0 (protections of sutro-mnist-medium/3.0.0, tightened; energy column)",
+  "raw_record_sha256": {
+    "run-1.json": "97259dff5c82ceecb01e985b7ab9807e2c69f9e50293bfe1e1cf3c6d2285fcc1",
+    "run-2.json": "af06faa994e0ee3430dbec046d9a7b098dba502499f4234f3d78a98e2873942c",
+    "run-3.json": "9cfbe3b017ca0b323c2902fd6ee91c1987478a81575a3a8462e108e08506bb82"
+  },
+  "evidence_scope": "All three fixed energy-enabled stock-runner outcomes, with raw idle/reference/control/method windows and GPU UUIDs. The initial no-energy batch is retained separately. Saved-window reconstruction is not another GPU run. Remote execution-time scorer hash and raw official prediction arrays are not stored by the runner.",
+  "energy_enabled": true,
+  "modal_app_id": "ap-7Y1Klqnp1QZhMQlcyxIMNF",
+  "measurement_date": "2026-10-12",
+  "record_command": "python run_modal.py submissions/kernel-rbf-d3-20261009/kernel_d3_two_metric_low_ridge.py:classify --difficulty 3 --runs 3 --json /tmp/kernel-rbf-d3-energy"
+}

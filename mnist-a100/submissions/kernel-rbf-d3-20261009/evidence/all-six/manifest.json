@@ -1,0 +1,17 @@
+{
+  "difficulty": 3,
+  "runs": 6,
+  "energy_enabled": true,
+  "source_sha256": "296b69006ad178cf85562387e40d29d8149381a41e1b3c7d7f8bcb1683c565b8",
+  "source_bytes": 19730,
+  "source_file": "kernel_d3_cg_graph.py",
+  "raw_record_sha256": {
+    "run-1.json": "ad0de098c23a34ad55e59dcbcb3b0f940fa0fe87cad6748b5f4f225e50d1c79a",
+    "run-2.json": "c81c43a325f6a34052fbc1f4c82de92ecda8b5ae898d9053bcb66c0818e828a8",
+    "run-3.json": "c08e0df1d6b959afda23354963540ac9de9bbc4a6e3c55152895afcff60a8240",
+    "run-4.json": "153cdb2466e8071b8d58c4388177aa5996b4101781e8f006f194e440e58b41bd",
+    "run-5.json": "ffd8b2c9150b1a613b2a9fb5bab60e085c624982df5728d65d9b36a90ba936fc",
+    "run-6.json": "594eab18295eaf4119bd1deaa4deb9b090baa861625e2e6034f44faac7c6b8c7"
+  },
+  "scope": "Complete fixed6-run batch; timing6/6, overall5/6; run6 accuracy failure retained, energy unmeasured"
+}

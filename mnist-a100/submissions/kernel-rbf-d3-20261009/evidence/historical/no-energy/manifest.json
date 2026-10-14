@@ -1,0 +1,21 @@
+{
+  "difficulty": 3,
+  "runs": 3,
+  "source_file": "kernel_d3_two_metric_low_ridge.py",
+  "function": "classify",
+  "source_sha256": "13dfbe8b83a2cd92c422e576ff4b0b8b756c440f8132b61beb4ffa821b144dc4",
+  "source_bytes": 20388,
+  "entrant": "islamborghini",
+  "implementation_authoring": "DeepSeek V4.1 Flash via OpenCode",
+  "energy": "unmeasured; --no-energy",
+  "local_scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+  "local_runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+  "reviewed_upstream_commit": "7c7d477978613fa354126fbb912e9d9a92c73c98",
+  "scorer_version": "mnist-a100/1.2.0 (protections of sutro-mnist-medium/3.0.0, tightened; energy column)",
+  "raw_record_sha256": {
+    "run-1.json": "17b64b1057666cc0090833b7fe526903565d327f9d9cb06950791be149b528e8",
+    "run-2.json": "4affbc90d7b5c9d1ab043cd60b62dc716a1a4b8ef404160436726ee5564f876d",
+    "run-3.json": "2c09c83ed56eaa1d62b7f9268cc33877b43736e769bdf73a66b53130dbfb4cb2"
+  },
+  "evidence_scope": "Unfiltered stock-runner JSON. Saved-record/source reviews are not additional GPU reproductions. Remote scorer hash, GPU UUIDs and warm-up durations were not stored by the runner."
+}

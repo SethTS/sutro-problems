@@ -1,0 +1,25 @@
+mnist-d3-submission-draft/mnist-a100/submissions/kernel-rbf-d3-20261009/evidence/official: 3 runs, difficulty 3, source kernel_d3_cg_graph.py sha 296b6900
+run  device                  gpu             ranked ms    energy mJ MNIST err holdout err  status
+  1  NVIDIA A100-SXM4-80GB   53b37762        49.820535    8,417.715     2.63% 12.77% fashion  PASS
+  2  NVIDIA A100-SXM4-80GB   c5c617ff        51.312406    7,841.957     2.54% 12.51% fashion  PASS
+  3  NVIDIA A100-SXM4-80GB   47ee823b        49.990213    8,445.230     2.63% 12.66% fashion  PASS
+  run returned 0: OK (3/3)
+  no problems: OK (3/3)
+  empty stderr: OK (3/3)
+  scorer version: OK (3/3)
+  entry point: OK (3/3)
+  A100 hardware: OK (3/3)
+  source hash: OK (3/3)
+  file name: OK (3/3)
+  band: OK (3/3)
+  sandboxed: OK (3/3)
+  15 calls (11+4): OK (3/3)
+  call values: OK (3/3)
+  holdout: OK (3/3)
+  judge rebuild: OK (3/3)
+  energy rebuild: OK (3/3)
+  energy measurement present: OK (3/3)
+  distinct GPU UUIDs: OK (3 of 3)
+  ranked medians: median 49.990213 ms
+  energy medians: median 8,417.715451 mJ over 3 runs
+Verified 3/3 saved records: no disqualification problems; local reconstruction only, not an independent GPU reproduction.
