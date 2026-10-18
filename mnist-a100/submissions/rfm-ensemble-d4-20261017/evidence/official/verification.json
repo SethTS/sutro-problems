@@ -1,0 +1,53 @@
+{
+  "source_sha256": "0bb2b7b4852db2bda7726029d7f211d109473d1b7c672a8256d6ce86daa94bef",
+  "runs": [
+    {
+      "run": "run-1.json",
+      "passed": true,
+      "problems": [],
+      "ranked_ms": 217.96351623535156,
+      "unqualified_time_ms": null,
+      "error_pct": 2.2163636363636385,
+      "worst_error_pct": 2.4900000000000033,
+      "holdout": "fashion",
+      "holdout_accuracy_pct": 88.63,
+      "energy_mj": 39296.26805593362,
+      "gpu_uuid": "GPU-78a13e68-eb6c-0e43-f18d-bceb96db88d6",
+      "summary": "MNIST 97.78% (107,562/110,000), 217.923 ms/call; hold-out (fashion) 88.63%, 217.964 ms/call"
+    },
+    {
+      "run": "run-2.json",
+      "passed": true,
+      "problems": [],
+      "ranked_ms": 219.33893793279475,
+      "unqualified_time_ms": null,
+      "error_pct": 2.242727272727274,
+      "worst_error_pct": 2.5699999999999945,
+      "holdout": "kmnist",
+      "holdout_accuracy_pct": 96.9575,
+      "energy_mj": 39088.83903121836,
+      "gpu_uuid": "GPU-907fac36-c281-fa36-d18c-d2b8ffe1d398",
+      "summary": "MNIST 97.76% (107,533/110,000), 219.339 ms/call; hold-out (kmnist) 96.96%, 219.324 ms/call"
+    },
+    {
+      "run": "run-3.json",
+      "passed": true,
+      "problems": [],
+      "ranked_ms": 218.46369656649503,
+      "unqualified_time_ms": null,
+      "error_pct": 2.1700000000000053,
+      "worst_error_pct": 2.500000000000002,
+      "holdout": "fashion",
+      "holdout_accuracy_pct": 88.2675,
+      "energy_mj": 43198.21722813655,
+      "gpu_uuid": "GPU-6c2ba0af-b6ca-0b82-d725-b6b0094a679f",
+      "summary": "MNIST 97.83% (107,613/110,000), 218.464 ms/call; hold-out (fashion) 88.27%, 218.429 ms/call"
+    }
+  ],
+  "attempted": 3,
+  "passed": 3,
+  "qualifying_three_run_result": true,
+  "median_ranked_ms": 218.46369656649503,
+  "median_energy_mj": 39296.26805593362,
+  "canonical_score_and_energy_reconstructed": true
+}
