@@ -1,0 +1,99 @@
+{
+  "pull_request": 123,
+  "reviewed_head": "6348d2768bc48413828b75fba9de6f85ff4479f8",
+  "frozen_main": "c269e4baa95f2bd96e05dee2107a3330064e8daa",
+  "source_sha256": "0bb2b7b4852db2bda7726029d7f211d109473d1b7c672a8256d6ce86daa94bef",
+  "source_bytes": 11300,
+  "source_limit_bytes": 20480,
+  "source_gate_passed": true,
+  "source_review_flags": [],
+  "entry_point": "kernel_ensemble",
+  "canonical_scorer_unchanged": true,
+  "canonical_runner_unchanged": true,
+  "imports": [
+    "math",
+    "torch",
+    "torch.nn.functional"
+  ],
+  "changed_scope": "11 added files within one submission directory only; no existing source, leaderboard, scorer, runner, release or threshold edit.",
+  "upstream_comparisons": {
+    "ladder_kernel_teacher": {
+      "path": "mnist-a100/submissions/ladder-kernel-d4-20261012/submission.py",
+      "sha256": "f4c69bf486197cd00721320a90dbd644ad734b3371e65ea2fff498d9304ebbdc",
+      "ast_identical_definitions": [
+        "Sym",
+        "agop",
+        "aug",
+        "chol",
+        "h3_ops",
+        "kern",
+        "lfac",
+        "panels",
+        "rownorm",
+        "sqrtm",
+        "upd_eager"
+      ],
+      "shared_but_changed_definitions": [
+        "kernel_scores",
+        "pcg"
+      ]
+    },
+    "rfm_hknn": {
+      "path": "mnist-a100/submissions/rfm-hknn-d3-20261012/submission.py",
+      "sha256": "da456d0ed99d8fb59b26e76b1658d6cd8d69b31710122936f2ca5f81f0ced966",
+      "ast_identical_definitions": [
+        "aug",
+        "chol",
+        "h3_ops",
+        "hk_probs",
+        "hknn",
+        "kern",
+        "rownorm"
+      ],
+      "shared_but_changed_definitions": [
+        "Sym",
+        "agop",
+        "lfac",
+        "panels",
+        "pcg",
+        "run",
+        "sqrtm"
+      ]
+    }
+  },
+  "attribution": "Source headers explicitly credit islamborghini kernel-PCG, Radhakrishnan et al. RFM, spartanhaden Ladder/kernel teacher and RFM/HKNN, and Vincent/Bengio HKNN. Substantial teacher and HKNN source reuse is consistent with those credits.",
+  "method_delta": "Drops upstream Ladder neural student. Five deterministically cyclic training orders; three AGOP stages at3000/6000/10000 labels,12PCG iterations per metric fit,13 train-only iterations,16 transductive iterations; up to2048 first-panel gradient rows (2000 cap at6000/10000). Corrects512 low-margin queries with70 neighbors for3 candidateclasses. Five fixed temperature0.3 probability vectors averaged.",
+  "fresh_fit": "Each graph replay starts from current static copies, recomputes radius normalization, current one-hot labels, identity metric, all metrics/Gram panels/Nystr\u00f6m factors/zero-initialized PCG states/current pseudo-label masks/local hulls and votes. No fitted parameters carried between replays.",
+  "graph_reset_and_ownership": "STATE is empty at import and maps fixed canonical shapes/device to graph,inputbuffers,output. Every call copies all supplied train_x,train_y,test_x before graph.replay; output.clone prevents aliasing later replays. CUDAGraph keeps its private allocation pool; all captured intermediate solver/model allocations and initializations are replayed. Multistream kernel stages have explicit wait_stream ordering and join before use. Cache key omits dtype, but canonical API always fixes float32 inputs/int64 labels, so no benchmark-path inconsistency.",
+  "query_truth_and_supervision": "Only supplied train_y supplies truth. Query pseudo-labels are current model argmax. The transductive mask uses current score margin. HKNN query supports use predicted labels and current-valid margins. No test_y, draw identity, datasets, seeds, external examples or truth accessible.",
+  "input_integrity": "Input normalization/roll/concatenation are out of place; all diagonal/in-place/matmul-out/index writes target owned freshly allocated tensors or static owned scratch, never caller inputs.",
+  "prior_review": "No encoded data, decoder, network/filesystem/process introspection, caller access, trained tensor constants or high-entropy literals. Only static scalar hyperparameters. No backward/autograd/optimizer.",
+  "fixed_work": "Loops/shape branches fixed for canonical data;5ensemble members on every fit. Data-dependent masks/selects have static tensor extents and are still computed. No timers/events/sleeps or dataset-specific timing branch. Foreign warm-up graph capture explicitly allowed.",
+  "numerical_notes": "FP32 math/metric/local Cholesky; FP16 hi/lo kernel features and panels plus FP32 accumulation and scaled half PCG vectors. TF32 disabled and FP16 reduced precision reductions disabled uniformly. Nonfinite cases not hidden or retried; canonical GPU group evaluates empirical validity.",
+  "author_records": "Raw source filename ensemble5_metric3_s2048.py differs from packaged submission.py, but identical SHA-256 binds exact same bytes. All three score and energy results independently reconstructed; original raw files preserved. No author manifest was packaged, so reviewer generated explicit snapshot hash manifest.",
+  "external_evidence": "Heldout evaluator uses unchanged canonical timed_call sandbox, foreign Fashion warm-up, train-only whitening and Haar release. Separate integer/mean arithmetic and reproducible seeded train/query index hashes verified. MNIST test reuses same10000queries for3fits; QMNIST extra uses5disjoint cohorts over10000..59999. Fresh primary-source downloads matched every compressed SHA-256 and applicable MD5/Git-blob hash,IDX shape and label bounds. External GPU outcomes not independently rerun.",
+  "published_rule_scope": "D4 requires at least107470/110000 correct in each score run, worst individual draw\u22659620/10000, foreign\u22656000/40000, all timing gates. Median of3Modal A100 runs per README. Energy optional; telemetry failure leaves column blank while score stands. External QMNIST2.382% not a competition failure.",
+  "static_source_blockers": [],
+  "blockers": [],
+  "documentation_notes": [
+    "README correctly calls ensemble members different cyclic orders; initial source comment says independently sampled, although no independent random sampling occurs. Do not change qualified source bytes merely for that comment.",
+    "Add explicit upstream submission links/credits to README when integrating for easier discovery; source already provides credits.",
+    "Additional unused settings in run and stale derivative-penalty header are inert; no runtime/source-compliance blocker."
+  ],
+  "previous_github_reviews": {
+    "issue_comments": 0,
+    "inline_comments": 0,
+    "reviews": 0
+  },
+  "author_history_limit": "Provided three author files are preserved and reconstruct. Claims that these were initial attempts with no omitted/dropped runs and that external tests informed no tuning cannot be authenticated from the supplied snapshot alone. Independent reviewer group was fixed by parent instruction and launched once.",
+  "fresh_reviewer_result": {
+    "passed_runs": 3,
+    "required_passed_runs": 3,
+    "energy_valid_runs": 3,
+    "median_ranked_ms": 219.1943702697754,
+    "median_energy_mj": 42617.16840253514,
+    "pooled_error_pct": 2.273939393939395,
+    "minimum_accuracy_margin_labels": 10,
+    "app_id": "ap-WjZtZwGRsoEEJHAXUandfN"
+  }
+}

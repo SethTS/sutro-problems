@@ -1,5 +1,28 @@
 # RFM kernel ensemble: difficulty 4
 
+## Independent reviewer reproduction — October 18, 2026
+
+The first frozen reviewer group passed **3/3 fresh canonical sandboxed Modal A100-80GB runs**, with valid above-idle energy measurements on three distinct GPUs. Median ranked time is **219.194370 ms/call** and median energy is **42,617.168403 mJ/call**; pooled MNIST error is **2.273939%** (322,496/330,000 correct).
+
+| Reviewer run | MNIST error | Margin, labels | Ranked ms | Above-idle mJ |
+| - | -: | -: | -: | -: |
+| 1 | 2.283636% | +18 | 219.244261 | 42,847.432270 |
+| 2 | 2.290909% | +10 | 219.194370 | 42,617.168403 |
+| 3 | 2.247273% | +58 | 218.955311 | 40,462.843908 |
+
+Source is unchanged at SHA-256 `0bb2b7b4852db2bda7726029d7f211d109473d1b7c672a8256d6ce86daa94bef`. The scorer and runner are unchanged. [Verification](evidence/reviewer-20261018/verification.json) reconstructs every complete canonical score and energy result from the [raw records](evidence/reviewer-20261018/); [source review](evidence/reviewer-20261018/source-review.json) covers per-call fitting, label isolation and cached-state reset. No reviewer outcome was replaced or retried.
+
+The ensemble uses five deterministic cyclic orders of the same supplied training draw. Its RFM, kernel-PCG and HKNN source credits are preserved, including @spartanhaden's accepted [kernel teacher](../ladder-kernel-d4-20261012/submission.py) and [RFM/HKNN implementation](../rfm-hknn-d3-20261012/submission.py). Submitted external-test diagnostics remain separate from competition qualification.
+
+The leaderboard uses the independent reviewer medians above. Author results below are retained separately. The published instructions specify three official Modal runs and their median; this independent reproduction is review evidence, not a newly imposed second-batch submission rule.
+
+Using Python 3.13 as in the canonical runner, recheck saved records from this submission directory with `python evidence/reviewer-20261018/verify_records.py evidence/reviewer-20261018 submission.py --difficulty 4 --function kernel_ensemble --output /tmp/pr123-verification.json`. This reconstructs recorded verdicts without executing the learner.
+
+## Original author report (as submitted)
+
+Present-tense record and pending-review claims below describe the submission date; the dated reviewer section above gives the accepted review status.
+
+
 Non-neural RBF kernel ensemble for **difficulty 4**, with **three analytic metric updates per model**, Nyström-preconditioned conjugate-gradient solves and local affine-hull correction. All three initial energy-enabled sandboxed Modal A100-80GB runs of the unchanged scorer (`mnist-a100/1.2.0`) passed: **218.463697 ms/call median**, **39,296.268 mJ/call median above idle**, and **2.209697% pooled MNIST error** across 33 MNIST calls.
 
 Difficulty 4 requires mean MNIST error at most **2.30% within each run**, individual-draw error at most **3.80%**, and holdout accuracy at least **15%**.

@@ -1,0 +1,20 @@
+{
+  "created_utc": "2026-10-18T18:37:13.676157+00:00",
+  "reviewed_head": "6348d2768bc48413828b75fba9de6f85ff4479f8",
+  "frozen_main": "c269e4baa95f2bd96e05dee2107a3330064e8daa",
+  "source_sha256": "0bb2b7b4852db2bda7726029d7f211d109473d1b7c672a8256d6ce86daa94bef",
+  "source_bytes": 11300,
+  "source_file": "submission.py",
+  "entry_point": "kernel_ensemble",
+  "runs": 3,
+  "difficulty": 4,
+  "band_bp": 230,
+  "energy_enabled": true,
+  "fixed_by_parent_instruction_before_launch": true,
+  "metadata_saved_after_launch_due_to_copy_path_error": true,
+  "scope": "Initial once-only fixed independent maintainer group; preserve all results, never replace failures. Score qualification separate from optional energy validity. Parent task fixed all run/source/gate parameters before launch; local manifest creation retried once after correcting snapshot-copy path.",
+  "local_scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+  "local_runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+  "source_gate_passed": true,
+  "source_review_flags": null
+}

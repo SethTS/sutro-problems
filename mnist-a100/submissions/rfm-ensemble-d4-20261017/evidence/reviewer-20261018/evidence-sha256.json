@@ -1,0 +1,14 @@
+{
+  "author-evidence-audit.json": "0a4978c054ebc2eb0ff69053f558188f76e6efaa480100c29365ccc7dcb4a4d4",
+  "manifest.json": "11e6f7df0a2452971d40d28d88fe5f5182bda20138ead4b25823ef3485b6417b",
+  "measurement-plan.json": "7da0176eece9af6758752f8a5a59c34fabcaae06ac5ebb482bd566052bd5bd89",
+  "parent-author-record-audit.json": "f1a25146e2200c86f96cf39ef1690ece1312a031811d81c43d491e2b9eaaef4e",
+  "review-decision.json": "5af3a21056d37e9d0d594a8519c5cf39a0fec99bcc7c1ae8b6ff564ba0924fac",
+  "run-1.json": "a795cdd5c39895caf7f696cf077a833da9e6d96adcf5bfd11fb0191d71175f56",
+  "run-2.json": "c7a62789f49743d51ae6dbb31e37cbbc44ddf547c20d148807eec0ae92458fa5",
+  "run-3.json": "9043bbfe423fadd2baf969d7147d2d0f4bcb3754e1b1f1965888f4a949423997",
+  "source-review.json": "d51aece4931d5d07810db4ba2931b3dbf23aac8ddd93271499c1124e96a3a56b",
+  "specialist-verification.json": "82353075b5235f04db873c2f7fc4b8f70f997edabc40d1faf1b2805b1a0cc3f6",
+  "verification.json": "97f179ad889ecc55c0dced0c164e77aaace8ca49e20b4e9cff9b23323724f81a",
+  "verify_records.py": "c503fa911e85a723f4e558e459f86e752a1ef1f727d0fc9f51bc3d2356f400c9"
+}
