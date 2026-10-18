@@ -1,0 +1,43 @@
+{
+  "source_sha256": "1387f65ce5ff6eb9906f52cca3311cd7be274afa16ceaab1f1d208c68a08b4cb",
+  "unchanged_source": true,
+  "parameters_tuned_on_these_results": false,
+  "gpu": "NVIDIA A100-SXM4-80GB, GPU-869d5cba-ca95-4ed6-fc5d-9daf9cd8680a",
+  "sandboxed": true,
+  "external_diagnostic_not_competition_qualification": true,
+  "datasets": {
+    "mnist-test": {
+      "unique_query_images": 10000,
+      "calls": 3,
+      "predictions": 30000,
+      "correct": 29528,
+      "error_pct": 1.5733333333333333,
+      "accuracy_pct": 98.42666666666666,
+      "per_call_error_pct": [
+        1.6,
+        1.49,
+        1.63
+      ],
+      "calls_above_1_90_percent": 0,
+      "mean_gpu_ms": 898.3920694986979
+    },
+    "qmnist-extra": {
+      "unique_query_images": 50000,
+      "calls": 5,
+      "predictions": 50000,
+      "correct": 49074,
+      "error_pct": 1.852,
+      "accuracy_pct": 98.148,
+      "per_call_error_pct": [
+        1.74,
+        1.64,
+        1.94,
+        1.92,
+        2.02
+      ],
+      "calls_above_1_90_percent": 3,
+      "mean_gpu_ms": 898.52578125
+    }
+  },
+  "max_abs_unexplained_ms": 7.902303978837381
+}

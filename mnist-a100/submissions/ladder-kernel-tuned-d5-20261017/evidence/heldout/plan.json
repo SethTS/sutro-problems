@@ -1,0 +1,27 @@
+{
+  "no_parameter_changes": true,
+  "no_selection_on_these_results": true,
+  "labelled_training_rows_per_call": 10000,
+  "official_test_seeds": [
+    627101,
+    627102,
+    627103
+  ],
+  "qmnist_extra_seeds": [
+    627201,
+    627202,
+    627203,
+    627204,
+    627205
+  ],
+  "qmnist_query_indices": "Random permutation of 10000..59999 with seed 627000, split into five disjoint 10000-row cohorts.",
+  "preprocessing": "Canonical area average 28x28->9x9, train-only PCA whitening to 60D, fresh Haar rotation and label permutation.",
+  "workers": "One fresh canonical sandbox worker per call, foreign Fashion warm-up, complete training and prediction timed.",
+  "candidates": [
+    {
+      "name": "frozen_d5",
+      "function": "ladder_kernel",
+      "sha256": "1387f65ce5ff6eb9906f52cca3311cd7be274afa16ceaab1f1d208c68a08b4cb"
+    }
+  ]
+}

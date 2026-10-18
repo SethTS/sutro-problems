@@ -1,0 +1,16 @@
+{
+  "sha256": "1387f65ce5ff6eb9906f52cca3311cd7be274afa16ceaab1f1d208c68a08b4cb",
+  "bytes": 20411,
+  "changed_constants": {
+    "(STEPS, BATCH, LR, BETA1, DECAY_START)": {
+      "before": "(2300, 1000, 0.011, 0.8, 2 / 3)",
+      "after": "(800, 2000, 0.011, 0.8, 2 / 3)"
+    }
+  },
+  "review_flags": [
+    "20,411 bytes, close to the 20,480-byte limit"
+  ],
+  "base_source_sha256": "039bde8b8576a67dbfd20017d7b70cbb2fce59f0927d0fc9f989c1bb6db45728",
+  "base_pr": "https://github.com/cybertronai/sutro-problems/pull/121",
+  "upstream_commit": "c269e4baa95f2bd96e05dee2107a3330064e8daa"
+}

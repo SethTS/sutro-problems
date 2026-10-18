@@ -1,0 +1,52 @@
+{
+  "passed": 3,
+  "attempted": 3,
+  "source_sha256": "1387f65ce5ff6eb9906f52cca3311cd7be274afa16ceaab1f1d208c68a08b4cb",
+  "rows": [
+    {
+      "run": "run-1.json",
+      "device": "NVIDIA A100-SXM4-80GB",
+      "mnist_correct": 108074,
+      "margin_labels": 164,
+      "min_gpu_ms": 892.5675659179688,
+      "max_gpu_ms": 895.6354370117188,
+      "max_abs_unexplained_ms": 6.081485613998325,
+      "energy_calls": 23,
+      "energy_mnist_error_pct": 1.7765217391304322
+    },
+    {
+      "run": "run-2.json",
+      "device": "NVIDIA A100-SXM4-80GB",
+      "mnist_correct": 107992,
+      "margin_labels": 82,
+      "min_gpu_ms": 897.2646484375,
+      "max_gpu_ms": 901.5643920898438,
+      "max_abs_unexplained_ms": 6.639643062599134,
+      "energy_calls": 23,
+      "energy_mnist_error_pct": 1.8591304347826076
+    },
+    {
+      "run": "run-3.json",
+      "device": "NVIDIA A100-SXM4-80GB",
+      "mnist_correct": 108027,
+      "margin_labels": 117,
+      "min_gpu_ms": 898.0367431640625,
+      "max_gpu_ms": 903.2662963867188,
+      "max_abs_unexplained_ms": 4.814109208540003,
+      "energy_calls": 23,
+      "energy_mnist_error_pct": 1.8100000000000005
+    }
+  ],
+  "median_ms": 899.1913396661931,
+  "time_reduction_pct": 50.54191089446134,
+  "speedup": 2.0219139438770046,
+  "median_energy_mj": 155269.57191985755,
+  "energy_reduction_pct": 31.403444798309543,
+  "pooled_correct": 324093,
+  "pooled_total": 330000,
+  "pooled_error_pct": 1.7900000000000027,
+  "all_timed_calls": 45,
+  "three_distinct_gpu_uuids": true,
+  "no_attempt_replaced": true,
+  "maintainer_review_pending": true
+}

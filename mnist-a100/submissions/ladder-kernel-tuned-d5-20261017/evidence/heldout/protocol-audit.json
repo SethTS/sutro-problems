@@ -1,0 +1,11 @@
+{
+  "unchanged_pipeline": {
+    "evaluate.py": "3f84c6e9fe1380150f05b97b2ceb37a026baba9ef3f40bd904ce6dbdfac1e296",
+    "checks.py": "963a4cfd9ed4c2da0de7b32da718e27fceed6d4d296b28472dfe06c95fe7a670",
+    "data-manifest.json": "e294ebb00ee9afd2986f3c78cc2df41761dab6456176ef43aeb3e3e48e0de85a"
+  },
+  "frozen_source_sha256": "1387f65ce5ff6eb9906f52cca3311cd7be274afa16ceaab1f1d208c68a08b4cb",
+  "selected_before_results": true,
+  "data_checks_passed": true,
+  "no_parameter_tuning": true
+}
