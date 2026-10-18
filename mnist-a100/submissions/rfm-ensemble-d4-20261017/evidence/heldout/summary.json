@@ -1,0 +1,42 @@
+{
+  "source_sha256": "0bb2b7b4852db2bda7726029d7f211d109473d1b7c672a8256d6ce86daa94bef",
+  "source_unchanged": true,
+  "no_parameter_tuning_on_these_results": true,
+  "datasets": {
+    "mnist-test": {
+      "calls": 3,
+      "unique_query_images": 10000,
+      "predictions": 30000,
+      "errors": 634,
+      "error_pct": 2.1133333333333333,
+      "accuracy_pct": 97.88666666666667,
+      "per_call_error_pct": [
+        2.17,
+        2.07,
+        2.1
+      ],
+      "mean_cuda_ms": 219.22030639648438,
+      "min_cuda_ms": 219.20358276367188,
+      "max_cuda_ms": 219.24351501464844
+    },
+    "qmnist-extra": {
+      "calls": 5,
+      "unique_query_images": 50000,
+      "predictions": 50000,
+      "errors": 1191,
+      "error_pct": 2.382,
+      "accuracy_pct": 97.618,
+      "per_call_error_pct": [
+        2.4,
+        2.3,
+        2.06,
+        2.44,
+        2.71
+      ],
+      "mean_cuda_ms": 219.25457763671875,
+      "min_cuda_ms": 219.1820831298828,
+      "max_cuda_ms": 219.31007385253906
+    }
+  },
+  "official_competition_qualification": false
+}
