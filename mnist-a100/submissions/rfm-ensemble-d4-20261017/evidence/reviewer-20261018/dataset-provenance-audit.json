@@ -1,0 +1,55 @@
+{
+  "scope": "Fresh primary-source downloads; independent compressed SHA-256/MD5/Git-blob hashes and gzip IDX sizes/labels matched submitted data manifest.",
+  "qmnist_commit": "94061367ec2e099ea18c553c75727ecf849ddb9b",
+  "verified": true,
+  "files": [
+    {
+      "file": "mnist-test-images.gz",
+      "url": "https://storage.googleapis.com/cvdf-datasets/mnist/t10k-images-idx3-ubyte.gz",
+      "bytes": 1648877,
+      "sha256": "8d422c7b0a1c1c79245a5bcf07fe86e33eeafee792b84584aec276f5a2dbc4e6",
+      "git_blob_sha1": null,
+      "md5": "9fb629c4189551a2d022fa330f9573f3",
+      "verified_remote_bytes": true,
+      "idx_magic": 2051,
+      "examples": 10000,
+      "computed_git_blob_sha1": "5ace8ea93f8d2a3741f4d267954e2ad37e1b3a39"
+    },
+    {
+      "file": "mnist-test-labels.gz",
+      "url": "https://storage.googleapis.com/cvdf-datasets/mnist/t10k-labels-idx1-ubyte.gz",
+      "bytes": 4542,
+      "sha256": "f7ae60f92e00ec6debd23a6088c31dbd2371eca3ffa0defaefb259924204aec6",
+      "git_blob_sha1": null,
+      "md5": "ec29112dd5afa0611ce80d1b7f02629c",
+      "verified_remote_bytes": true,
+      "idx_magic": 2049,
+      "examples": 10000,
+      "computed_git_blob_sha1": "a7e141541c1d08d3f2ed01eae03e644f9e2fd0c5"
+    },
+    {
+      "file": "qmnist-test-images-idx3-ubyte.gz",
+      "url": "https://raw.githubusercontent.com/facebookresearch/qmnist/94061367ec2e099ea18c553c75727ecf849ddb9b/qmnist-test-images-idx3-ubyte.gz",
+      "bytes": 9742279,
+      "sha256": "43fc22bf7498b8fc98de98369d72f752d0deabc280a43a7bcc364ab19e57b375",
+      "git_blob_sha1": "d6d267b6ad716da3979256a1115d70bf914ddd58",
+      "md5": null,
+      "verified_remote_bytes": true,
+      "idx_magic": 2051,
+      "examples": 60000,
+      "computed_git_blob_sha1": "d6d267b6ad716da3979256a1115d70bf914ddd58"
+    },
+    {
+      "file": "qmnist-test-labels-idx1-ubyte.gz",
+      "url": "https://raw.githubusercontent.com/facebookresearch/qmnist/94061367ec2e099ea18c553c75727ecf849ddb9b/qmnist-test-labels-idx1-ubyte.gz",
+      "bytes": 29026,
+      "sha256": "3f384004f51536c2a29f2ce4d36388ee6cb8fff45bc3ad0cc588a86f2cc76375",
+      "git_blob_sha1": "652e340afbba5039fba9a5d0dc2312ebfb3d2036",
+      "md5": null,
+      "verified_remote_bytes": true,
+      "idx_magic": 2049,
+      "examples": 60000,
+      "computed_git_blob_sha1": "652e340afbba5039fba9a5d0dc2312ebfb3d2036"
+    }
+  ]
+}

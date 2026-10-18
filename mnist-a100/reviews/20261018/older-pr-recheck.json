@@ -1,0 +1,160 @@
+{
+  "review_date": "2026-10-18",
+  "checked_at_utc": "2026-10-18T18:36:59.155531+00:00",
+  "repository": "cybertronai/sutro-problems",
+  "remote_main_sha": "c269e4baa95f2bd96e05dee2107a3330064e8daa",
+  "comparison_audit": "/Users/yaroslavvb/git/sutro-problems/output/pr-review-20261015/older-pr-independent-recheck.json",
+  "new_gpu_runs": 0,
+  "external_mutations": false,
+  "original_checkout_modified": false,
+  "canonical_main": {
+    "mnist-a100/mnist.py": {
+      "sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+      "unchanged_from_oct14_and_oct15": true
+    },
+    "mnist-a100/run_modal.py": {
+      "sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+      "unchanged_from_oct14_and_oct15": true
+    }
+  },
+  "prs": [
+    {
+      "number": 110,
+      "url": "https://github.com/cybertronai/sutro-problems/pull/110",
+      "state": "open",
+      "head_sha": "95368c5469238ff5d6c3c0633bf8831947454c84",
+      "source_path": "mnist/submissions/mnist-medium-rff-ridge-20261006/rff_ridge.py",
+      "source_sha256": "c9ce69223b6d1625858d298cf462207435edac7026fbcf3bcce8040d48537ea6",
+      "source_bytes": 9845,
+      "head_unchanged_from_oct15": true,
+      "source_unchanged_from_oct15": true,
+      "body_unchanged_from_oct15": true,
+      "updated_at": "2026-10-07T20:36:20Z",
+      "discussion_counts": {
+        "discussion": 0,
+        "inline": 0,
+        "reviews": 0
+      },
+      "github_mergeable": true,
+      "github_mergeable_state": "clean",
+      "new_discussion_or_review_evidence": false,
+      "recommendation": "leave open unmerged",
+      "reason": "Keep separate non-record branch: requested A100 diagnostic completed October 8 on the unchanged source, and current mnist policy keeps non-record results separate from main.",
+      "completed_diagnostic": {
+        "date": "2026-10-08",
+        "hardware": "NVIDIA A100-SXM4-40GB",
+        "median_gpu_ms": 193.52409904233872,
+        "median_above_idle_mj": 19854.014291898562,
+        "scope": "Three measurement rounds on one existing draw, not a fresh eleven-draw qualification. GPU board energy; original harness scope/sham caveats retained."
+      }
+    },
+    {
+      "number": 114,
+      "url": "https://github.com/cybertronai/sutro-problems/pull/114",
+      "state": "open",
+      "head_sha": "74dc7ad1eb3f0d5d4fd4c75ec1394b6fb8e1e9c1",
+      "source_path": "mnist-a100/submissions/native-mlp-d4-20261007/leancompile-repair/submission.py",
+      "source_sha256": "c5ed1d8ffb115cc58a6a6b4ac468b07c780d773b3f8d7387ec3f295b6f1b3eb1",
+      "source_bytes": 19538,
+      "head_unchanged_from_oct15": true,
+      "source_unchanged_from_oct15": true,
+      "body_unchanged_from_oct15": true,
+      "updated_at": "2026-10-09T20:16:47Z",
+      "discussion_counts": {
+        "discussion": 0,
+        "inline": 0,
+        "reviews": 0
+      },
+      "github_mergeable": true,
+      "github_mergeable_state": "clean",
+      "new_discussion_or_review_evidence": false,
+      "recommendation": "leave open unmerged",
+      "reason": "Hold for unresolved accuracy reproduction: prior exact-source independent group passed 1/3; two complete runs missed D4 accuracy by 64 and 4 labels. Author 3/3 remains separately valid."
+    },
+    {
+      "number": 119,
+      "url": "https://github.com/cybertronai/sutro-problems/pull/119",
+      "state": "open",
+      "head_sha": "4f2ea071a78da77a84e1de0f5551ec5f71f6ceec",
+      "source_path": "mnist-a100/submissions/tangent-refresh400-d5-20261012/submission.py",
+      "source_sha256": "6f0e1a109ece2679f8ee1e0527cd98abc6a58e664d11fc6033740765ba4a990f",
+      "source_bytes": 10883,
+      "head_unchanged_from_oct15": true,
+      "source_unchanged_from_oct15": true,
+      "body_unchanged_from_oct15": true,
+      "updated_at": "2026-10-12T23:36:49Z",
+      "discussion_counts": {
+        "discussion": 0,
+        "inline": 0,
+        "reviews": 0
+      },
+      "github_mergeable": true,
+      "github_mergeable_state": "clean",
+      "new_discussion_or_review_evidence": false,
+      "recommendation": "leave open unmerged",
+      "reason": "Hold for unresolved warm-up reproducibility: prior exact-source independent group passed 1/3, with two later 90-second implementation watchdog failures. Published prose still says 180 seconds; underlying phase/cause remains undiagnosed. Author 3/3 remains separately valid."
+    },
+    {
+      "number": 122,
+      "url": "https://github.com/cybertronai/sutro-problems/pull/122",
+      "state": "open",
+      "head_sha": "f63a5521d0bd24fea490b91d1056ea5d6491bd8d",
+      "source_path": "mnist-a100/submissions/tangent-relu-w128-bias-d5-20261013/submission.py",
+      "source_sha256": "d3bc8a2bf543c8db7f90e57d9b974532eb4e15d3f5415c1f79015ac34a2075a9",
+      "source_bytes": 15223,
+      "head_unchanged_from_oct15": true,
+      "source_unchanged_from_oct15": true,
+      "body_unchanged_from_oct15": true,
+      "updated_at": "2026-10-13T22:34:10Z",
+      "discussion_counts": {
+        "discussion": 0,
+        "inline": 0,
+        "reviews": 0
+      },
+      "github_mergeable": true,
+      "github_mergeable_state": "clean",
+      "new_discussion_or_review_evidence": false,
+      "recommendation": "leave open unmerged",
+      "reason": "Hold for unresolved accuracy reproduction: October 14 independent reviewer group passed 1/3; complete runs missed D5 accuracy by 28 and 74 labels. All earlier author groups and reviewer outcomes remain retained.",
+      "prior_initial_reviewer_group": {
+        "passed_runs": 1,
+        "runs": 3,
+        "accuracy_margins_labels": [
+          -28,
+          98,
+          -74
+        ],
+        "qualified_median_ms": null,
+        "qualified_median_energy_mj": null,
+        "observed_energy_gpu_uuids": 1
+      }
+    }
+  ],
+  "published_rule_checks": {
+    "official_three_run_example": {
+      "line": 30,
+      "text": "python run_modal.py example.py:mlp --difficulty 1 --runs 3   # official: three Modal A100-80GB runs, median"
+    },
+    "warmup_advertised_prose": {
+      "line": 64,
+      "text": "  call is limited to 60 s, each warm-up to 180 s."
+    },
+    "warmup_implemented_limits": {
+      "line": 127,
+      "text": "MAX_CALL_MS, WARMUP_MAX_CALL_MS, LATER_WARMUP_MAX_CALL_MS = 60000, 180000, 90000"
+    },
+    "warmup_budget_selection": {
+      "line": 288,
+      "text": "                              (WARMUP_MAX_CALL_MS if index == 0 else LATER_WARMUP_MAX_CALL_MS) / 1e3)"
+    },
+    "nonrecord_separate_branch_policy": {
+      "line": 197,
+      "text": "Open a pull request against `main` only for a result that qualifies for a table\nabove, with every reported metric measured or shown as an em dash. Keep\nexperiments, prototypes, measurement-harness proposals, and non-record results\non a separate branch rather than merging them into `main`."
+    },
+    "qualification_boundary": "Published MNIST-A100 instructions specify three official Modal runs and median. They do not explicitly require a second three-of-three maintainer batch or impose a permanent source ban after a failed batch. Existing holds are reviewer judgements based on contrary actual reproduction evidence. For #119, advertised 180-second warm-up prose and implemented 90-second later-worker watchdog remain distinct; do not describe it as an unambiguous advertised-rule violation."
+  },
+  "any_changed_evidence_resolving_holds": false,
+  "all_heads_sources_bodies_unchanged": true,
+  "all_discussion_reviews_empty": true,
+  "remote_main_stable_during_read": true
+}

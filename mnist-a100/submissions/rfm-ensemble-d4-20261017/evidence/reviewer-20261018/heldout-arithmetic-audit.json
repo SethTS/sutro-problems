@@ -1,0 +1,31 @@
+{
+  "scope": "Independent arithmetic and seeded-index reconstruction of external author records; no new GPU external-test reproduction. No qualification pooling.",
+  "heldout": [
+    {
+      "dataset": "mnist-test",
+      "calls": 3,
+      "errors": 634,
+      "predictions": 30000,
+      "unique_query_images": 10000,
+      "error_pct": 2.1133333333333333,
+      "mean_cuda_ms": 219.22030639648438,
+      "index_hashes_reproduced": true
+    },
+    {
+      "dataset": "qmnist-extra",
+      "calls": 5,
+      "errors": 1191,
+      "predictions": 50000,
+      "unique_query_images": 50000,
+      "error_pct": 2.382,
+      "mean_cuda_ms": 219.25457763671875,
+      "index_hashes_reproduced": true
+    }
+  ],
+  "stdout_matches_records": true,
+  "source_hashes_match": true,
+  "all_query_cohorts_correct": true,
+  "additional_digits_exclude_first_10000": true,
+  "no_tuning_claim_independently_verifiable": false,
+  "competition_qualification": false
+}

@@ -1,5 +1,7 @@
 {
   "author-evidence-audit.json": "0a4978c054ebc2eb0ff69053f558188f76e6efaa480100c29365ccc7dcb4a4d4",
+  "dataset-provenance-audit.json": "024e4ca3779996eb356693fcd74ee6e778806f80c10d6f616ab6a10dd5098c8f",
+  "heldout-arithmetic-audit.json": "0993202a4de3f82fd6dc513946b01e7861e81aaefa7c320f13a4642a23b23006",
   "manifest.json": "11e6f7df0a2452971d40d28d88fe5f5182bda20138ead4b25823ef3485b6417b",
   "measurement-plan.json": "7da0176eece9af6758752f8a5a59c34fabcaae06ac5ebb482bd566052bd5bd89",
   "parent-author-record-audit.json": "f1a25146e2200c86f96cf39ef1690ece1312a031811d81c43d491e2b9eaaef4e",

@@ -1,0 +1,42 @@
+{
+  "pr": 124,
+  "head": "7899be443fad87618fd8ff338be17265e247b59e",
+  "main_head": "c269e4baa95f2bd96e05dee2107a3330064e8daa",
+  "folder": "ladder-kernel-tuned-d5-20261017",
+  "source_path": "/Users/yaroslavvb/git/sutro-problems/output/pr-review-20261018/pr124/source/mnist-a100/submissions/ladder-kernel-tuned-d5-20261017/submission.py",
+  "function": "ladder_kernel",
+  "source_sha256": "1387f65ce5ff6eb9906f52cca3311cd7be274afa16ceaab1f1d208c68a08b4cb",
+  "source_bytes": 20411,
+  "upstream_source_sha256": "039bde8b8576a67dbfd20017d7b70cbb2fce59f0927d0fc9f989c1bb6db45728",
+  "scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+  "runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+  "difficulty": 5,
+  "runs": 3,
+  "energy_enabled": true,
+  "initial_reviewer_set": true,
+  "failed_outcomes_replaced": false,
+  "replacement_runs": 0,
+  "local_scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+  "local_runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+  "modal_app_id": "ap-c5Tst8TNgvSnxLVppXEznL",
+  "modal_app_url": "https://modal.com/apps/yaroslavvb/main/ap-c5Tst8TNgvSnxLVppXEznL",
+  "started_unix": 1792348633.523041,
+  "command": [
+    "/tmp/sutro-pr-review-20261018-controller/bin/python",
+    "run_modal.py",
+    "/Users/yaroslavvb/git/sutro-problems/output/pr-review-20261018/pr124/source/mnist-a100/submissions/ladder-kernel-tuned-d5-20261017/submission.py:ladder_kernel",
+    "--difficulty",
+    "5",
+    "--runs",
+    "3",
+    "--json",
+    "/Users/yaroslavvb/git/sutro-problems/output/pr-review-20261018/pr124/modal"
+  ],
+  "raw_record_sha256": {
+    "run-1.json": "77a41287ae120255fd505a526d4a407e54221f0eaebc655a49dad1a5055cd46d",
+    "run-2.json": "c9405d390e3312355aa27f59bef2fc99668f41440b550422bc950874123431b3",
+    "run-3.json": "14230985edb2aca7f996d6d8f37e571c0c989519c91d910e0ace5b5da83fa5cc"
+  },
+  "finished_unix": 1792349233.218837,
+  "controller_exit_code": 0
+}

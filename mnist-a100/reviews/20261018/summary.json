@@ -1,0 +1,85 @@
+{
+  "review_date": "2026-10-18",
+  "repository": "cybertronai/sutro-problems",
+  "frozen_main": "c269e4baa95f2bd96e05dee2107a3330064e8daa",
+  "fresh_canonical_modal_runs": 6,
+  "fresh_score_passes": 6,
+  "fresh_valid_energy_measurements": 6,
+  "fresh_timed_calls": 90,
+  "learner_source_changes_during_review": false,
+  "failed_runs_replaced": false,
+  "reviewer_groups_run_once": true,
+  "merged": [
+    {
+      "pull_request": 123,
+      "difficulty": 4,
+      "source_sha256": "0bb2b7b4852db2bda7726029d7f211d109473d1b7c672a8256d6ce86daa94bef",
+      "reviewed_head": "6348d2768bc48413828b75fba9de6f85ff4479f8",
+      "median_ranked_ms": 219.1943702697754,
+      "median_energy_mj": 42617.16840253514,
+      "aggregate_mnist_error_pct": 2.273939393939394,
+      "function": "kernel_ensemble",
+      "best_record": true,
+      "evidence": "mnist-a100/submissions/rfm-ensemble-d4-20261017/evidence/reviewer-20261018",
+      "passed_runs": 3,
+      "energy_valid_runs": 3,
+      "reviewer_accuracy_margins_labels": [
+        18,
+        10,
+        58
+      ],
+      "distinct_gpu_uuids": 3,
+      "url": "https://github.com/cybertronai/sutro-problems/pull/123",
+      "accuracy_scope": "Minimum reviewer-run margin: 10 labels. Passing these recorded draws does not guarantee future random draws."
+    },
+    {
+      "pull_request": 124,
+      "difficulty": 5,
+      "source_sha256": "1387f65ce5ff6eb9906f52cca3311cd7be274afa16ceaab1f1d208c68a08b4cb",
+      "reviewed_head": "7899be443fad87618fd8ff338be17265e247b59e",
+      "median_ranked_ms": 897.469071821733,
+      "median_energy_mj": 154288.60782909038,
+      "aggregate_mnist_error_pct": 1.813939393939394,
+      "function": "ladder_kernel",
+      "best_record": true,
+      "evidence": "mnist-a100/submissions/ladder-kernel-tuned-d5-20261017/evidence/reviewer-20261018",
+      "passed_runs": 3,
+      "energy_valid_runs": 3,
+      "reviewer_accuracy_margins_labels": [
+        155,
+        91,
+        38
+      ],
+      "distinct_gpu_uuids": 3,
+      "url": "https://github.com/cybertronai/sutro-problems/pull/124",
+      "attribution": "@islamborghini tuning of @spartanhaden PR #121; executable changes only batch 1,000 to 2,000 and steps 2,300 to 800."
+    }
+  ],
+  "left_open": [
+    {
+      "pull_request": 110,
+      "reviewed_head": "95368c5469238ff5d6c3c0633bf8831947454c84",
+      "head_unchanged": true,
+      "reason": "Explicitly non-record; the separate-branch policy applies. The requested A100 diagnostic was completed October 8."
+    },
+    {
+      "pull_request": 114,
+      "reviewed_head": "74dc7ad1eb3f0d5d4fd4c75ec1394b6fb8e1e9c1",
+      "head_unchanged": true,
+      "reason": "Unchanged source: previous reviewer runs missed D4 accuracy by 64 and 4 labels. The author three-pass set remains separate."
+    },
+    {
+      "pull_request": 119,
+      "reviewed_head": "4f2ea071a78da77a84e1de0f5551ec5f71f6ceec",
+      "head_unchanged": true,
+      "reason": "Unchanged source: two later reviewer warm-ups exceeded the implemented 90-second limit. Author runs pass; documentation says 180 seconds while code allows 90 seconds for later workers. The cause remains unresolved."
+    },
+    {
+      "pull_request": 122,
+      "reviewed_head": "f63a5521d0bd24fea490b91d1056ea5d6491bd8d",
+      "head_unchanged": true,
+      "reason": "Unchanged source: the October 14 reviewer group passed 1/3, with D5 accuracy misses of 28 and 74 labels. All author groups and reviewer failures remain retained."
+    }
+  ],
+  "scope_note": "New-source review used one fixed three-run group for each source. Author evidence and external generalization diagnostics remain separate. Older exact-source evidence was rechecked without replacement GPU batches. Published instructions do not impose a mandatory second reviewer batch or permanent source exclusion; older holds are reviewer judgements about unresolved contrary evidence or the non-record separate-branch policy."
+}

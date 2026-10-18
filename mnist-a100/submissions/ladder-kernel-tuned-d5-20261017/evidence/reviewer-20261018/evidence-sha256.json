@@ -1,0 +1,16 @@
+{
+  "ast-diff-audit.json": "6bb82f6388317c12173e53cd72516a914aa95df6d210e816a9d96d3b7b740f95",
+  "author-record-audit.json": "6b8db413c9a5f5d230ea11de57d7b3a3dd74600b46d508891fa8f0a6fcddc6d4",
+  "heldout-record-audit.json": "f2ea6ae7e72af616c628b41607146f85330967475976bb5edf5c3525ce18b85d",
+  "manifest.json": "951963a27075ce10bfa6c24c303f81fa40375e6ec347345a4189c5c9887b217c",
+  "parent-author-record-audit.json": "8209441a6fa29ba3094714725d910b4a010a80292bd39896969c7f2d6be9341b",
+  "review-decision.json": "4e13dab4f2d9e589fe0d01409fddd351c38b16496d6b1ffddc425b95dd145346",
+  "run-1.json": "77a41287ae120255fd505a526d4a407e54221f0eaebc655a49dad1a5055cd46d",
+  "run-2.json": "c9405d390e3312355aa27f59bef2fc99668f41440b550422bc950874123431b3",
+  "run-3.json": "14230985edb2aca7f996d6d8f37e571c0c989519c91d910e0ace5b5da83fa5cc",
+  "source-manifest.json": "75a03a9f6aaa8ccbb3deeb75795b178bddcf7c9ad4414b3e2a25acf0b38f1022",
+  "source-review.json": "3e7d482462079fd22ddfddd54848d55bbf4f59dff5ca2b4109d100b3038b951a",
+  "specialist-verification.json": "7eb6002e98be416988e53228c8d27b152bbc2a5b4c624cb226efbe662c77a370",
+  "verification.json": "83259fb5b578e84e667039a67a42ca10357d364012613c12c8c0d0bd3e4eb588",
+  "verify_records.py": "c503fa911e85a723f4e558e459f86e752a1ef1f727d0fc9f51bc3d2356f400c9"
+}

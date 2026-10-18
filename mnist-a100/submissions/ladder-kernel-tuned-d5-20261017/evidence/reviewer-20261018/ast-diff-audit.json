@@ -1,0 +1,30 @@
+{
+  "source_sha256": "1387f65ce5ff6eb9906f52cca3311cd7be274afa16ceaab1f1d208c68a08b4cb",
+  "upstream_sha256": "039bde8b8576a67dbfd20017d7b70cbb2fce59f0927d0fc9f989c1bb6db45728",
+  "changed_assignments": [
+    {
+      "line": 42,
+      "target": "(STEPS, BATCH, LR, BETA1, DECAY_START)",
+      "before": "(2300, 1000, 0.011, 0.8, 2 / 3)",
+      "after": "(800, 2000, 0.011, 0.8, 2 / 3)"
+    }
+  ],
+  "normalized_ast_identical": true,
+  "source_gate_passed": true,
+  "review_flags": [
+    "20,411 bytes, close to the 20,480-byte limit"
+  ],
+  "upstream_source_credits_preserved": true,
+  "scope": "No learner import; AST comparison to actual frozen upstream bytes. Removes module docstring and normalizes the single changed constants assignment.",
+  "author_patch_matches_independent_diff": true,
+  "only_executable_scalar_changes": {
+    "STEPS": {
+      "before": 2300,
+      "after": 800
+    },
+    "BATCH": {
+      "before": 1000,
+      "after": 2000
+    }
+  }
+}

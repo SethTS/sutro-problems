@@ -1,0 +1,103 @@
+{
+  "pr": 124,
+  "head": "7899be443fad87618fd8ff338be17265e247b59e",
+  "main_head": "c269e4baa95f2bd96e05dee2107a3330064e8daa",
+  "folder": "ladder-kernel-tuned-d5-20261017",
+  "source_path": "/Users/yaroslavvb/git/sutro-problems/output/pr-review-20261018/pr124/source/mnist-a100/submissions/ladder-kernel-tuned-d5-20261017/submission.py",
+  "function": "ladder_kernel",
+  "source_sha256": "1387f65ce5ff6eb9906f52cca3311cd7be274afa16ceaab1f1d208c68a08b4cb",
+  "source_bytes": 20411,
+  "upstream_source_sha256": "039bde8b8576a67dbfd20017d7b70cbb2fce59f0927d0fc9f989c1bb6db45728",
+  "scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+  "runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+  "reviewed_head": "7899be443fad87618fd8ff338be17265e247b59e",
+  "checked_at_utc": "2026-10-18T18:39:09.353036+00:00",
+  "entrant": "islamborghini",
+  "source_gate_passed": true,
+  "review_flags": [
+    "20,411 bytes, close to the 20,480-byte limit"
+  ],
+  "static_blockers": [],
+  "imports": [
+    {
+      "line": 25,
+      "module": "math"
+    },
+    {
+      "line": 26,
+      "module": "os"
+    },
+    {
+      "line": 28,
+      "module": "torch"
+    },
+    {
+      "line": 29,
+      "module": "torch.nn.functional"
+    },
+    {
+      "line": 475,
+      "module": "mnist"
+    }
+  ],
+  "function_lines": {
+    "chol": 56,
+    "rownorm": 60,
+    "aug": 64,
+    "kern": 73,
+    "h3_ops": 78,
+    "panels": 86,
+    "upd_comp": 139,
+    "lfac": 152,
+    "pcg": 160,
+    "sqrtm": 180,
+    "agop": 193,
+    "sym_scores": 212,
+    "teacher": 261,
+    "bn": 286,
+    "lrelu": 291,
+    "combine": 295,
+    "mm": 306,
+    "ladder_kernel": 445
+  },
+  "scope": "Manual full source and upstream review; AST comparison; unchanged canonical check_source/review_flags. Learner and author verifiers/helpers were never imported or executed locally. Raw author evidence is independently reconstructed; separate fresh reviewer Modal group supplies independent GPU reproduction.",
+  "upstream_attribution": {
+    "base_entry": "mnist-a100/submissions/ladder-kernel-d5-20261012/submission.py",
+    "base_pr": 121,
+    "base_commit": "c269e4baa95f2bd96e05dee2107a3330064e8daa",
+    "base_source_sha256": "039bde8b8576a67dbfd20017d7b70cbb2fce59f0927d0fc9f989c1bb6db45728",
+    "base_author": "spartanhaden",
+    "derivative_author": "islamborghini",
+    "changes": "Only STEPS 2300\u2192800 and BATCH 1000\u21922000 plus step count text in module docstring. All other executable AST nodes match the actual base source.",
+    "credits": "README opens with explicit spartanhaden upstream attribution and PR #121 link; source preserves original credits to SethTS, Rasmus et al. 2015 and islamborghini kernel-PCG teacher.",
+    "normalized_executable_ast_identical": true
+  },
+  "fresh_teacher": "teacher copies all three current inputs to static owned clones before each graph replay. sym_scores initializes transform to identity, PCG coefficients to zero, rebuilds metric and kernel fits from current train rows/labels, then recomputes current-query pseudo-label targets and metric. Graph caches store workspaces/instructions, not reused fitted state.",
+  "fresh_student": "ladder_kernel computes current metric coordinates, copies current labelled input/one-hot labels, train+query pool and true-train/teacher-query targets into owned buffers, then net.reset reinitializes encoder/decoder/combiners/bias/gain, zeroes Adam first/second moments and step, resets update counter, fills loss-sampling scores with 1, and reconstructs minibatch ordering and RNG before 800 replays. Captured step overwrites scalar LR from reset counter before optimizer use.",
+  "input_and_label_integrity": "Caller tensors never receive in-place writes; teacher clones them and student operates on derived owned buffers. No test truth enters learner. Query inputs are transductive, used only for predicted pseudo labels, softened teacher targets and unsupervised Ladder reconstruction.",
+  "fixed_work": "Same kernel metrics/CG schedule, 800 training steps and clean prediction structure for every dataset. Branches select cache initialization by shape/device or current-query pseudo confidence; no dataset identity, clocks, scorer introspection, parent access or output reuse.",
+  "warmup_and_streams": "Warmup compiles the loss and captures teacher/student graphs. Side streams wait on current stream and current stream waits on them before results used. All fresh teacher fitting, student initialization/training and prediction occur in timed calls. Compilation behavior and canonical warmup limits are tested by initial Modal group.",
+  "prior_review": "Interpretable scalar hyperparameters, architecture/index lists and ordinary Inductor options only; no pretrained weights, encoded data, decoders, network activity, dataset file access or harness modifications. os use only points compiler cache paths under /tmp at call time.",
+  "canonical_rules": {
+    "version": "mnist-a100/1.2.0",
+    "source_bytes_limit": 20480,
+    "D5_run_error_at_most_pct": 1.9,
+    "worst_draw_error_at_most_pct": 3.4,
+    "holdout_accuracy_at_least_pct": 15,
+    "protocol": "11 MNIST + 4 foreign holdout calls, each fresh sandbox worker; slower dataset mean ranked with parent-clock floor; per-call/group clock checks and within-dataset timing dispersion.",
+    "qualification_for_this_review": "One initial independent canonical Modal three-run group; all three complete runs must pass for a reviewer median. Failed outcomes are never dropped or replaced.",
+    "energy": "Optional independent column. Energy validation failure cannot invalidate the canonical time; unavailable telemetry leaves energy median blank."
+  },
+  "author_evidence_provenance": {
+    "scope": "Supplied raw official records bind exact source hash and scorer version; independent arithmetic is not execution attestation.",
+    "filename_note": "Author records call the same hash ladder_d5_800.py rather than repository submission.py. Content identity matches all records; function is ladder_kernel.",
+    "missing_execution_provenance": "No author official Modal app ID, original controller log, scorer/runner SHA manifest, run timestamps or tamper-proof attempt log is submitted. Author claims first and only official set; chronology cannot be proven solely from snapshot. Independent reviewer group supplies separate preserved execution.",
+    "heldout": "Eight external diagnostics are separate from competition qualification. Arithmetic, cohort hashes and helper-file hashes reconstructed without running author code; no dataset download or independent diagnostic GPU rerun performed. No-before-selection or no-tuning chronology attestation possible from snapshot.",
+    "development_scope": "README claims 14 screened configurations and a frozen 24-draw confirmation on seeds 719001\u2013719024; no raw development/confirmation records are included in this PR, so those claims were not independently reconstructed and are not used for qualification."
+  },
+  "prior_exact_source_independent_set_found": false,
+  "reviewer_initial_set_launched": true,
+  "modal_app_id": "ap-c5Tst8TNgvSnxLVppXEznL",
+  "replacement_runs": 0,
+  "source_changed": false
+}

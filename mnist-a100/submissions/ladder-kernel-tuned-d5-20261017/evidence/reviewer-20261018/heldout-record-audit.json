@@ -1,0 +1,113 @@
+{
+  "scope": "Raw author diagnostic record arithmetic, helper hash consistency, and deterministic cohort/training-index hashes. No author code executed, no datasets downloaded, no independent GPU or dataset checksum attestation. Not competition qualification.",
+  "checks": {
+    "success_return": true,
+    "exactly_eight_calls": true,
+    "source_hash": true,
+    "sandbox": true,
+    "each_10000": true,
+    "gpu": true,
+    "stdout_rows_match": true,
+    "helper_hashes_match_declared": true,
+    "disjoint_fifty_thousand_extra_indices": true,
+    "deterministic_cohorts_and_training_indices_match": true,
+    "mnist-test_summary_matches": true,
+    "qmnist-extra_summary_matches": true
+  },
+  "passed": true,
+  "groups": {
+    "mnist-test": {
+      "calls": 3,
+      "correct": 29528,
+      "predictions": 30000,
+      "error_pct": 1.5733333333333333,
+      "mean_gpu_ms": 898.3920694986979,
+      "per_call_error_pct": [
+        1.6,
+        1.49,
+        1.63
+      ],
+      "calls_above_1_90_percent": 0,
+      "unique_query_images": 10000
+    },
+    "qmnist-extra": {
+      "calls": 5,
+      "correct": 49074,
+      "predictions": 50000,
+      "error_pct": 1.852,
+      "mean_gpu_ms": 898.52578125,
+      "per_call_error_pct": [
+        1.74,
+        1.64,
+        1.94,
+        1.92,
+        2.02
+      ],
+      "calls_above_1_90_percent": 3,
+      "unique_query_images": 50000
+    }
+  },
+  "cohorts": [
+    {
+      "dataset": "mnist-test",
+      "seed": 627101,
+      "matches_record": true,
+      "query_indices_sha256": "9e1c19b3fdc185411bd1a987deb6a9fda2531116aac060a84c4d878854d1c099",
+      "training_indices_sha256": "fe995b7d7cbe26ee6c68422effe8f7ba47ccb5e611a5cfcbcbda402c8739cdca"
+    },
+    {
+      "dataset": "mnist-test",
+      "seed": 627102,
+      "matches_record": true,
+      "query_indices_sha256": "9e1c19b3fdc185411bd1a987deb6a9fda2531116aac060a84c4d878854d1c099",
+      "training_indices_sha256": "59563b87c51545eeba34f769a9b9f6bf2412d04ff729381d3b3e1a7c9660a219"
+    },
+    {
+      "dataset": "mnist-test",
+      "seed": 627103,
+      "matches_record": true,
+      "query_indices_sha256": "9e1c19b3fdc185411bd1a987deb6a9fda2531116aac060a84c4d878854d1c099",
+      "training_indices_sha256": "6849b4a51bf04f766119c558f4a0214d5ea7301afdec35250a1d4402b05b1ed0"
+    },
+    {
+      "dataset": "qmnist-extra",
+      "seed": 627201,
+      "matches_record": true,
+      "query_indices_sha256": "a3b4d48df608a51f4a1901724619ed7306d74d000d4fa4feecd8d5e05ebc9e85",
+      "training_indices_sha256": "e13611feada01dc1e92b81887c5d20cac0cd19b38728aa50760c54feaa639ac9"
+    },
+    {
+      "dataset": "qmnist-extra",
+      "seed": 627202,
+      "matches_record": true,
+      "query_indices_sha256": "052847ed43324df36a8e1105dbec90167c10c8c0902ed1278a3027bf1d3ad648",
+      "training_indices_sha256": "88e75e63b954d04083eb7b5ac71960dfc4a313c539bdc2cddfadfe639e63b4c6"
+    },
+    {
+      "dataset": "qmnist-extra",
+      "seed": 627203,
+      "matches_record": true,
+      "query_indices_sha256": "bf19c6a47be6ac0dafb93a0ea7bfbdf11f94b45409d52378dc76f69aede32d92",
+      "training_indices_sha256": "811a27e0296d15c7b12e1c9033bc4f5061316555d7713187697c4085f7f69acc"
+    },
+    {
+      "dataset": "qmnist-extra",
+      "seed": 627204,
+      "matches_record": true,
+      "query_indices_sha256": "92c1bde60d377e9bdedf9cb4a9acb0a2c57a7714bca9fdc12d2b08877e583c1a",
+      "training_indices_sha256": "181d2c422eff9fef82f295a445373a081d573c5f92f52e9213586df4fdb162f3"
+    },
+    {
+      "dataset": "qmnist-extra",
+      "seed": 627205,
+      "matches_record": true,
+      "query_indices_sha256": "2d9a0a1be91ad5e5fe5f4ba4c1e196fdccd9d8c4de7480ff2453b426cc6d21f8",
+      "training_indices_sha256": "2f5c21ef95f684bc4074a8c6fe6b4c6551eceaa4a7afd6bdfdc7c0c5325166a4"
+    }
+  ],
+  "limits": [
+    "Chronological claims that selection preceded evaluation and no tuning occurred cannot be established from the submitted snapshot alone.",
+    "Declared dataset download hashes and release hashes are preserved but not independently recomputed from downloaded images.",
+    "Three QMNIST cohorts exceed 1.90%; all diagnostic results remain descriptive."
+  ]
+}

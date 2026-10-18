@@ -1,5 +1,28 @@
 # Tuned Ladder/kernel teacher: difficulty 5
 
+## Independent reviewer reproduction — October 18, 2026
+
+The first frozen reviewer group passed **3/3 fresh canonical sandboxed Modal A100-80GB runs**, with valid above-idle energy measurements on three distinct GPUs. Median ranked time is **897.469072 ms/call** and median energy is **154,288.607829 mJ/call**; pooled MNIST error is **1.813939%** (324,014/330,000 correct).
+
+| Reviewer run | MNIST error | Margin, labels | Ranked ms | Above-idle mJ |
+| - | -: | -: | -: | -: |
+| 1 | 1.759091% | +155 | 902.778503 | 152,205.273845 |
+| 2 | 1.817273% | +91 | 896.942848 | 159,265.969906 |
+| 3 | 1.865455% | +38 | 897.469072 | 154,288.607829 |
+
+Source is unchanged at SHA-256 `1387f65ce5ff6eb9906f52cca3311cd7be274afa16ceaab1f1d208c68a08b4cb`. The scorer and runner are unchanged. [Verification](evidence/reviewer-20261018/verification.json) reconstructs every complete canonical score and energy result from the [raw records](evidence/reviewer-20261018/); [source review](evidence/reviewer-20261018/source-review.json) covers per-call fitting, label isolation and cached-state reset. No reviewer outcome was replaced or retried.
+
+This is a parameter tuning of @spartanhaden's accepted [Ladder with a kernel teacher](../ladder-kernel-d5-20261012/README.md) (PR #121), submitted by @islamborghini. Independent AST comparison confirms the executable changes are only `BATCH: 1000 → 2000` and `STEPS: 2300 → 800`; architecture, teacher, optimizer, losses and per-call reset remain unchanged, and source credits are preserved. Submitted external-test diagnostics remain separate from competition qualification.
+
+The leaderboard uses the independent reviewer medians above. Author results below are retained separately. The published instructions specify three official Modal runs and their median; this independent reproduction is review evidence, not a newly imposed second-batch submission rule.
+
+Using Python 3.13 as in the canonical runner, recheck saved records from this submission directory with `python evidence/reviewer-20261018/verify_records.py evidence/reviewer-20261018 submission.py --difficulty 5 --function ladder_kernel --output /tmp/pr124-verification.json`. This reconstructs recorded verdicts without executing the learner.
+
+## Original author report (as submitted)
+
+Present-tense record and pending-review claims below describe the submission date; the dated reviewer section above gives the accepted review status.
+
+
 This tunes **@spartanhaden’s existing [D5 Ladder network with a kernel teacher](https://github.com/cybertronai/sutro-problems/blob/c269e4baa95f2bd96e05dee2107a3330064e8daa/mnist-a100/submissions/ladder-kernel-d5-20261012/README.md)**, introduced in [PR #121](https://github.com/cybertronai/sutro-problems/pull/121). The executable change is limited to **batch size 1,000 → 2,000** and **training steps 2,300 → 800**; the architecture, teacher, optimizer, losses and reset/prediction logic are unchanged. Existing source credits are preserved.
 
 All three initial energy-enabled sandboxed Modal A100-80GB runs of this exact source passed the unchanged scorer (`mnist-a100/1.2.0`): **899.191340 ms/call median**, **155,269.572 mJ/call median above idle**, and **1.790000% pooled MNIST error**. This author-run median takes **50.542% less time (2.022× faster)** than the base entry’s published independent reviewer median of **1,818.087508 ms**; independent maintainer verification of this entry is pending.
