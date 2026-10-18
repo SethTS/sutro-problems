@@ -1,0 +1,119 @@
+{
+  "difficulty": 3,
+  "function": "rfm_d3",
+  "scorer_commit": "14a92c25a899f8ae4509c0068a6ce577b508fc1b",
+  "profiles": [
+    {
+      "id": "default",
+      "source": "default.py",
+      "source_sha256": "7d16487446a8db9f14f2af2d2ea15dbfc27e82995eb30bcf7c0da1ed24d73a17",
+      "resource_profile": "default cpu request; default temporary storage",
+      "source_bytes": 19085,
+      "median_ms": 5.495054109702144,
+      "median_energy_mj": 344.3386861934091,
+      "pooled_error_pct": 2.574242424242424,
+      "runs": [
+        {
+          "error_pct": 2.5045454545454544,
+          "ranked_ms": 5.495054109702144,
+          "energy_mj": 344.3386861934091,
+          "holdout": "fashion",
+          "holdout_accuracy_pct": 87.67,
+          "record": "evidence/default/run-1.json"
+        },
+        {
+          "error_pct": 2.6081818181818184,
+          "ranked_ms": 5.457714729355289,
+          "energy_mj": 320.2524479775031,
+          "holdout": "kmnist",
+          "holdout_accuracy_pct": 96.2375,
+          "record": "evidence/default/run-2.json"
+        },
+        {
+          "error_pct": 2.61,
+          "ranked_ms": 5.653284882362295,
+          "energy_mj": 489.5202871162201,
+          "holdout": "kmnist",
+          "holdout_accuracy_pct": 96.3625,
+          "record": "evidence/default/run-3.json"
+        }
+      ],
+      "record_source_sha256": "9f4bcb3eb7d892f4104aa683eccfde8bf4fdee0d4d5ef665e0bd456823e0f925",
+      "record_source_bytes": 19179
+    },
+    {
+      "id": "cpu4",
+      "source": "cpu4.py",
+      "source_sha256": "cb483d67932305990801d1b4a66183bfe5b35b0d906174598878be3ed2250907",
+      "resource_profile": "four reserved cpus; default temporary storage",
+      "source_bytes": 20378,
+      "median_ms": 5.437365785787493,
+      "median_energy_mj": 387.48494284115094,
+      "pooled_error_pct": 2.5415151515151515,
+      "runs": [
+        {
+          "error_pct": 2.5490909090909093,
+          "ranked_ms": 5.420047947559745,
+          "energy_mj": 412.56196779486015,
+          "holdout": "fashion",
+          "holdout_accuracy_pct": 87.2425,
+          "record": "evidence/cpu4/run-1.json"
+        },
+        {
+          "error_pct": 2.517272727272727,
+          "ranked_ms": 5.437365785787493,
+          "energy_mj": 363.2110249709299,
+          "holdout": "kmnist",
+          "holdout_accuracy_pct": 96.3025,
+          "record": "evidence/cpu4/run-2.json"
+        },
+        {
+          "error_pct": 2.558181818181818,
+          "ranked_ms": 6.4657481903335405,
+          "energy_mj": 387.48494284115094,
+          "holdout": "fashion",
+          "holdout_accuracy_pct": 87.3225,
+          "record": "evidence/cpu4/run-3.json"
+        }
+      ],
+      "record_source_sha256": "cf5962177cfda7fa197cc2bda4994cad07852e2fca70c7f8627dfa3e9a3d6357",
+      "record_source_bytes": 20459
+    },
+    {
+      "id": "cpu4-dev",
+      "source": "submission.py",
+      "source_sha256": "df1158db88162d674dd869998f0795aedee96bb088f506803c5370bc872b3e39",
+      "resource_profile": "four reserved cpus; tmpdir=/dev",
+      "source_bytes": 20377,
+      "median_ms": 3.060773561088724,
+      "median_energy_mj": 220.22556688211066,
+      "pooled_error_pct": 2.5103030303030303,
+      "runs": [
+        {
+          "error_pct": 2.4327272727272726,
+          "ranked_ms": 3.187936280045892,
+          "energy_mj": 222.7554923250023,
+          "holdout": "fashion",
+          "holdout_accuracy_pct": 87.22,
+          "record": "evidence/cpu4-dev/run-1.json"
+        },
+        {
+          "error_pct": 2.5436363636363635,
+          "ranked_ms": 3.060773561088724,
+          "energy_mj": 220.22556688211066,
+          "holdout": "fashion",
+          "holdout_accuracy_pct": 86.905,
+          "record": "evidence/cpu4-dev/run-2.json"
+        },
+        {
+          "error_pct": 2.5545454545454547,
+          "ranked_ms": 3.003391981124878,
+          "energy_mj": 219.0352779063161,
+          "holdout": "kmnist",
+          "holdout_accuracy_pct": 96.3,
+          "record": "evidence/cpu4-dev/run-3.json"
+        }
+      ]
+    }
+  ]
+}
