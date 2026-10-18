@@ -1,0 +1,53 @@
+{
+  "source_sha256": "1387f65ce5ff6eb9906f52cca3311cd7be274afa16ceaab1f1d208c68a08b4cb",
+  "runs": [
+    {
+      "run": "run-1.json",
+      "passed": true,
+      "problems": [],
+      "ranked_ms": 894.5640869140625,
+      "unqualified_time_ms": null,
+      "error_pct": 1.7509090909090919,
+      "worst_error_pct": 1.9399999999999973,
+      "holdout": "fashion",
+      "holdout_accuracy_pct": 88.6075,
+      "energy_mj": 143862.2072459296,
+      "gpu_uuid": "GPU-cfa61e7e-ee3a-7215-e81b-10b74518e197",
+      "summary": "MNIST 98.25% (108,074/110,000), 894.125 ms/call; hold-out (fashion) 88.61%, 894.564 ms/call"
+    },
+    {
+      "run": "run-2.json",
+      "passed": true,
+      "problems": [],
+      "ranked_ms": 899.1913396661931,
+      "unqualified_time_ms": null,
+      "error_pct": 1.8254545454545412,
+      "worst_error_pct": 2.0100000000000007,
+      "holdout": "kmnist",
+      "holdout_accuracy_pct": 97.15,
+      "energy_mj": 155269.57191985755,
+      "gpu_uuid": "GPU-250ece9e-a1d7-9ae7-a045-b6a3b4559677",
+      "summary": "MNIST 98.17% (107,992/110,000), 899.191 ms/call; hold-out (kmnist) 97.15%, 898.863 ms/call (floored by the scorer's clock)"
+    },
+    {
+      "run": "run-3.json",
+      "passed": true,
+      "problems": [],
+      "ranked_ms": 899.9678178267045,
+      "unqualified_time_ms": null,
+      "error_pct": 1.793636363636364,
+      "worst_error_pct": 2.2299999999999986,
+      "holdout": "fashion",
+      "holdout_accuracy_pct": 88.5575,
+      "energy_mj": 161879.45516873122,
+      "gpu_uuid": "GPU-56274c11-513d-5eb0-72eb-0cc069fd5101",
+      "summary": "MNIST 98.21% (108,027/110,000), 899.968 ms/call; hold-out (fashion) 88.56%, 898.777 ms/call"
+    }
+  ],
+  "attempted": 3,
+  "passed": 3,
+  "qualifying_three_run_result": true,
+  "median_ranked_ms": 899.1913396661931,
+  "median_energy_mj": 155269.57191985755,
+  "canonical_score_and_energy_reconstructed": true
+}

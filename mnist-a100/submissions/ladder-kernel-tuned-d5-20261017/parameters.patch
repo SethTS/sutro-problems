@@ -1,0 +1,28 @@
+--- mnist-a100/submissions/ladder-kernel-d5-20261012/submission.py
++++ mnist-a100/submissions/ladder-kernel-tuned-d5-20261017/submission.py
+@@ -1,6 +1,6 @@
+ """MNIST difficulty 5 (band 1.90%): a kernel-ridge teacher distilled into a semi-supervised Ladder network.
+ 
+-Like the difficulty-4 entry, but 2300 steps, teacher weight 0.25, AGOP^0.75 student inputs, plain autograd and
++Like the difficulty-4 entry, but 800 steps, teacher weight 0.25, AGOP^0.75 student inputs, plain autograd and
+ cheap-compile settings (a cold A100 compile fits the warm-up limit). Inputs are whitened+rotated: it learns a metric.
+  1. Kernel teacher (after @islamborghini's kernel-pcg): rows are partly normalised; RBF kernel ridge is fitted by
+     Nystrom-preconditioned CG, and the AGOP M of the fit (mean outer product of its input gradients) sets the
+@@ -11,7 +11,7 @@
+  3. Ladder network: a 60-1024-512-256-10 encoder with batch norm and Gaussian noise on every layer; a decoder of
+     per-unit MLP combinators denoises down to the input, so unlabelled rows shape the features. Loss: cross-entropy
+     on labelled rows (sampled partly by recent loss) plus, on train + test rows, an input-level reconstruction cost
+-    and a cross-entropy toward the true labels (train) or the teacher's softened scores (test). 2300 Adam steps.
++    and a cross-entropy toward the true labels (train) or the teacher's softened scores (test). 800 Adam steps.
+  4. Predict: BN statistics from training rows, a clean (noise-free) encoder pass, argmax.
+ test_x is used transductively, without labels (pseudo-labels, distillation targets, unlabelled Ladder rows).
+ 
+@@ -39,7 +39,7 @@
+ PSEUDO_CONF, P, NS_ITERS, SHIFT = 0.15, 2000, 15, 3.0
+ F32 = torch.float32
+ M, DIMS = 1, (60, 1024, 512, 256, 10)
+-STEPS, BATCH, LR, BETA1, DECAY_START = 2300, 1000, 0.011, 0.8, 2 / 3
++STEPS, BATCH, LR, BETA1, DECAY_START = 800, 2000, 0.011, 0.8, 2 / 3
+ NOISE, SCALE, RECON, EPS, CSTD, SEED = 0.25, 0.6, 2000.0, 1e-10, 0.025, 11
+ MIX, MIX_A, MIX_B, MIX_C = 0.5, 0.1, 0.6, 0.9  # loss-weighted sampling share, schedule
+ TW, TEACH_TAU = 0.25, 0.1  # distillation weight, temperature
