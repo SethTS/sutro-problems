@@ -1,0 +1,13 @@
+{
+  "pull_request": 125,
+  "reviewed_head": "ef7e84ae4a952cad29cfb155ee60d9e0ae16c6a4",
+  "source_sha256": "df1158db88162d674dd869998f0795aedee96bb088f506803c5370bc872b3e39",
+  "decision": "merge exact source; use independent stock-launcher metrics and preserve author-profile/provenance distinctions",
+  "passed_runs": 3,
+  "energy_valid_runs": 3,
+  "median_ranked_ms": 5.179753205524286,
+  "median_energy_mj": 320.1658968536391,
+  "merged_commit": "977a24e47905c3eaa330e0315baaa0e7c682c4a7",
+  "decision_author": "primary reviewer after independent canonical reconstruction",
+  "retries_or_replacements": 0
+}

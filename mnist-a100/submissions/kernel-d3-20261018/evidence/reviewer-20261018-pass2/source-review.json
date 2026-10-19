@@ -1,0 +1,26 @@
+{
+  "checked_at_utc": "2026-10-19T05:51:18.763561+00:00",
+  "pull_request": 125,
+  "reviewed_head": "ef7e84ae4a952cad29cfb155ee60d9e0ae16c6a4",
+  "frozen_main": "14a92c25a899f8ae4509c0068a6ce577b508fc1b",
+  "source_path": "/Users/yaroslavvb/git/sutro-problems/output/pr-review-20261018-pass2/pr125/source/mnist-a100/submissions/kernel-d3-20261018/submission.py",
+  "source_sha256": "df1158db88162d674dd869998f0795aedee96bb088f506803c5370bc872b3e39",
+  "source_bytes": 20377,
+  "function": "rfm_d3",
+  "source_gate_passed": true,
+  "review_flags": [
+    "embedded weights? 766 numeric literals",
+    "20,377 bytes, close to the 20,480-byte limit"
+  ],
+  "static_blockers": [],
+  "source_minification": "Minified source inspected in original and AST rendering; no literal data arrays, encoded payload or fitted weights. Only torch/triton/gc/math imports.",
+  "training_and_label_isolation": "Closed-form current-training Fisher initialization, class-conditional QDA/Fisher-style metric update, 48-dimensional projection, class-wise current-data centroids, compressed weighted RBF-PCG fit and low-margin HKNN correction. Query vertex labels are current model predictions. No query truth, parent/scorer access, data-file/network reads or timer introspection.",
+  "input_integrity": "rfm_d3 clones current inputs for capture then copies each call into owned static arrays. Normalization uses out-of-place multiplication; training labels are read for one-hot/class grouping. Kernel outputs target owned scratch. Return clone protects cached graph output from aliasing.",
+  "cache_reset": "One full A9 fit captured; every replay includes current one-hot targets, current-data metric/covariance computations, current centroids/compressed support, zero coefficient/current residual initialization in AS, all five CG iterations and final correction. Temporary reduction/matvec/packed-operand buffers are written before reads. Shape cache is constant0 but canonical shapes/dtypes are fixed.",
+  "warmup": "First worker invocation performs eager compilation/setup, graph capture, gc.collect/gc.freeze and64 graph replays plus synchronize. Timed/energy calls copy new arrays and replay one full fit. Extra warm-up does not preserve a fitted solution; no dataset identity branch or event tampering.",
+  "profile_boundary": "Author primary cpu4-dev records use same source but custom4-CPU launcher with parent TMPDIR=/dev; stock runner is different configuration. Canonical Worker._start overrides per-worker cache/TMPDIR into unique private directories and deletes both worker and io directories; no source filesystem use. This review uses unchanged stock run_modal.py, default CPU request and default parent temp storage.",
+  "historical_source_identity": "Packaged default.py and cpu4.py hashes differ from their recorded source hashes; disclosed in results.json but actual executed historical bytes are absent. Treat those rows as historical arithmetic, not exact packaged-source qualification. Primary submission.py matches its three records.",
+  "provenance": "All supplied author records strip stdout/stderr and GPU UUIDs. Saved arithmetic can be reconstructed; distinct-board claims and execution provenance cannot be independently proved from stripped records. No prior exact-source reviewer result found under output before this launch.",
+  "upstream_credit_finding": "README/source currently omit upstream credits. Pipeline, partial-normalization constants, low-margin HKNN correction structure and rfm_d3 full-fit CUDA-graph/gc.freeze wrapper strongly derive from @spartanhaden accepted rfm-hknn-d3-20261012 (itself credits @islamborghini kernel-PCG and Vincent/Bengio HKNN). Fisher/class-wise centroid ideas also overlap accepted nystrom-fisher D1, but exact code lineage for custom Fisher/QDA/compression kernels is not established. Add accurate report attribution without changing qualified source bytes.",
+  "published_rules": "Unchanged mnist-a1001.2.0 D3: mean error<=2.70% per complete11-MNIST run, worst draw<=4.20%, holdout>=15%, timing/dispersion/parent-clock gates; three stock Modal A100-80GB runs for record median. Energy separate column. No imposed permanent source ban or second reviewer-batch rule."
+}
