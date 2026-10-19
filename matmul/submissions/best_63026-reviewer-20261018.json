@@ -1,0 +1,27 @@
+{
+  "pull_request": 128,
+  "reviewed_head": "f89669784533d80802378462f5f5b5876f0a6316",
+  "canonical_main": "14a92c25a899f8ae4509c0068a6ce577b508fc1b",
+  "source_sha256": "76af2cf3585f8ade347dfeb3d777d2363ada9785858a9ef7f3985df1444b3c27",
+  "scorer_sha256": "cb701af7e34aa330492a76e43483c7953bb55a883c95398524bcc551a15fd4d9",
+  "canonical_score": 63026,
+  "independent_polynomial_score": 63026,
+  "exact_symbolic_outputs": 256,
+  "arbitrary_integer_inputs": true,
+  "operation_counts": {
+    "copy": 2145,
+    "mul": 4096,
+    "add": 3840
+  },
+  "read_costs": {
+    "copy": 20724,
+    "mul": 17861,
+    "add": 20139,
+    "output": 4302
+  },
+  "inputs": 512,
+  "maximum_address": 617,
+  "previous_best": 63290,
+  "improvement": 264,
+  "passed": true
+}
