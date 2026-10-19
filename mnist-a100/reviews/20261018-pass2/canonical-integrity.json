@@ -1,0 +1,14 @@
+{
+  "frozen_main": "14a92c25a899f8ae4509c0068a6ce577b508fc1b",
+  "main_after_matmul_verification": "c38f2092081191fc98d02dd59573192d91c6202b",
+  "canonical_files": {
+    "mnist.py": {
+      "sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+      "unchanged": true
+    },
+    "run_modal.py": {
+      "sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+      "unchanged": true
+    }
+  }
+}

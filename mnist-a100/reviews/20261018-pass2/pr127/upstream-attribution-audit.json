@@ -1,0 +1,97 @@
+{
+  "upstream_sha256": "039bde8b8576a67dbfd20017d7b70cbb2fce59f0927d0fc9f989c1bb6db45728",
+  "source_sha256": "5754027efaadd7b3b2b26ea5e1f7bd1c953c6e70b1692797887565e6e23ba005",
+  "helpers": [
+    {
+      "current_function": "eq",
+      "current_line": 2,
+      "upstream_function": "chol",
+      "upstream_line": 56,
+      "normalized_ast_matches": true,
+      "removed_upstream_optional_mask_branch": false
+    },
+    {
+      "current_function": "rn",
+      "current_line": 4,
+      "upstream_function": "rownorm",
+      "upstream_line": 60,
+      "normalized_ast_matches": true,
+      "removed_upstream_optional_mask_branch": false
+    },
+    {
+      "current_function": "fj",
+      "current_line": 6,
+      "upstream_function": "aug",
+      "upstream_line": 64,
+      "normalized_ast_matches": true,
+      "removed_upstream_optional_mask_branch": false
+    },
+    {
+      "current_function": "e6",
+      "current_line": 8,
+      "upstream_function": "kern",
+      "upstream_line": 73,
+      "normalized_ast_matches": true,
+      "removed_upstream_optional_mask_branch": false
+    },
+    {
+      "current_function": "d5",
+      "current_line": 10,
+      "upstream_function": "h3_ops",
+      "upstream_line": 78,
+      "normalized_ast_matches": true,
+      "removed_upstream_optional_mask_branch": false
+    },
+    {
+      "current_function": "d6",
+      "current_line": 12,
+      "upstream_function": "panels",
+      "upstream_line": 86,
+      "normalized_ast_matches": true,
+      "removed_upstream_optional_mask_branch": false
+    },
+    {
+      "current_function": "c3",
+      "current_line": 32,
+      "upstream_function": "upd_comp",
+      "upstream_line": 139,
+      "normalized_ast_matches": true,
+      "removed_upstream_optional_mask_branch": true
+    },
+    {
+      "current_function": "e7",
+      "current_line": 34,
+      "upstream_function": "lfac",
+      "upstream_line": 152,
+      "normalized_ast_matches": true,
+      "removed_upstream_optional_mask_branch": false
+    },
+    {
+      "current_function": "fx",
+      "current_line": 36,
+      "upstream_function": "pcg",
+      "upstream_line": 160,
+      "normalized_ast_matches": true,
+      "removed_upstream_optional_mask_branch": true
+    },
+    {
+      "current_function": "cw",
+      "current_line": 41,
+      "upstream_function": "sqrtm",
+      "upstream_line": 180,
+      "normalized_ast_matches": true,
+      "removed_upstream_optional_mask_branch": false
+    },
+    {
+      "current_function": "e4",
+      "current_line": 46,
+      "upstream_function": "agop",
+      "upstream_line": 193,
+      "normalized_ast_matches": true,
+      "removed_upstream_optional_mask_branch": false
+    }
+  ],
+  "matching_helpers": 11,
+  "scope": "Expands explicit module aliases and method-call aliases, alpha-renames function locals, removes docstrings, and compares AST. For pcg/upd_comp removes the upstream optional mask argument, guarded branch and forwarded call argument to compare their default path. Other new algorithm portions are manually reviewed separately.",
+  "attribution_status": "Submitted source and README contain no upstream or third-party credit. Strong teacher-helper relationship establishes specific attribution requiring documentation repair before promotion."
+}

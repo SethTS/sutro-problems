@@ -1,0 +1,44 @@
+{
+  "review_date_local": "2026-10-18",
+  "repository": "cybertronai/sutro-problems",
+  "frozen_canonical_main": "14a92c25a899f8ae4509c0068a6ce577b508fc1b",
+  "protocol": "One initial canonical stock-launcher three-run energy-enabled group per new exact learner source; all original outcomes retained, with no retries or replacements. Score qualification and optional energy-column validity assessed separately.",
+  "new_groups": [
+    {
+      "pull_request": 125,
+      "difficulty": 3,
+      "head": "ef7e84ae4a952cad29cfb155ee60d9e0ae16c6a4",
+      "source_sha256": "df1158db88162d674dd869998f0795aedee96bb088f506803c5370bc872b3e39",
+      "app": "ap-OmkqXsyc3I020k18eW4BFE"
+    },
+    {
+      "pull_request": 126,
+      "difficulty": 4,
+      "head": "4199965260948ad7837fadbaccc7639b02cb80d6",
+      "source_sha256": "1966a800debdb3681b1c897527c28771d958a02604b0281b9dbe8508f183aa77",
+      "app": "ap-59xniVO3cytv6PKOEMGHj9"
+    },
+    {
+      "pull_request": 127,
+      "difficulty": 5,
+      "head": "19d2a3faba642814aee9c12ed1a118a927b796d2",
+      "source_sha256": "5754027efaadd7b3b2b26ea5e1f7bd1c953c6e70b1692797887565e6e23ba005",
+      "app": "ap-5dsYyMoDE3OW8SDeFBL3M1"
+    }
+  ],
+  "unchanged_prior_sources": [
+    110,
+    114,
+    119,
+    122
+  ],
+  "new_gpu_runs_for_prior_sources": 0,
+  "matmul": {
+    "pull_request": 128,
+    "head": "f89669784533d80802378462f5f5b5876f0a6316",
+    "verification": "unchanged canonical scorer plus separate exact polynomial proof",
+    "score": 63026,
+    "passed": true,
+    "merged_commit": "3722b47d34ca5888172f680aaa24bad3d137e41a"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "merged": [
+    {
+      "headRefOid": "ef7e84ae4a952cad29cfb155ee60d9e0ae16c6a4",
+      "mergeCommit": {
+        "oid": "977a24e47905c3eaa330e0315baaa0e7c682c4a7"
+      },
+      "mergedAt": "2026-10-19T06:00:46Z",
+      "number": 125,
+      "state": "MERGED",
+      "url": "https://github.com/cybertronai/sutro-problems/pull/125"
+    },
+    {
+      "headRefOid": "f89669784533d80802378462f5f5b5876f0a6316",
+      "mergeCommit": {
+        "oid": "3722b47d34ca5888172f680aaa24bad3d137e41a"
+      },
+      "mergedAt": "2026-10-19T05:49:15Z",
+      "number": 128,
+      "state": "MERGED",
+      "url": "https://github.com/cybertronai/sutro-problems/pull/128"
+    }
+  ],
+  "open": [
+    {
+      "headRefOid": "19d2a3faba642814aee9c12ed1a118a927b796d2",
+      "number": 127,
+      "title": "add a100 d5 result at 308.420616 ms",
+      "url": "https://github.com/cybertronai/sutro-problems/pull/127"
+    },
+    {
+      "headRefOid": "4199965260948ad7837fadbaccc7639b02cb80d6",
+      "number": 126,
+      "title": "add a100 d4 result at 35.678700 ms",
+      "url": "https://github.com/cybertronai/sutro-problems/pull/126"
+    },
+    {
+      "headRefOid": "f63a5521d0bd24fea490b91d1056ea5d6491bd8d",
+      "number": 122,
+      "title": "mnist-a100 D5: width-128 cross-taught Muon ReLU MLPs with hidden bias, 3/3 official runs, median 1,491 ms",
+      "url": "https://github.com/cybertronai/sutro-problems/pull/122"
+    },
+    {
+      "headRefOid": "4f2ea071a78da77a84e1de0f5551ec5f71f6ceec",
+      "number": 119,
+      "title": "[codex] MNIST A100 D5: 2581 ms tangent ensemble, three sandbox passes",
+      "url": "https://github.com/cybertronai/sutro-problems/pull/119"
+    },
+    {
+      "headRefOid": "74dc7ad1eb3f0d5d4fd4c75ec1394b6fb8e1e9c1",
+      "number": 114,
+      "title": "MNIST A100 D4: cold-compilation repair, three Modal passes at 985 ms",
+      "url": "https://github.com/cybertronai/sutro-problems/pull/114"
+    },
+    {
+      "headRefOid": "95368c5469238ff5d6c3c0633bf8831947454c84",
+      "number": 110,
+      "title": "RFF-ridge MNIST-medium (non-record branch): one A100 energy measurement requested",
+      "url": "https://github.com/cybertronai/sutro-problems/pull/110"
+    }
+  ]
+}

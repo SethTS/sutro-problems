@@ -9,6 +9,7 @@
   "snapshot-manifest.json": "0cd4201415e15d0575cda6b012f160e7bc8f3b2677d2a16f70bbd1921704d3ee",
   "source-manifest.json": "a455631979d1b61a57ccd27e12a4606ad1e94b340d5730c0050b239dd237d462",
   "source-review.json": "b600aebba88b09c9a4ed2a7df89a082898bec2a4e41131afd60db7a5a43adb4c",
+  "specialist-decision.json": "1ae98332729d57fbb87447201e3712d292b82f8e4f1e3f4450f982125cf28f7d",
   "specialist-verification.json": "7352c269ab50d27c8f1b3af575b852bbc00a7d4e957e78f6c028fe5f02d0cb5d",
   "verification.json": "c91678c4f3da87cebe532348cd69a7a9d5c743777610e6dc8d9dbf6c1d0ee6f8",
   "verify_records.py": "b33777f502eff431081cbca8bc85a0970667f528f703f47d680efb56548c8d3e"

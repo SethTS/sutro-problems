@@ -1,0 +1,19 @@
+{
+  "pull_request": 126,
+  "reviewed_head": "4199965260948ad7837fadbaccc7639b02cb80d6",
+  "source_sha256": "1966a800debdb3681b1c897527c28771d958a02604b0281b9dbe8508f183aa77",
+  "decision": "leave open: unresolved exact-source accuracy reproduction",
+  "passed_runs": 1,
+  "energy_valid_runs": 1,
+  "accuracy_margins_labels": [
+    53,
+    -26,
+    -20
+  ],
+  "all_timed_calls_complete": true,
+  "median_ranked_ms": null,
+  "median_energy_mj": null,
+  "author_records": "different unsupplied source hash c7b78944bfbc45859ec53ec68b94d0808a93decec0c4e2115ae6b6e3c52d78b1; numerical reconstruction separate from exact-source qualification",
+  "rule_scope": "Published rules specify three official Modal runs and median; contradictory actual review evidence justifies this hold, not a permanent source ban.",
+  "retries_or_replacements": 0
+}

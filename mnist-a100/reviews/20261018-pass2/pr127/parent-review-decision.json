@@ -1,0 +1,19 @@
+{
+  "pull_request": 127,
+  "reviewed_head": "19d2a3faba642814aee9c12ed1a118a927b796d2",
+  "source_sha256": "5754027efaadd7b3b2b26ea5e1f7bd1c953c6e70b1692797887565e6e23ba005",
+  "decision": "leave open: unresolved exact-source accuracy reproduction",
+  "passed_runs": 1,
+  "energy_valid_runs": 1,
+  "accuracy_margins_labels": [
+    59,
+    -116,
+    -57
+  ],
+  "all_timed_calls_complete": true,
+  "median_ranked_ms": null,
+  "median_energy_mj": null,
+  "author_records": "three separate source-matching author passes; sanitized logs and GPU identifiers",
+  "rule_scope": "Published rules specify three official Modal runs and their median; the new contradictory review outcomes justify this hold, rather than a permanent source ban or newly imposed mandatory second batch.",
+  "retries_or_replacements": 0
+}

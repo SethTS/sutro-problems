@@ -1,0 +1,60 @@
+{
+  "pr": 127,
+  "head": "19d2a3faba642814aee9c12ed1a118a927b796d2",
+  "main_head": "14a92c25a899f8ae4509c0068a6ce577b508fc1b",
+  "folder": "ladder-d5-20261018",
+  "source_path": "/Users/yaroslavvb/git/sutro-problems/output/pr-review-20261018-pass2/pr127/source/mnist-a100/submissions/ladder-d5-20261018/submission.py",
+  "source_sha256": "5754027efaadd7b3b2b26ea5e1f7bd1c953c6e70b1692797887565e6e23ba005",
+  "source_bytes": 20326,
+  "scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+  "runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+  "function": "ladder_kernel",
+  "reviewed_head": "19d2a3faba642814aee9c12ed1a118a927b796d2",
+  "checked_at_utc": "2026-10-19T05:50:54.815572+00:00",
+  "entrant": "sigkillme0",
+  "source_gate_passed": true,
+  "review_flags": [
+    "embedded weights? 721 numeric literals",
+    "20,326 bytes, close to the 20,480-byte limit"
+  ],
+  "static_blockers": [],
+  "publication_repairs": [
+    "Add explicit upstream/third-party attribution in README and leaderboard description without modifying qualified learner bytes.",
+    "Replace premature author-only established-record star and measurements with independent reviewer qualification status and metrics."
+  ],
+  "scope": "Full manual source/reset/graph/kernel audit, trusted canonical static gate, nonexecuted readable AST expansion, numeric literal review and upstream helper AST comparison. No learner or submitted verifier was executed locally. Independent author raw arithmetic and one fresh canonical reviewer GPU group are separate.",
+  "method": "Current-training RBF/AGOP metric teacher; train-fitted double-precision PCA orientation; 60-1024-256-256-10 Ladder student with structured and same-class tangent noise, custom Triton autograd, Muon-like matrix updates and Adam head/bias/combinator parameters; staged 480-step training and decoder/local-hull readout.",
+  "numeric_literals": "721 numeric literals are dominated by small indexing, shape, sampling and algorithm constants; largest readable string 25 characters. No fitted array, encoded model/pool or decoder found. 1065353216 is float32 1.0 bits used to reset packed live sampling-score storage. Literal inventory retained separately.",
+  "fresh_teacher": "es overwrites cloned static training features/labels before every teacher graph replay. en starts identity transform, zero PCG coefficients and recomputes both metric stages from current labels; returned metric, last-fit training rows/coefficients and previous metric are current-call results. No query labels enter teacher; ah computes current-query soft targets from those current training fits.",
+  "fresh_student": "Every ladder_kernel call copies current transformed inputs/one-hot labels/train+query pool, current teacher targets and fresh same-class tangent buffers. It clears p/fm, calls _z to reset weights, class-centroid head initialization from current data, Adam/Muon momentum, step counters, orthogonalization caches, loss-sampling scores, batch order and RNG. It saves freshly initialized parameters, runs one timed calibration step, restores that current-call parameter snapshot, resets optimizer/sampling counters and carries over only the current-draw three-coefficient calibration result.",
+  "fitted_state_audit": "Module aw holds teacher/student CUDA graphs and workspaces. Gradient/list references retained by capture are not read as an offline fitted model. m is a zero allocated fallback; p/fm and o calibration values explicitly reset or overwritten each call; all train/query targets and tangent buffers overwritten. Scalar LR is overwritten from reset counter before each update. First F replay refits orthogonalization caches before subsequent cached-step use.",
+  "fixed_work": "Main executes 32 single steps + 12 eight-step graphs + 44 eight-step graphs = 480 training updates, plus one current-call calibration step before reset. ax=650 only sizes schedule/index buffers; range(480,480) is empty. Cache-only compilation captures additional graph variants, without using learned warmup parameters. No dataset recognition, clocks, timers, scorer/process introspection, network or file access.",
+  "kernel_audit": "Triton kernels implement batch normalization and decoder forward/backward, structured noise, inverse-CDF sampling/gather and atomic packed sampling-score updates. All pointers originate from own current data/model/workspace tensors. No arbitrary addressing, external file or host memory access identified. Side streams join before graph results are used.",
+  "input_and_truth": "Caller feature/label tensors are read only. Initial teacher buffers are clones, metric/PCA coordinates are derived allocations, and all in-place work uses owned student or kernel buffers. Query labels never appear in function signature or imports; transductive query features and current predicted targets are allowed by accepted source precedent.",
+  "upstream_attribution": {
+    "base_author": "spartanhaden",
+    "base_pr": 121,
+    "base_entry": "mnist-a100/submissions/ladder-kernel-d5-20261012/submission.py",
+    "base_source_sha256": "039bde8b8576a67dbfd20017d7b70cbb2fce59f0927d0fc9f989c1bb6db45728",
+    "proof": "11 teacher helpers have matching normalized AST after transparent alias expansion/local renaming; pcg/upd_comp compare the unused-mask default path.",
+    "third_party_credits_to_preserve": "Original upstream teacher credits islamborghini kernel-PCG; Ladder credits SethTS and Rasmus et al. 2015. Muon coefficients and local-hull method also warrant appropriate algorithm references.",
+    "submitted_credit_status": "No upstream attribution in submitted source/README; source uses minified names and strips original docstring/credits. Documentation repair needed before promotion.",
+    "new_work": "Substantial changes to optimizer, noise, graph schedule, architecture, custom Triton kernels and readout; do not describe this source as a two-parameter retune."
+  },
+  "canonical_rules": {
+    "version": "mnist-a100/1.2.0",
+    "source_bytes_limit": 20480,
+    "D5_error_limit_pct": 1.9,
+    "worst_draw_limit_pct": 3.4,
+    "holdout_accuracy_floor_pct": 15,
+    "protocol": "11 MNIST and 4 foreign holdout calls, fresh sandbox worker per call, slower dataset mean with scorer-clock floor and clock/dispersion gates.",
+    "review_policy": "Exactly one initial frozen energy-enabled three-run group, all complete runs individually passing for qualification; no replaced outcomes or retries.",
+    "energy": "Optional separate column; invalid energy telemetry cannot invalidate qualified canonical time."
+  },
+  "author_provenance": "Source SHA/function and canonical version/commit claims match supplied raw record fields. Console logs and GPU identifiers are explicitly removed and filenames normalized; supplied records are reconstructed but not independent execution/attempt-history attestation. Three distinct author boards cannot be verified. Fresh reviewer full raw output supplies separate execution provenance.",
+  "prior_exact_source_reviewer_group_found": false,
+  "modal_app_id": "ap-5dsYyMoDE3OW8SDeFBL3M1",
+  "reviewer_initial_set_launched": true,
+  "replacement_runs": 0,
+  "readable_source_is_nonexecuted_rendering": true
+}

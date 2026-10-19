@@ -1,0 +1,37 @@
+{
+  "created_utc": "2026-10-19T05:48:37.537108+00:00",
+  "reviewed_head": "4199965260948ad7837fadbaccc7639b02cb80d6",
+  "frozen_main": "14a92c25a899f8ae4509c0068a6ce577b508fc1b",
+  "source_sha256": "1966a800debdb3681b1c897527c28771d958a02604b0281b9dbe8508f183aa77",
+  "source_bytes": 18558,
+  "source_file": "submission.py",
+  "function": "classify",
+  "entry_point": "classify",
+  "difficulty": 4,
+  "band_bp": 230,
+  "runs": 3,
+  "energy_enabled": true,
+  "fixed_before_launch": true,
+  "local_scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+  "local_runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+  "source_gate_passed": true,
+  "review_flags": null,
+  "scope": "One fixed initial three-run independent group for exact submitted source; every outcome retained; no retry or replacement. Author hash-mismatched records stay separate. Score qualification and optional energy validity assessed separately.",
+  "completed_utc": "2026-10-19T06:06:05.262243+00:00",
+  "app_id": "ap-59xniVO3cytv6PKOEMGHj9",
+  "app_url": "https://modal.com/apps/yaroslavvb/main/ap-59xniVO3cytv6PKOEMGHj9",
+  "raw_record_sha256": {
+    "run-1.json": "c4279025a499218034f8934fcd5876fdbd64b54de232083004d525b22ba31bde",
+    "run-2.json": "9cbed883ed2f9e3739e2b050dabd1918d33be5ef6182439ed7b42ccb4f45b188",
+    "run-3.json": "1f2eecce652ed8d911097dd243d14feef52a0dd09565672a97e38da09c8d026d"
+  },
+  "reruns": 0,
+  "learner_repairs": 0,
+  "failed_outcomes_retained": true,
+  "scorer_unmodified": true,
+  "runner_unmodified": true,
+  "actual_source_review_flags": [
+    "embedded weights? 652 numeric literals",
+    "18,558 bytes, close to the 20,480-byte limit"
+  ]
+}

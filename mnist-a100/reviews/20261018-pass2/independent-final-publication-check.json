@@ -1,0 +1,31 @@
+{
+  "checked_at_utc": "2026-10-19T06:08:54.141096+00:00",
+  "checks": {
+    "pr125_summary_matches_parent": true,
+    "pr125_margins": true,
+    "pr125_all45_calls": true,
+    "pr125_verification_link": true,
+    "pr126_summary_matches_parent": true,
+    "pr126_margins": true,
+    "pr126_all45_calls": true,
+    "pr126_verification_link": true,
+    "pr126_raw_exact": true,
+    "pr126_manifest_hashes": true,
+    "pr126_expected_replay_exit1": true,
+    "pr126_replay_matches": true,
+    "pr127_summary_matches_parent": true,
+    "pr127_margins": true,
+    "pr127_all45_calls": true,
+    "pr127_verification_link": true,
+    "pr127_raw_exact": true,
+    "pr127_manifest_hashes": true,
+    "pr127_expected_replay_exit1": true,
+    "pr127_replay_matches": true,
+    "all_relative_markdown_links_resolve": true,
+    "five_best_stars": true,
+    "total135_calls": true,
+    "total5_score_passes": true
+  },
+  "missing_links": [],
+  "qualification_blockers": []
+}

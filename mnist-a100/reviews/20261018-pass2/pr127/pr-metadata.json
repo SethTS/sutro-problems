@@ -1,0 +1,66 @@
+{
+  "author": {
+    "id": "MDQ6VXNlcjgyMjc4NzI0",
+    "is_bot": false,
+    "login": "sigkillme0",
+    "name": ""
+  },
+  "baseRefOid": "14a92c25a899f8ae4509c0068a6ce577b508fc1b",
+  "body": "adds a difficulty-5 learner with a 308.420616 ms median across three sandboxed a100-80gb runs.\n\ndeveloped using riasm models.\n",
+  "comments": [],
+  "files": [
+    {
+      "path": "mnist-a100/README.md",
+      "additions": 2,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "mnist-a100/submissions/ladder-d5-20261018/README.md",
+      "additions": 16,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "mnist-a100/submissions/ladder-d5-20261018/evidence/default/run-1.json",
+      "additions": 362,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "mnist-a100/submissions/ladder-d5-20261018/evidence/default/run-2.json",
+      "additions": 364,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "mnist-a100/submissions/ladder-d5-20261018/evidence/default/run-3.json",
+      "additions": 364,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "mnist-a100/submissions/ladder-d5-20261018/results.json",
+      "additions": 43,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "mnist-a100/submissions/ladder-d5-20261018/submission.py",
+      "additions": 311,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "mnist-a100/submissions/ladder-d5-20261018/verify_records.py",
+      "additions": 95,
+      "deletions": 0,
+      "changeType": "ADDED"
+    }
+  ],
+  "headRefName": "sutro-d5",
+  "headRefOid": "19d2a3faba642814aee9c12ed1a118a927b796d2",
+  "number": 127,
+  "reviews": [],
+  "title": "add a100 d5 result at 308.420616 ms"
+}

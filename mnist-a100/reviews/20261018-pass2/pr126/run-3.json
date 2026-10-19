@@ -1,0 +1,143 @@
+{
+ "returncode": 1,
+ "stdout": "submission.py:classify at 2.30% error: 15 timed calls, each in a fresh process\n  review flag: embedded weights? 652 numeric literals\n  review flag: 18,558 bytes, close to the 20,480-byte limit\n  NVIDIA A100-SXM4-80GB, torch 2.12.0+cu130, sandbox on\n  call  1/15: 36.293 ms, scorer's clock 41.349 ms\n  call  2/15: 36.295 ms, scorer's clock 41.957 ms\n  call  3/15: 36.362 ms, scorer's clock 43.295 ms\n  call  4/15: 36.328 ms, scorer's clock 41.385 ms\n  call  5/15: 36.378 ms, scorer's clock 39.372 ms\n  call  6/15: 36.341 ms, scorer's clock 41.591 ms\n  call  7/15: 36.408 ms, scorer's clock 42.758 ms\n  call  8/15: 36.321 ms, scorer's clock 40.159 ms\n  call  9/15: 36.263 ms, scorer's clock 41.772 ms\n  call 10/15: 36.360 ms, scorer's clock 43.322 ms\n  call 11/15: 36.397 ms, scorer's clock 41.334 ms\n  call 12/15: 36.327 ms, scorer's clock 40.569 ms\n  call 13/15: 36.370 ms, scorer's clock 40.928 ms\n  call 14/15: 36.415 ms, scorer's clock 41.861 ms\n  call 15/15: 36.240 ms, scorer's clock 40.103 ms\nMNIST 97.68% (107,450/110,000), 41.569 ms/call; hold-out (kmnist) 96.61%, 40.067 ms/call (floored by the scorer's clock)\ndisqualified: MNIST accuracy 97.682% (107,450/110,000); the band needs 107,470 correct\n",
+ "stderr": "r upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_inductor/lowering.py:2158: FutureWarning: `torch._prims_common.check` is deprecated and will be removed in the future. Please use `torch._check*` functions instead.\n  check(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_inductor/lowering.py:2158: FutureWarning: `torch._prims_common.check` is deprecated and will be removed in the future. Please use `torch._check*` functions instead.\n  check(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_inductor/lowering.py:2158: FutureWarning: `torch._prims_common.check` is deprecated and will be removed in the future. Please use `torch._check*` functions instead.\n  check(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n/usr/local/lib/python3.13/site-packages/torch/_inductor/lowering.py:2158: FutureWarning: `torch._prims_common.check` is deprecated and will be removed in the future. Please use `torch._check*` functions instead.\n  check(\n/usr/local/lib/python3.13/site-packages/torch/_dynamo/guards.py:1317: RuntimeWarning: Guards may run slower on Python 3.13.0. Consider upgrading to Python 3.13.1+.\n  warnings.warn(\n",
+ "record": {
+  "version": "mnist-a100/1.2.0 (protections of sutro-mnist-medium/3.0.0, tightened; energy column)",
+  "file": "submission.py",
+  "function": "classify",
+  "source_sha256": "1966a800debdb3681b1c897527c28771d958a02604b0281b9dbe8508f183aa77",
+  "band_bp": 230,
+  "sandboxed": true,
+  "holdout": "kmnist",
+  "device": "NVIDIA A100-SXM4-80GB",
+  "torch": "2.12.0+cu130",
+  "calls": [
+   {
+    "dataset": "kmnist",
+    "ms": 36.292606353759766,
+    "parent_ms": 45.41827500000295,
+    "correct": 9655,
+    "total": 10000,
+    "overhead_ms": 4.069426495826583
+   },
+   {
+    "dataset": "mnist",
+    "ms": 36.294654846191406,
+    "parent_ms": 46.23054200001775,
+    "correct": 9760,
+    "total": 10000,
+    "overhead_ms": 4.273190999901885
+   },
+   {
+    "dataset": "mnist",
+    "ms": 36.362239837646484,
+    "parent_ms": 46.62352899998723,
+    "correct": 9765,
+    "total": 10000,
+    "overhead_ms": 3.328415000237669
+   },
+   {
+    "dataset": "mnist",
+    "ms": 36.32844924926758,
+    "parent_ms": 46.00140999997393,
+    "correct": 9761,
+    "total": 10000,
+    "overhead_ms": 4.616013499289352
+   },
+   {
+    "dataset": "kmnist",
+    "ms": 36.377601623535156,
+    "parent_ms": 43.93407800000659,
+    "correct": 9664,
+    "total": 10000,
+    "overhead_ms": 4.56245000007425
+   },
+   {
+    "dataset": "mnist",
+    "ms": 36.340736389160156,
+    "parent_ms": 45.20854100002225,
+    "correct": 9766,
+    "total": 10000,
+    "overhead_ms": 3.617761999375716
+   },
+   {
+    "dataset": "mnist",
+    "ms": 36.408321380615234,
+    "parent_ms": 46.97980699995696,
+    "correct": 9757,
+    "total": 10000,
+    "overhead_ms": 4.222135498344642
+   },
+   {
+    "dataset": "mnist",
+    "ms": 36.32128143310547,
+    "parent_ms": 44.00896000004195,
+    "correct": 9765,
+    "total": 10000,
+    "overhead_ms": 3.84950499826914
+   },
+   {
+    "dataset": "mnist",
+    "ms": 36.26291275024414,
+    "parent_ms": 45.62623399999666,
+    "correct": 9791,
+    "total": 10000,
+    "overhead_ms": 3.8538935017436415
+   },
+   {
+    "dataset": "mnist",
+    "ms": 36.360191345214844,
+    "parent_ms": 47.324817999992774,
+    "correct": 9772,
+    "total": 10000,
+    "overhead_ms": 4.002884498977892
+   },
+   {
+    "dataset": "mnist",
+    "ms": 36.397056579589844,
+    "parent_ms": 45.425666000028286,
+    "correct": 9785,
+    "total": 10000,
+    "overhead_ms": 4.0913349967140675
+   },
+   {
+    "dataset": "kmnist",
+    "ms": 36.327423095703125,
+    "parent_ms": 44.55498999993779,
+    "correct": 9637,
+    "total": 10000,
+    "overhead_ms": 3.985944500775986
+   },
+   {
+    "dataset": "mnist",
+    "ms": 36.37043380737305,
+    "parent_ms": 45.006436999983634,
+    "correct": 9770,
+    "total": 10000,
+    "overhead_ms": 4.078846497244285
+   },
+   {
+    "dataset": "mnist",
+    "ms": 36.415489196777344,
+    "parent_ms": 45.724512999981926,
+    "correct": 9758,
+    "total": 10000,
+    "overhead_ms": 3.86343349878598
+   },
+   {
+    "dataset": "kmnist",
+    "ms": 36.24038314819336,
+    "parent_ms": 44.24701600009939,
+    "correct": 9689,
+    "total": 10000,
+    "overhead_ms": 4.143781999661314
+   }
+  ],
+  "problems": [
+   "MNIST accuracy 97.682% (107,450/110,000); the band needs 107,470 correct"
+  ],
+  "summary": "MNIST 97.68% (107,450/110,000), 41.569 ms/call; hold-out (kmnist) 96.61%, 40.067 ms/call (floored by the scorer's clock)",
+  "ranked_ms": null
+ }
+}

@@ -1,0 +1,41 @@
+{
+  "pr": 127,
+  "head": "19d2a3faba642814aee9c12ed1a118a927b796d2",
+  "main_head": "14a92c25a899f8ae4509c0068a6ce577b508fc1b",
+  "folder": "ladder-d5-20261018",
+  "source_path": "/Users/yaroslavvb/git/sutro-problems/output/pr-review-20261018-pass2/pr127/source/mnist-a100/submissions/ladder-d5-20261018/submission.py",
+  "source_sha256": "5754027efaadd7b3b2b26ea5e1f7bd1c953c6e70b1692797887565e6e23ba005",
+  "source_bytes": 20326,
+  "scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+  "runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+  "function": "ladder_kernel",
+  "difficulty": 5,
+  "runs": 3,
+  "energy_enabled": true,
+  "initial_reviewer_set": true,
+  "failed_outcomes_replaced": false,
+  "replacement_runs": 0,
+  "local_scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+  "local_runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+  "modal_app_id": "ap-5dsYyMoDE3OW8SDeFBL3M1",
+  "modal_app_url": "https://modal.com/apps/yaroslavvb/main/ap-5dsYyMoDE3OW8SDeFBL3M1",
+  "started_unix": 1792388893.415262,
+  "command": [
+    "/tmp/sutro-pr-review-20261018-controller/bin/python",
+    "run_modal.py",
+    "/Users/yaroslavvb/git/sutro-problems/output/pr-review-20261018-pass2/pr127/source/mnist-a100/submissions/ladder-d5-20261018/submission.py:ladder_kernel",
+    "--difficulty",
+    "5",
+    "--runs",
+    "3",
+    "--json",
+    "/Users/yaroslavvb/git/sutro-problems/output/pr-review-20261018-pass2/pr127/modal"
+  ],
+  "raw_record_sha256": {
+    "run-1.json": "1425c659e6ba45e236b8f4abdaf6f6f7dcd4e19587822b0ddf72d1acb162d123",
+    "run-2.json": "f8c6bfa840d309d02382bf86ab19f884d932586eb9e1c1a5355d03337e959880",
+    "run-3.json": "410647e67b28d75f8c5ffa42d62e7fde1eaf423b651c3465774ef227f590fa36"
+  },
+  "finished_unix": 1792389735.161011,
+  "controller_exit_code": 1
+}

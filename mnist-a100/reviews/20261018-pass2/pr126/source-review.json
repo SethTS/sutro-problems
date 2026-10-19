@@ -1,0 +1,96 @@
+{
+  "pull_request": 126,
+  "reviewed_head": "4199965260948ad7837fadbaccc7639b02cb80d6",
+  "frozen_main": "14a92c25a899f8ae4509c0068a6ce577b508fc1b",
+  "source_sha256": "1966a800debdb3681b1c897527c28771d958a02604b0281b9dbe8508f183aa77",
+  "source_bytes": 18558,
+  "source_limit_bytes": 20480,
+  "source_gate_passed": true,
+  "review_flags": [
+    "embedded weights? 652 numeric literals",
+    "18,558 bytes, close to the 20,480-byte limit"
+  ],
+  "review_flags_disposition": "652 scalar numeric literals are algorithm/kernel hyperparameters, shape/mask constants, RNG hashes and Muon coefficients. No embedded model/data table found. Source length is18558 below20480cap.",
+  "function": "classify",
+  "canonical_scorer_unchanged": true,
+  "canonical_runner_unchanged": true,
+  "review_method": "Full minified source and separately generated readable ast.unparse view read; import/source gate and syntax compilation; tensor/reset/Triton pointer flow inspected. Readable view is a diagnostic only and never used for qualification.",
+  "imports": [
+    "torch",
+    "torch.cuda",
+    "torch.nn.functional",
+    "triton",
+    "triton.language",
+    "triton.language.extra.cuda.libdevice",
+    "math"
+  ],
+  "method": "Fourth-moment inverse covariance plus current-label Nystr\u00f6m/RFM metric preprocessing. Four three-hidden-layer CReLU/RMSNorm MLPs with256 expanded hidden features;48batched optimizer updates, current-label same-class tangent jitter, mixup/dropout, Muon-style hidden updates and AdamW head, opposite-half confident query pseudo-labels. EMA embeddings receive within-class covariance whitening and one supervised contrastive affine update, then hub-corrected5-neighbor voting and3joint train/query propagation steps.",
+  "fresh_state_reset": "classify clones/copies all current inputs, then graph.replay executes p->_y to recompute all metrics/transformed tensors/current one-hot labels/same-class tangent vectors. _w resets first-layer weights from current labelled examples at fixed random indices, remaining hidden weights from stored data-independent RNG constants, headweights/biases to0, EMA toinitialweights, all optimizer momentum/secondmoment arrays to0, activation-preconditioner factors toidentity, counterto0, samplingCDFtouniform and pseudo-label arrays to0. No fitted state reused from foreign warm-up.",
+  "training_and_graph": "Entire fixed48-update fit and readout captured during allowed foreign warm-up; both backward and optimizer updates are in the graph. Parameter.grad=None at capture yields recorded overwrite/gradient kernels for each update. Every actual fit starts with captured tensor resets and receives current static inputs. Cached compiled callables and immutable random initialization/index/pool schedules do not depend on prior dataset truth.",
+  "cache_and_output": "_S owns graph,state,inputbuffers,and output. Metric _S[f]/coarse_info objects are assigned but not consulted as warm fit results. Returned labels alias graph output rather than clone; canonical worker consumes labels before the next serial replay, so no benchmark-path failure. Public callers retaining outputs across calls would observe mutation. Fixed canonical shapes/dtypes mean single unkeyed graph cache is sufficient in benchmark.",
+  "truth_and_priors": "Only current train_y enters true targets, class-conditioned neighbors, supervised metric/contrastive fitting, and graph clamps. Query training labels are current predictions from opposite-half EMA networks, with90percentconfidence coverage and disjoint fixed query pools. Final graph readout uses current queries without truth. No dataset seed/label access, prior data table, stored trained model, decoder, network/filesystem/process/caller introspection, timing primitives or delayed work.",
+  "input_integrity": "Static clones separate callers from writes; normalized/covariance/feature/label transforms produce new tensors. Every in-place model/optimizer/labelCDF/tangent/score/Triton store targets owned scratch. Supplied inputs are read only.",
+  "precision_and_rng": "TF32 disabled during metric work and restored uniformly for neural math; BF16 activations/weights and FP16 metric products; FP32 accumulators/local metrics. RNG constants/hash/dropout seed109 and generatorseed0 supply fresh-call reproducible data-independent schedules. No RNG call encodes model data. inline assembly is only add.rn.f32.",
+  "triton_review": "Matrix products, CReLU/RMSNorm forward/backward, class-group same-class top10 neighbor search, packed quantized topk, current-lossCDF binary-search sampling and tangent/mixup data construction read supplied or owned tensors. Explicit masks bound rows/columns; grouped neighbor outputs initialized to-inf and stores keyed to valid original-row IDs. Unmasked pseudo-label reads use defaultindex0 outside active rows and remain within owned arrays. No remote or host pointer leakage.",
+  "published_rules": "D4 requires107470/110000 correct per full run, every draw>=9620/10000, foreign aggregate>=6000/40000 plus every timing/clock gate. Median3Modal A100 runs. Energy is optional; invalid telemetry cannot itself disqualify passing score. Fresh-group outcomes are retained and never replaced.",
+  "author_evidence_issue": {
+    "submitted_source_sha256": "1966a800debdb3681b1c897527c28771d958a02604b0281b9dbe8508f183aa77",
+    "record_source_sha256": "c7b78944bfbc45859ec53ec68b94d0808a93decec0c4e2115ae6b6e3c52d78b1",
+    "record_source_bytes": 18611,
+    "original_record_source_supplied": false,
+    "assessment": "Arithmetic and energy reconstruct3/3 but records do not establish submitted-source identity. Author verifier explicitly permits a separately declared record hash; no equivalence proof supplied. Logs/GPUUUIDs removed, so run context/distinct GPUs not independently authenticated. Fresh exact-source group is separate."
+  },
+  "upstream_attribution": {
+    "documented_credits_present": false,
+    "proven_small_helpers": "Four helpers exactly equivalent after alias/local-name normalization to accepted ladder-kernel-d4-20261012 source; proof in upstream-helper-comparison.json.",
+    "larger_design_overlap": "Neural tangent/mixup/Muon/cross-teaching/EMA/graph readout closely follows tangent-relu-d5-20261012 and tangent-crossteach-d5-20261012. Entire-body equivalence/development provenance not proven.",
+    "recommendation": "Add source/report links and credit to accepted kernel/Ladder and tangent entries in README integration. Keep qualified source bytes unchanged.",
+    "accepted_credit_chain": "tangent-relu-d5-20261012 (PR120) and tangent-crossteach-d5-20261012 list entrant @likelytobelaura for the Muon neural/tangent/cross-teaching implementations. Both accepted READMEs explicitly credit @sjbaebae for joint train+query graph-propagation readout from D3. Kernel/Ladder teacher: @spartanhaden, in turn credited kernel-PCG/RFM predecessors."
+  },
+  "static_source_blockers": [],
+  "blockers": [],
+  "documentation_issues": [
+    "Author qualifying time/error claims bind an unprovided different source, not submitted bytes. Label those author records separately and use reviewer current-source qualification if it passes.",
+    "README currently omits meaningful method, reset, precision and upstream credit description. Add concise integration notes and source/report links.",
+    "Leaderboard best-marker claim is premature before current-source review; parent handles final placement."
+  ],
+  "created_utc": "2026-10-19T05:52:09.454045+00:00",
+  "fresh_reviewer_outcome": {
+    "passed_runs": 1,
+    "required_passed_runs": 3,
+    "energy_valid_runs": 1,
+    "margins_labels": [
+      53,
+      -26,
+      -20
+    ],
+    "median_ranked_ms": null,
+    "median_energy_mj": null,
+    "all45calls_complete": true,
+    "blockers": [
+      {
+        "run": 2,
+        "type": "canonical mean MNIST accuracy failure",
+        "correct": 107444,
+        "required": 107470,
+        "shortfall": 26,
+        "error_pct": 2.3236363636363637,
+        "canonical_problems": [
+          "MNIST accuracy 97.676% (107,444/110,000); the band needs 107,470 correct"
+        ]
+      },
+      {
+        "run": 3,
+        "type": "canonical mean MNIST accuracy failure",
+        "correct": 107450,
+        "required": 107470,
+        "shortfall": 20,
+        "error_pct": 2.3181818181818183,
+        "canonical_problems": [
+          "MNIST accuracy 97.682% (107,450/110,000); the band needs 107,470 correct"
+        ]
+      }
+    ],
+    "disposition": "Hold unmerged; retain all outcomes."
+  }
+}

@@ -1,0 +1,159 @@
+✓ Initialized. View run at 
+https://modal.com/apps/yaroslavvb/main/ap-5dsYyMoDE3OW8SDeFBL3M1
+✓ Created objects.
+├── ✓ Uploaded 
+│   /Users/yaroslavvb/git/sutro-problems/output/pr-review-20261018-pass2/pr127/c
+│   anonical/run_modal.py
+├── ✓ Uploaded 
+│   /Users/yaroslavvb/git/sutro-problems/output/pr-review-20261018-pass2/pr127/c
+│   anonical/mnist.py
+└── ✓ Created Function remote_score.
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 13.3.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 13.3.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 13.3.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 13.3.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 13.3.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+--- run 1:
+submission.py:ladder_kernel at 1.90% error: 15 timed calls, each in a fresh process
+  review flag: embedded weights? 721 numeric literals
+  review flag: 20,326 bytes, close to the 20,480-byte limit
+  NVIDIA A100-SXM4-80GB, torch 2.12.0+cu130, sandbox on
+  call  1/15: 306.436 ms, scorer's clock 310.520 ms
+  call  2/15: 306.406 ms, scorer's clock 310.169 ms
+  call  3/15: 306.845 ms, scorer's clock 310.241 ms
+  call  4/15: 306.265 ms, scorer's clock 309.698 ms
+  call  5/15: 306.509 ms, scorer's clock 309.769 ms
+  call  6/15: 306.324 ms, scorer's clock 310.341 ms
+  call  7/15: 306.867 ms, scorer's clock 311.168 ms
+  call  8/15: 306.354 ms, scorer's clock 310.559 ms
+  call  9/15: 306.524 ms, scorer's clock 310.248 ms
+  call 10/15: 306.560 ms, scorer's clock 310.358 ms
+  call 11/15: 306.549 ms, scorer's clock 309.564 ms
+  call 12/15: 306.158 ms, scorer's clock 309.771 ms
+  call 13/15: 305.959 ms, scorer's clock 309.739 ms
+  call 14/15: 306.531 ms, scorer's clock 309.926 ms
+  call 15/15: 306.445 ms, scorer's clock 310.015 ms
+MNIST 98.15% (107,969/110,000), 308.575 ms/call; hold-out (fashion) 88.43%, 308.319 ms/call (floored by the scorer's clock); score 308.575 ms
+energy: one more fresh process runs the method back to back on fresh MNIST draws for 20 s, between idle windows in which it is frozen
+  NVIDIA A100-SXM4-80GB: idle 75.5 W with the method frozen; telemetry reference 18.4 TFLOP/s at 9.49 J/TFLOP above idle (a healthy NVIDIA A100-SXM4-80GB reads 6-11)
+  the round trip alone: 12.1 mJ per call over 3,312 empty calls, subtracted
+  the method: 65 calls in 20.2 s, MNIST 98.20%, 306.441 ms per call, 192.9 W on average
+energy 36438.337 mJ per call above idle
+--- run 2:
+submission.py:ladder_kernel at 1.90% error: 15 timed calls, each in a fresh process
+  review flag: embedded weights? 721 numeric literals
+  review flag: 20,326 bytes, close to the 20,480-byte limit
+  NVIDIA A100-SXM4-80GB, torch 2.12.0+cu130, sandbox on
+  call  1/15: 305.500 ms, scorer's clock 310.374 ms
+  call  2/15: 305.053 ms, scorer's clock 309.363 ms
+  call  3/15: 305.596 ms, scorer's clock 310.517 ms
+  call  4/15: 304.885 ms, scorer's clock 308.281 ms
+  call  5/15: 304.934 ms, scorer's clock 308.619 ms
+  call  6/15: 304.991 ms, scorer's clock 309.950 ms
+  call  7/15: 305.253 ms, scorer's clock 311.460 ms
+  call  8/15: 305.118 ms, scorer's clock 308.901 ms
+  call  9/15: 305.463 ms, scorer's clock 309.828 ms
+  call 10/15: 304.918 ms, scorer's clock 308.664 ms
+  call 11/15: 304.964 ms, scorer's clock 308.730 ms
+  call 12/15: 305.051 ms, scorer's clock 308.670 ms
+  call 13/15: 305.020 ms, scorer's clock 309.551 ms
+  call 14/15: 305.321 ms, scorer's clock 308.283 ms
+  call 15/15: 305.220 ms, scorer's clock 309.855 ms
+MNIST 97.99% (107,794/110,000), 307.596 ms/call; hold-out (fashion) 88.55%, 308.276 ms/call (floored by the scorer's clock)
+disqualified: MNIST accuracy 97.995% (107,794/110,000); the band needs 107,910 correct
+--- run 3:
+submission.py:ladder_kernel at 1.90% error: 15 timed calls, each in a fresh process
+  review flag: embedded weights? 721 numeric literals
+  review flag: 20,326 bytes, close to the 20,480-byte limit
+  NVIDIA A100-SXM4-80GB, torch 2.12.0+cu130, sandbox on
+  call  1/15: 305.765 ms, scorer's clock 308.375 ms
+  call  2/15: 305.512 ms, scorer's clock 308.215 ms
+  call  3/15: 306.020 ms, scorer's clock 308.710 ms
+  call  4/15: 606.375 ms, scorer's clock 609.011 ms
+  call  5/15: 305.711 ms, scorer's clock 308.740 ms
+  call  6/15: 305.878 ms, scorer's clock 309.454 ms
+  call  7/15: 305.727 ms, scorer's clock 308.846 ms
+  call  8/15: 305.605 ms, scorer's clock 308.973 ms
+  call  9/15: 305.869 ms, scorer's clock 309.054 ms
+  call 10/15: 306.075 ms, scorer's clock 308.756 ms
+  call 11/15: 305.698 ms, scorer's clock 308.960 ms
+  call 12/15: 305.449 ms, scorer's clock 308.632 ms
+  call 13/15: 305.584 ms, scorer's clock 308.720 ms
+  call 14/15: 305.786 ms, scorer's clock 309.510 ms
+  call 15/15: 305.888 ms, scorer's clock 311.216 ms
+MNIST 98.05% (107,853/110,000), 334.631 ms/call; hold-out (fashion) 88.43%, 307.074 ms/call (floored by the scorer's clock)
+disqualified: MNIST accuracy 98.048% (107,853/110,000); the band needs 107,910 correct
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/yaroslavvb/main/ap-5dsYyMoDE3OW8SDeFBL3M1
+passed 1 of 3 runs; median 308.575 ms; energy median 36,438.3 mJ per call over 1 runs

@@ -1,0 +1,28 @@
+{
+  "current_source_sha256": "1966a800debdb3681b1c897527c28771d958a02604b0281b9dbe8508f183aa77",
+  "upstream": "mnist-a100/submissions/ladder-kernel-d4-20261012/submission.py",
+  "upstream_sha256": "f4c69bf486197cd00721320a90dbd644ad734b3371e65ea2fff498d9304ebbdc",
+  "scope": "Exact AST comparison of four small helpers after documented alias expansion and local-variable renaming. Larger solver/MLP/readout routines were separately read; this does not establish their entire-body equivalence or author development history.",
+  "results": [
+    {
+      "submission_function": "aw",
+      "upstream_function": "chol",
+      "equivalent_after_import_alias_and_local_variable_renaming": true
+    },
+    {
+      "submission_function": "t",
+      "upstream_function": "rownorm",
+      "equivalent_after_import_alias_and_local_variable_renaming": true
+    },
+    {
+      "submission_function": "_b",
+      "upstream_function": "aug",
+      "equivalent_after_import_alias_and_local_variable_renaming": true
+    },
+    {
+      "submission_function": "_c",
+      "upstream_function": "kern",
+      "equivalent_after_import_alias_and_local_variable_renaming": true
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "checked_at_utc": "2026-10-19T06:06:53.886618+00:00",
+  "source_url": "https://raw.githubusercontent.com/cybertronai/sutro-problems/19d2a3faba642814aee9c12ed1a118a927b796d2/mnist-a100/submissions/ladder-d5-20261018/submission.py",
+  "source_sha256": "5754027efaadd7b3b2b26ea5e1f7bd1c953c6e70b1692797887565e6e23ba005",
+  "source_copied_into_repository": false,
+  "record_filename": "submission.py",
+  "function": "ladder_kernel",
+  "expected_exit_status": 1,
+  "actual_exit_status": 1,
+  "passed_runs": 1,
+  "all_45_timed_calls_complete": true,
+  "accuracy_margins_labels": [
+    59,
+    -116,
+    -57
+  ],
+  "median_ranked_ms": null,
+  "median_energy_mj": null,
+  "canonical_scorer_sha256": "1bc6d8d96a776565bc70f3ccdb91be7de57187d4495b2b0437fac98f5e120064",
+  "canonical_runner_sha256": "1180b843cf6c32414774da90c835a8b7298d2db8719989237a793ca1c62a10ab",
+  "report_sha256": "f4b3a3ab85317483af4fb9c4c2e7206f98cc209c80d7c86b05cb4dd1b44c8363",
+  "scope": "Replayed existing records with the packaged verifier and freshly fetched pinned source. No learner execution and no new GPU runs."
+}

@@ -1,0 +1,22 @@
+{
+  "pull_request": 127,
+  "head": "19d2a3faba642814aee9c12ed1a118a927b796d2",
+  "source_sha256": "5754027efaadd7b3b2b26ea5e1f7bd1c953c6e70b1692797887565e6e23ba005",
+  "command": [
+    "/tmp/sutro-pr-review-20261018-controller/bin/python",
+    "run_modal.py",
+    "/Users/yaroslavvb/git/sutro-problems/output/pr-review-20261018-pass2/pr127/source/mnist-a100/submissions/ladder-d5-20261018/submission.py:ladder_kernel",
+    "--difficulty",
+    "5",
+    "--runs",
+    "3",
+    "--json",
+    "/Users/yaroslavvb/git/sutro-problems/output/pr-review-20261018-pass2/pr127/modal"
+  ],
+  "started_unix": 1792388893.415262,
+  "initial_set": true,
+  "replacement_runs": 0,
+  "energy_enabled": true,
+  "returncode": 1,
+  "finished_unix": 1792389735.161011
+}
